@@ -2,23 +2,22 @@ package com.jesseojones.tictactoe.util;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 import com.jesseojones.tictactoe.domain.Coordinate;
 
 public class Generator {
 
-	private static final int MAXIMUM_VALUE = 10;
-	private static final int BOARD_SPACE_DIMENSION = 9;
-	private static final int BOARD_AXIS_DIMENSION = 3;
+	private static final int GAME_BOARD_DIMENSIONS = 3;
+
+	private static final int GAME_BOARD_SPACES = 9;
 
 	public char[] generateSimpleGameBoard() {
-		return new char[BOARD_SPACE_DIMENSION];
+		return new char[GAME_BOARD_SPACES];
 	}
 
 	public char[][] generateCoordinateGameBoard() {
-		return new char[BOARD_AXIS_DIMENSION][BOARD_AXIS_DIMENSION];
+		return new char[GAME_BOARD_DIMENSIONS][GAME_BOARD_DIMENSIONS];
 	}
 
 	public List<Integer> generateSimpleCoordinates() {
@@ -50,16 +49,16 @@ public class Generator {
 	}
 
 	public int generateRandomSimpleCoordinate() {
-		return ThreadLocalRandom.current().nextInt(1, BOARD_SPACE_DIMENSION);
+		return ThreadLocalRandom.current().nextInt(1, GAME_BOARD_SPACES);
 	}
 
 	public int generateRandomCoordinate() {
-		return ThreadLocalRandom.current().nextInt(1, BOARD_AXIS_DIMENSION);
+		return ThreadLocalRandom.current().nextInt(1, GAME_BOARD_DIMENSIONS);
 	}
 
 	public Coordinate generateRandomCoordinateObject() {
-		final int xCoordinate = ThreadLocalRandom.current().nextInt(0, BOARD_AXIS_DIMENSION);
-		final int yCoordinate = ThreadLocalRandom.current().nextInt(0, BOARD_AXIS_DIMENSION);
+		final int xCoordinate = ThreadLocalRandom.current().nextInt(0, GAME_BOARD_DIMENSIONS);
+		final int yCoordinate = ThreadLocalRandom.current().nextInt(0, GAME_BOARD_DIMENSIONS);
 		return new Coordinate(xCoordinate, yCoordinate);
 	}
 }
