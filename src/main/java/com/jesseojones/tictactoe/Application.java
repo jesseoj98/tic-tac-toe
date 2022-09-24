@@ -43,8 +43,9 @@ public class Application {
 		letCpuGoFirst = userInput == 'y' || userInput == 'Y';
 
 		printer.printSimpleCoordinateSampleGameBoard();
+		printer.printCoordinatesSampleGameBoard();
 
-		System.out.print("Choose a game board type (s/c): ");
+		System.out.print("\nChoose a game board type (s/c): ");
 
 		do {
 			userInput = scanner.next().charAt(0);

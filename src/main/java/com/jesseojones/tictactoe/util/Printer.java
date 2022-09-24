@@ -20,7 +20,6 @@ public class Printer {
 				}
 			}
 		}
-		System.out.println();
 	}
 
 	public void printCoordinatesGameBoard(char[][] gameBoard) {
@@ -47,8 +46,17 @@ public class Printer {
 	}
 
 	public void printCoordinatesSampleGameBoard() {
+		System.out.println("\nSample Coordinates Game Board:\n");
 		printSimpleCoordinateGameBoardDivider();
-		printSimpleCoordinateGameBoardDivider();
+		for (int i = 0; i < GAME_BOARD_DIMENSION; i++) {
+			for (int j = 0; j < GAME_BOARD_DIMENSION; j++) {
+				System.out.print("|" + (j + 1) + "," + (i + 1));
+				if (j == GAME_BOARD_DIMENSION - 1) {
+					System.out.println("|");
+					printSimpleCoordinateGameBoardDivider();
+				}
+			}
+		}
 	}
 
 	private void printTopOfCoordinatesGameBoard() {
