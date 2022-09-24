@@ -6,8 +6,12 @@ public class Validator {
 		return userInput == 'x' || userInput == 'X' || userInput == 'o' || userInput == 'O';
 	}
 
-	public boolean isUserInputLetCpuGoFirstValid(char userInput) {
+	public boolean isUserInputValid(char userInput) {
 		return userInput == 'y' || userInput == 'Y' || userInput == 'n' || userInput == 'N';
+	}
+
+	public boolean playAgain(char userInput) {
+		return userInput == 'y' || userInput == 'Y';
 	}
 
 	public boolean isUserInputGameBoardTypeValid(char userInput) {

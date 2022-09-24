@@ -128,7 +128,7 @@ public class Printer {
 				return " ";
 			}
 		} else {
-			return "" + gameBoardSpace;
+			return Character.toString(gameBoardSpace);
 		}
 	}
 
