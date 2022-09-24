@@ -2,15 +2,17 @@ package com.jesseojones.tictactoe.util;
 
 public class Printer {
 
-	private static final int BOARD_SPACE_DIMENSION = 9;
 	private static final int GAME_BOARD_DIMENSION = 3;
+
+	private static final int GAME_BOARD_SPACES = 9;
 
 	private static Helper helper = new Helper();
 
 	public void printSimpleCoordinateSampleGameBoard() {
-		System.out.println("\nSample Simple Coordinate Game Board:\n");
+		System.out.println("\nSimple Game Board");
+		System.out.println("\nEnter a single digit to place your move\n");
 		printSimpleCoordinateGameBoardDivider();
-		for (int i = 0; i < BOARD_SPACE_DIMENSION; i++) {
+		for (int i = 0; i < GAME_BOARD_SPACES; i++) {
 			if (endOfSimpleRowMatch(i)) {
 				System.out.println(" " + (i + 1) + " |");
 				printSimpleCoordinateGameBoardDivider();
@@ -26,7 +28,7 @@ public class Printer {
 
 	public void printSimpleCoordinateGameBoard(char[] gameBoard) {
 		printSimpleCoordinateGameBoardDivider();
-		for (int i = 0; i < BOARD_SPACE_DIMENSION; i++) {
+		for (int i = 0; i < GAME_BOARD_SPACES; i++) {
 			if (endOfSimpleRowMatch(i)) {
 				System.out.println(" " + printGameBoardSpace(gameBoard[i], i) + " |");
 				printSimpleCoordinateGameBoardDivider();
@@ -64,7 +66,8 @@ public class Printer {
 	}
 
 	public void printCoordinatesSampleGameBoard() {
-		System.out.println("\nSample Coordinates Game Board:\n");
+		System.out.println("\nCoordinates Game Board");
+		System.out.println("\nEnter an x coordinate and a y coordinate to place your move\n");
 		printSimpleCoordinateGameBoardDivider();
 		for (int i = 0; i < GAME_BOARD_DIMENSION; i++) {
 			for (int j = 0; j < GAME_BOARD_DIMENSION; j++) {

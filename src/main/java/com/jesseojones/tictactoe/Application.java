@@ -33,8 +33,7 @@ public class Application {
 				userInput = scanner.next().charAt(0);
 			} while (!validator.isUserInputPlayingCharacterValid(userInput));
 
-			// userPlayingCharacter = Character.toUpperCase(userInput);
-			userPlayingCharacter = userInput == 'x' || userInput == 'X' ? 'X' : 'O';
+			userPlayingCharacter = Character.toUpperCase(userInput);
 
 			char cpuPlayingCharacter = userPlayingCharacter == 'X' ? 'O' : 'X';
 
@@ -67,6 +66,7 @@ public class Application {
 				if (letCpuGoFirst) {
 					helper.insertIntoGameBoard(gameBoard, generator.generateRandomSimpleCoordinate(),
 							cpuPlayingCharacter);
+					System.out.println();
 					printer.printSimpleCoordinateGameBoard(gameBoard);
 				}
 
