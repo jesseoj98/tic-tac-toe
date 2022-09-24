@@ -1,17 +1,13 @@
 package com.jesseojones.tictactoe.util;
 
 public class Helper {
-
-	public boolean isSpaceEmpty(char[] gameBoard, int userInput) {
-		return gameBoard[userInput] == ' ';
+	
+	public boolean isSpaceAlreadyOccupied(int input) {
+		return input == 'X' || input == 'O';
 	}
 
-	public boolean isSpaceAlreadyOccupied(char[] gameBoard, int userInput) {
-		return gameBoard[userInput] == 'X' || gameBoard[userInput] == 'O';
-	}
-
-	public boolean isSpaceEmpty(char[][] gameBoard, int xCoordinate, int yCoordinate) {
-		return gameBoard[xCoordinate][yCoordinate] == ' ';
+	public boolean isSpaceAlreadyOccupied(char[] gameBoard, int input) {
+		return gameBoard[input] == 'X' || gameBoard[input] == 'O';
 	}
 
 	public boolean isSpaceAlreadyOccupied(char[][] gameBoard, int xCoordinate, int yCoordinate) {

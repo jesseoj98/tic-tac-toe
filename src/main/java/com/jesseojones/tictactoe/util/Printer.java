@@ -5,6 +5,8 @@ public class Printer {
 	private static final int BOARD_SPACE_DIMENSION = 9;
 	private static final int GAME_BOARD_DIMENSION = 3;
 
+	private static Helper helper = new Helper();
+
 	public void printSimpleCoordinateSampleGameBoard() {
 		System.out.println("\nSample Simple Coordinate Game Board:\n");
 		printSimpleCoordinateGameBoardDivider();
@@ -17,6 +19,22 @@ public class Printer {
 					System.out.print((i + 1) + " |");
 				} else {
 					System.out.print("| " + (i + 1) + " | ");
+				}
+			}
+		}
+	}
+
+	public void printSimpleCoordinateGameBoard(char[] gameBoard) {
+		printSimpleCoordinateGameBoardDivider();
+		for (int i = 0; i < BOARD_SPACE_DIMENSION; i++) {
+			if (endOfSimpleRowMatch(i)) {
+				System.out.println(" " + printGameBoardSpace(gameBoard[i], i) + " |");
+				printSimpleCoordinateGameBoardDivider();
+			} else {
+				if (i % 3 != 0) {
+					System.out.print(printGameBoardSpace(gameBoard[i], i) + " |");
+				} else {
+					System.out.print("| " + printGameBoardSpace(gameBoard[i], i) + " | ");
 				}
 			}
 		}
@@ -37,9 +55,9 @@ public class Printer {
 		System.out.print((rowNumber + 1) + " |");
 		for (int i = 0; i < GAME_BOARD_DIMENSION; i++) {
 			if (endOfRowMatch(i)) {
-				System.out.print(" " + printGameBoardSpace(gameBoard[rowNumber][i]) + " |");
+				System.out.print(" " + printGameBoardSpace(gameBoard[rowNumber][i], i) + " |");
 			} else {
-				System.out.println(" " + printGameBoardSpace(gameBoard[rowNumber][i]));
+				System.out.println(" " + printGameBoardSpace(gameBoard[rowNumber][i], i));
 			}
 		}
 		System.out.println(" | " + (rowNumber + 1));
@@ -85,8 +103,33 @@ public class Printer {
 		return index != GAME_BOARD_DIMENSION - 1;
 	}
 
-	private char printGameBoardSpace(char gameBoardSpace) {
-		return gameBoardSpace != ' ' ? gameBoardSpace : ' ';
+	private String printGameBoardSpace(char gameBoardSpace, int index) {
+		if (!helper.isSpaceAlreadyOccupied(gameBoardSpace)) {
+			switch (index) {
+			case 0:
+				return "1";
+			case 1:
+				return "2";
+			case 2:
+				return "3";
+			case 3:
+				return "4";
+			case 4:
+				return "5";
+			case 5:
+				return "6";
+			case 6:
+				return "7";
+			case 7:
+				return "8";
+			case 8:
+				return "9";
+			default:
+				return " ";
+			}
+		} else {
+			return "" + gameBoardSpace;
+		}
 	}
 
 }

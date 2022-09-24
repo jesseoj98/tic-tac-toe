@@ -50,11 +50,11 @@ public class Generator {
 	}
 
 	public int generateRandomSimpleCoordinate() {
-		return ThreadLocalRandom.current().nextInt(0, BOARD_SPACE_DIMENSION);
+		return ThreadLocalRandom.current().nextInt(1, BOARD_SPACE_DIMENSION);
 	}
 
 	public int generateRandomCoordinate() {
-		return ThreadLocalRandom.current().nextInt(0, BOARD_AXIS_DIMENSION);
+		return ThreadLocalRandom.current().nextInt(1, BOARD_AXIS_DIMENSION);
 	}
 
 	public Coordinate generateRandomCoordinateObject() {

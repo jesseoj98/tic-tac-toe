@@ -51,6 +51,8 @@ public class Application {
 			userInput = scanner.next().charAt(0);
 		} while (!validator.isUserInputGameBoardTypeValid(userInput));
 
+		System.out.println("\n---------------");
+
 		if (userInput == 's' || userInput == 'S') {
 
 			int userInputSimple;
@@ -64,22 +66,23 @@ public class Application {
 
 			do {
 
-				System.out.println("Enter a spot to place your move: ");
+				System.out.print("\nEnter a spot to place your move: ");
 
 				do {
 					userInputSimple = scanner.nextInt();
 				} while (!validator.isUserInputValid(userInputSimple)
-						&& helper.isSpaceEmpty(gameBoard, userInputSimple - 1)
-						&& !helper.isSpaceAlreadyOccupied(gameBoard, userInputSimple - 1));
+						&& helper.isSpaceAlreadyOccupied(gameBoard, userInputSimple - 1));
 
 				helper.insertIntoGameBoard(gameBoard, userInputSimple - 1, userPlayingCharacter);
 
 				do {
 					cpuInputSimple = generator.generateRandomSimpleCoordinate();
-				} while (helper.isSpaceEmpty(gameBoard, cpuInputSimple - 1)
-						&& !helper.isSpaceAlreadyOccupied(gameBoard, cpuInputSimple - 1));
+				} while (helper.isSpaceAlreadyOccupied(gameBoard, cpuInputSimple - 1));
 
 				helper.insertIntoGameBoard(gameBoard, cpuInputSimple - 1, cpuPlayingCharacter);
+
+				System.out.println();
+				printer.printSimpleCoordinateGameBoard(gameBoard);
 
 			} while (!validator.ticTacToe(gameBoard) || !validator.allGameBoardSpacesFilled(gameBoard));
 
@@ -93,6 +96,8 @@ public class Application {
 
 			char[][] gameBoard = generator.generateCoordinateGameBoard();
 
+			// let cpu go first
+
 			do {
 
 				System.out.println("Enter an x coordinate to place your move: ");
@@ -105,17 +110,15 @@ public class Application {
 
 				do {
 					userInputYCoordinate = scanner.nextInt();
-				} while (!validator.isUserInputCoordinatesValid(userInputYCoordinate)
-						&& helper.isSpaceEmpty(gameBoard, userInputXCoordinate - 1, userInputYCoordinate - 1) && !helper
-								.isSpaceAlreadyOccupied(gameBoard, userInputXCoordinate - 1, userInputYCoordinate - 1));
+				} while (!validator.isUserInputCoordinatesValid(userInputYCoordinate) && !helper
+						.isSpaceAlreadyOccupied(gameBoard, userInputXCoordinate - 1, userInputYCoordinate - 1));
 
 				do {
 					cpuInputXCoordinate = generator.generateRandomCoordinate();
 					cpuInputYCoordinate = generator.generateRandomCoordinate();
 					helper.insertIntoGameBoard(gameBoard, generator.generateRandomCoordinate(),
 							generator.generateRandomCoordinate(), cpuPlayingCharacter);
-				} while (helper.isSpaceEmpty(gameBoard, cpuInputXCoordinate - 1, cpuInputYCoordinate - 1)
-						&& !helper.isSpaceAlreadyOccupied(gameBoard, cpuInputXCoordinate - 1, cpuInputYCoordinate - 1));
+				} while (!helper.isSpaceAlreadyOccupied(gameBoard, cpuInputXCoordinate - 1, cpuInputYCoordinate - 1));
 
 			} while (!validator.ticTacToe(gameBoard) || !validator.allGameBoardSpacesFilled(gameBoard));
 		}
