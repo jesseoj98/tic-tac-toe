@@ -9,7 +9,7 @@ public class Printer {
 		System.out.println("\nSample Simple Coordinate Game Board:\n");
 		printSimpleCoordinateGameBoardDivider();
 		for (int i = 0; i < BOARD_SPACE_DIMENSION; i++) {
-			if (i == 2 || i == 5 || i == 8) {
+			if (endOfSimpleRowMatch(i)) {
 				System.out.println(" " + (i + 1) + " |");
 				printSimpleCoordinateGameBoardDivider();
 			} else {
@@ -51,7 +51,7 @@ public class Printer {
 		for (int i = 0; i < GAME_BOARD_DIMENSION; i++) {
 			for (int j = 0; j < GAME_BOARD_DIMENSION; j++) {
 				System.out.print("|" + (j + 1) + "," + (i + 1));
-				if (j == GAME_BOARD_DIMENSION - 1) {
+				if (!endOfRowMatch(j)) {
 					System.out.println("|");
 					printSimpleCoordinateGameBoardDivider();
 				}
@@ -75,6 +75,10 @@ public class Printer {
 	private void printBottomOfCoordinatesGameBoard() {
 		printCoordinatesGameBoardDivider();
 		System.out.println("    1   2   3");
+	}
+
+	private boolean endOfSimpleRowMatch(int index) {
+		return index == 2 || index == 5 || index == 8;
 	}
 
 	private boolean endOfRowMatch(int index) {
