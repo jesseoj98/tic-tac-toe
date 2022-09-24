@@ -3,6 +3,7 @@ package com.jesseojones.tictactoe.util;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 import com.jesseojones.tictactoe.domain.Coordinate;
 
@@ -49,19 +50,16 @@ public class Generator {
 	}
 
 	public int generateRandomSimpleCoordinate() {
-		Random random = new Random();
-		return random.nextInt(MAXIMUM_VALUE);
+		return ThreadLocalRandom.current().nextInt(0, BOARD_SPACE_DIMENSION);
 	}
-	
+
 	public int generateRandomCoordinate() {
-		Random random = new Random();
-		return random.nextInt(BOARD_AXIS_DIMENSION);
+		return ThreadLocalRandom.current().nextInt(0, BOARD_AXIS_DIMENSION);
 	}
 
 	public Coordinate generateRandomCoordinateObject() {
-		Random random = new Random();
-		final int xCoordinate = random.nextInt(BOARD_AXIS_DIMENSION);
-		final int yCoordinate = random.nextInt(BOARD_AXIS_DIMENSION);
+		final int xCoordinate = ThreadLocalRandom.current().nextInt(0, BOARD_AXIS_DIMENSION);
+		final int yCoordinate = ThreadLocalRandom.current().nextInt(0, BOARD_AXIS_DIMENSION);
 		return new Coordinate(xCoordinate, yCoordinate);
 	}
 }

@@ -5,16 +5,22 @@ public class Printer {
 	private static final int BOARD_SPACE_DIMENSION = 9;
 	private static final int GAME_BOARD_DIMENSION = 3;
 
-	public void printSimpleCoordinateSampleGameBoard(char[] gameBoard) {
-		printCoordinatesGameBoardDivider();
+	public void printSimpleCoordinateSampleGameBoard() {
+		System.out.println("\nSample Simple Coordinate Game Board:\n");
+		printSimpleCoordinateGameBoardDivider();
 		for (int i = 0; i < BOARD_SPACE_DIMENSION; i++) {
 			if (i == 2 || i == 5 || i == 8) {
-				System.out.print(" " + printGameBoardSpace(gameBoard[i]) + " |");
+				System.out.println(" " + (i + 1) + " |");
+				printSimpleCoordinateGameBoardDivider();
 			} else {
-				System.out.println(" " + printGameBoardSpace(gameBoard[i]));
+				if (i % 3 != 0) {
+					System.out.print((i + 1) + " |");
+				} else {
+					System.out.print("| " + (i + 1) + " | ");
+				}
 			}
 		}
-		printCoordinatesGameBoardDivider();
+		System.out.println();
 	}
 
 	public void printCoordinatesGameBoard(char[][] gameBoard) {

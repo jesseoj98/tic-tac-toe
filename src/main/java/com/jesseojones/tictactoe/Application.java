@@ -4,12 +4,14 @@ import java.util.Scanner;
 
 import com.jesseojones.tictactoe.util.Generator;
 import com.jesseojones.tictactoe.util.Helper;
+import com.jesseojones.tictactoe.util.Printer;
 import com.jesseojones.tictactoe.util.Validator;
 
 public class Application {
 
 	private static Generator generator = new Generator();
 	private static Helper helper = new Helper();
+	private static Printer printer = new Printer();
 	private static Scanner scanner = new Scanner(System.in);
 	private static Validator validator = new Validator();
 
@@ -19,20 +21,20 @@ public class Application {
 		char userPlayingCharacter;
 		boolean letCpuGoFirst;
 
-		System.out.println("Tic-tac-toe by Jesse Jones");
+		System.out.println("Tic-tac-toe by Jesse Jones\n");
 
-		System.out.println("Please choose X or O: ");
+		System.out.print("Choose X or O: ");
 
 		do {
 			userInput = scanner.next().charAt(0);
 		} while (!validator.isUserInputPlayingCharacterValid(userInput));
 
 		// userPlayingCharacter = Character.toUpperCase(userInput);
-		userPlayingCharacter = userInput == 'x' ? 'X' : 'O';
+		userPlayingCharacter = userInput == 'x' || userInput == 'X' ? 'X' : 'O';
 
 		char cpuPlayingCharacter = userPlayingCharacter == 'X' ? 'O' : 'X';
 
-		System.out.println("Let the CPU go first? (y/n): ");
+		System.out.print("Let the CPU go first? (y/n): ");
 
 		do {
 			userInput = scanner.next().charAt(0);
@@ -40,7 +42,9 @@ public class Application {
 
 		letCpuGoFirst = userInput == 'y' || userInput == 'Y';
 
-		System.out.println("Choose a game board type (s/c): ");
+		printer.printSimpleCoordinateSampleGameBoard();
+
+		System.out.print("Choose a game board type (s/c): ");
 
 		do {
 			userInput = scanner.next().charAt(0);
@@ -59,7 +63,7 @@ public class Application {
 
 			do {
 
-				System.out.println("Please enter a number to place your move: ");
+				System.out.println("Enter a spot to place your move: ");
 
 				do {
 					userInputSimple = scanner.nextInt();
@@ -90,13 +94,13 @@ public class Application {
 
 			do {
 
-				System.out.println("Please enter an x coordinate to place your move: ");
+				System.out.println("Enter an x coordinate to place your move: ");
 
 				do {
 					userInputXCoordinate = scanner.nextInt();
 				} while (!validator.isUserInputCoordinatesValid(userInputXCoordinate));
 
-				System.out.println("Please enter an y coordinate to place your move: ");
+				System.out.println("Enter a y coordinate to place your move: ");
 
 				do {
 					userInputYCoordinate = scanner.nextInt();
