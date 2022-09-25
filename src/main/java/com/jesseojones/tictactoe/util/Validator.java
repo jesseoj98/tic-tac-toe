@@ -1,6 +1,20 @@
 package com.jesseojones.tictactoe.util;
 
+import java.util.List;
+
+import com.jesseojones.tictactoe.domain.Coordinate;
+
 public class Validator {
+
+	private static final int GAME_BOARD_DIMENSIONS = 3;
+
+	private static final int GAME_BOARD_SPACES = 9;
+
+	private static final Generator generator = new Generator();
+	private static final Helper helper = new Helper();
+
+	private static final List<List<Integer>> winningSimpleCoordinates = generator.generateSimpleWinningCoordinates();
+	private static final List<List<Coordinate>> winningCoordinates = generator.generateWinningCoordinates();
 
 	public boolean isUserInputPlayingCharacterValid(char userInput) {
 		return userInput == 'x' || userInput == 'X' || userInput == 'o' || userInput == 'O';
@@ -28,7 +42,16 @@ public class Validator {
 	}
 
 	public boolean allGameBoardSpacesFilled(char[] simpleGameBoard) {
-		return false;
+		for (int i = 0; i < GAME_BOARD_SPACES; i++) {
+			if (!helper.isSpaceAlreadyOccupied(simpleGameBoard[i])) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	public boolean ticTacToeSimple(List<Integer> positions) {
+		return winningSimpleCoordinates.containsAll(positions);
 	}
 
 	public boolean ticTacToe(char[] simpleGameBoard) {
@@ -41,6 +64,10 @@ public class Validator {
 
 	public boolean ticTacToe(char[][] coordinateGameBoard) {
 		return false;
+	}
+
+	public boolean ticTacToeCoordinate(List<Coordinate> positions) {
+		return winningCoordinates.containsAll(positions);
 	}
 
 }

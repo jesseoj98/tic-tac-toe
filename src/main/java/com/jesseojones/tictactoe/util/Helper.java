@@ -1,8 +1,8 @@
 package com.jesseojones.tictactoe.util;
 
 public class Helper {
-	
-	public boolean isSpaceAlreadyOccupied(int input) {
+
+	public boolean isSpaceAlreadyOccupied(char input) {
 		return input == 'X' || input == 'O';
 	}
 
