@@ -51,4 +51,5 @@ public class Results {
 	public void setWinningCoordinates(List<Coordinate> winningCoordinates) {
 		this.winningCoordinates = winningCoordinates;
 	}
+	
 }
