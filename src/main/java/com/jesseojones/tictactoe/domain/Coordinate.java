@@ -2,29 +2,29 @@ package com.jesseojones.tictactoe.domain;
 
 public class Coordinate {
 
-	private int xCoordinate;
+	private int x;
 
-	private int yCoordinate;
+	private int y;
 
-	public Coordinate(int xCoordinate, int yCoordinate) {
-		this.xCoordinate = xCoordinate;
-		this.yCoordinate = yCoordinate;
+	public Coordinate(int x, int y) {
+		this.x = x;
+		this.y = y;
 	}
 
-	public int getxCoordinate() {
-		return xCoordinate;
+	public int getX() {
+		return x;
 	}
 
-	public void setxCoordinate(int xCoordinate) {
-		this.xCoordinate = xCoordinate;
+	public void setX(int x) {
+		this.x = x;
 	}
 
-	public int getyCoordinate() {
-		return yCoordinate;
+	public int getY() {
+		return y;
 	}
 
-	public void setyCoordinate(int yCoordinate) {
-		this.yCoordinate = yCoordinate;
+	public void setY(int y) {
+		this.y = y;
 	}
 
 }
