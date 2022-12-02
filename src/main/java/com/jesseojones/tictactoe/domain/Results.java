@@ -1,6 +1,7 @@
 package com.jesseojones.tictactoe.domain;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Results {
 
@@ -51,5 +52,39 @@ public class Results {
 	public void setWinningCoordinates(List<Coordinate> winningCoordinates) {
 		this.winningCoordinates = winningCoordinates;
 	}
-	
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(cpuWon, playerWon, winningCoordinates, winningSimpleCoordinates);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null || getClass() != obj.getClass()) {
+			return false;
+		}
+		Results other = (Results) obj;
+		return cpuWon == other.cpuWon && playerWon == other.playerWon
+				&& Objects.equals(winningCoordinates, other.winningCoordinates)
+				&& Objects.equals(winningSimpleCoordinates, other.winningSimpleCoordinates);
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Results [playerWon=");
+		builder.append(playerWon);
+		builder.append(", cpuWon=");
+		builder.append(cpuWon);
+		builder.append(", winningSimpleCoordinates=");
+		builder.append(winningSimpleCoordinates);
+		builder.append(", winningCoordinates=");
+		builder.append(winningCoordinates);
+		builder.append("]");
+		return builder.toString();
+	}
+
 }
