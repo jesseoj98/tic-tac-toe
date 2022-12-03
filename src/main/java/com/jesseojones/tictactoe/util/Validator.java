@@ -79,7 +79,12 @@ public class Validator {
 	}
 
 	public boolean ticTacToeCoordinate(List<Coordinate> positions) {
-		return winningCoordinates.containsAll(positions);
+		for (List<Coordinate> coordinate : winningCoordinates) {
+			if (coordinate.containsAll(positions)) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 }
