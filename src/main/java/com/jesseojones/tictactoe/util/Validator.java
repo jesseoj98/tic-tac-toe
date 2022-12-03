@@ -51,7 +51,12 @@ public class Validator {
 	}
 
 	public boolean ticTacToeSimple(List<Integer> positions) {
-		return winningSimpleCoordinates.containsAll(positions);
+		for (List<Integer> coordinate : winningSimpleCoordinates) {
+			if (coordinate.containsAll(positions)) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public boolean ticTacToe(char[] simpleGameBoard) {
