@@ -59,7 +59,14 @@ public class Validator {
 	}
 
 	public boolean allGameBoardSpacesFilled(char[][] coordinateGameBoard) {
-		return false;
+		for (int i = 0; i < GAME_BOARD_DIMENSIONS; i++) {
+			for (int j = 0; j < GAME_BOARD_DIMENSIONS; j++) {
+				if (!helper.isSpaceAlreadyOccupied(coordinateGameBoard, i, j)) {
+					return false;
+				}
+			}
+		}
+		return true;
 	}
 
 	public boolean ticTacToe(char[][] coordinateGameBoard) {
