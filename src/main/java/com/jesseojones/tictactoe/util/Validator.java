@@ -59,10 +59,6 @@ public class Validator {
 		return false;
 	}
 
-	public boolean ticTacToe(char[] simpleGameBoard) {
-		return false;
-	}
-
 	public boolean allGameBoardSpacesFilled(char[][] coordinateGameBoard) {
 		for (int i = 0; i < GAME_BOARD_DIMENSIONS; i++) {
 			for (int j = 0; j < GAME_BOARD_DIMENSIONS; j++) {

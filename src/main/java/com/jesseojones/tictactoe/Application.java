@@ -98,7 +98,8 @@ public class Application {
 					System.out.println();
 					printer.printSimpleCoordinateGameBoard(gameBoard);
 
-				} while (!validator.ticTacToe(gameBoard) || !validator.allGameBoardSpacesFilled(gameBoard));
+				} while (!validator.ticTacToeSimple(cpuPositions) || !validator.ticTacToeSimple(playerPositions)
+						|| !validator.allGameBoardSpacesFilled(gameBoard));
 
 			} else {
 
