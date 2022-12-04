@@ -143,7 +143,9 @@ public class Application {
 							cpuPlayingCharacter);
 					cpuCoordinatePositions.add(new Coordinate(userInputXCoordinate - 1, userInputYCoordinate - 1));
 
-				} while (!validator.ticTacToe(gameBoard) || !validator.allGameBoardSpacesFilled(gameBoard));
+				} while (!validator.ticTacToeCoordinate(cpuCoordinatePositions)
+						|| !validator.ticTacToeCoordinate(playerCoordinatePositions)
+						|| !validator.allGameBoardSpacesFilled(gameBoard));
 			}
 
 			System.out.print("Play again? (y/n): ");
