@@ -131,6 +131,8 @@ public class Application {
 					} while (!validator.isUserInputCoordinatesValid(userInputYCoordinate) && !helper
 							.isSpaceAlreadyOccupied(gameBoard, userInputXCoordinate - 1, userInputYCoordinate - 1));
 
+					playerCoordinatePositions.add(new Coordinate(userInputXCoordinate - 1, userInputYCoordinate - 1));
+
 					do {
 						cpuInputXCoordinate = generator.generateRandomCoordinate();
 						cpuInputYCoordinate = generator.generateRandomCoordinate();
