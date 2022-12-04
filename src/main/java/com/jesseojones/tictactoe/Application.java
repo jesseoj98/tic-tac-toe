@@ -20,6 +20,9 @@ public class Application {
 	static ArrayList<Integer> playerPositions = new ArrayList<>();
 	static ArrayList<Integer> cpuPositions = new ArrayList<>();
 
+	static ArrayList<Coordinate> playerCoordinatePositions = new ArrayList<>();
+	static ArrayList<Coordinate> cpuCoordinatePositions = new ArrayList<>();
+
 	public static void main(String[] args) {
 
 		char playAgain;
@@ -66,7 +69,7 @@ public class Application {
 				int userInputSimple;
 				int cpuInputSimple;
 
-				char[] gameBoard = generator.generateSimpleGameBoard();
+				final char[] gameBoard = generator.generateSimpleGameBoard();
 
 				if (letCpuGoFirst) {
 					final int cpuFirstPlay = generator.generateRandomSimpleCoordinate();
@@ -109,7 +112,7 @@ public class Application {
 				int cpuInputXCoordinate;
 				int cpuInputYCoordinate;
 
-				char[][] gameBoard = generator.generateCoordinateGameBoard();
+				final char[][] gameBoard = generator.generateCoordinateGameBoard();
 
 				// let cpu go first
 
