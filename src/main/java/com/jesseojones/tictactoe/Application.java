@@ -1,7 +1,9 @@
 package com.jesseojones.tictactoe;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
+import com.jesseojones.tictactoe.domain.Coordinate;
 import com.jesseojones.tictactoe.util.Generator;
 import com.jesseojones.tictactoe.util.Helper;
 import com.jesseojones.tictactoe.util.Printer;
@@ -14,6 +16,9 @@ public class Application {
 	private static Printer printer = new Printer();
 	private static Scanner scanner = new Scanner(System.in);
 	private static Validator validator = new Validator();
+
+	static ArrayList<Integer> playerPositions = new ArrayList<>();
+	static ArrayList<Integer> cpuPositions = new ArrayList<>();
 
 	public static void main(String[] args) {
 
@@ -64,8 +69,9 @@ public class Application {
 				char[] gameBoard = generator.generateSimpleGameBoard();
 
 				if (letCpuGoFirst) {
-					helper.insertIntoGameBoard(gameBoard, generator.generateRandomSimpleCoordinate(),
-							cpuPlayingCharacter);
+					final int cpuFirstPlay = generator.generateRandomSimpleCoordinate();
+					helper.insertIntoGameBoard(gameBoard, cpuFirstPlay, cpuPlayingCharacter);
+					cpuPositions.add(cpuFirstPlay);
 					System.out.println();
 					printer.printSimpleCoordinateGameBoard(gameBoard);
 				}
@@ -80,12 +86,14 @@ public class Application {
 							&& helper.isSpaceAlreadyOccupied(gameBoard, userInputSimple - 1));
 
 					helper.insertIntoGameBoard(gameBoard, userInputSimple - 1, userPlayingCharacter);
+					playerPositions.add(userInputSimple - 1);
 
 					do {
 						cpuInputSimple = generator.generateRandomSimpleCoordinate();
 					} while (helper.isSpaceAlreadyOccupied(gameBoard, cpuInputSimple - 1));
 
 					helper.insertIntoGameBoard(gameBoard, cpuInputSimple - 1, cpuPlayingCharacter);
+					cpuPositions.add(cpuInputSimple - 1);
 
 					System.out.println();
 					printer.printSimpleCoordinateGameBoard(gameBoard);
