@@ -154,7 +154,7 @@ public class Application {
 				playAgain = scanner.next().charAt(0);
 			} while (validator.isUserInputValid(playAgain));
 
-		} while (playAgain == 'y' || playAgain == 'Y');
+		} while (validator.playAgain(playAgain));
 
 		// collect game results
 		// tic tac toe? user or cpu won?
