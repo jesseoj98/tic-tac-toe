@@ -28,6 +28,10 @@ public class Validator {
 		return userInput == 'y' || userInput == 'Y';
 	}
 
+	public boolean letCpuGoFirst(char userInput) {
+		return userInput == 'y' || userInput == 'Y';
+	}
+
 	public boolean isUserInputGameBoardTypeValid(char userInput) {
 		return userInput == 's' || userInput == 'S' || userInput == 'c' || userInput == 'C';
 	}
