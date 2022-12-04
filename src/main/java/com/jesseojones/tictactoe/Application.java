@@ -51,7 +51,7 @@ public class Application {
 				userInput = scanner.next().charAt(0);
 			} while (!validator.isUserInputValid(userInput));
 
-			letCpuGoFirst = userInput == 'y' || userInput == 'Y';
+			letCpuGoFirst = validator.letCpuGoFirst(userInput);
 
 			printer.printSimpleCoordinateSampleGameBoard();
 			printer.printCoordinatesSampleGameBoard();
