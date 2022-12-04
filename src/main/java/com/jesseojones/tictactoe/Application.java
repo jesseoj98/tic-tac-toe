@@ -136,10 +136,11 @@ public class Application {
 					do {
 						cpuInputXCoordinate = generator.generateRandomCoordinate();
 						cpuInputYCoordinate = generator.generateRandomCoordinate();
-						helper.insertIntoGameBoard(gameBoard, generator.generateRandomCoordinate(),
-								generator.generateRandomCoordinate(), cpuPlayingCharacter);
 					} while (!helper.isSpaceAlreadyOccupied(gameBoard, cpuInputXCoordinate - 1,
 							cpuInputYCoordinate - 1));
+
+					helper.insertIntoGameBoard(gameBoard, generator.generateRandomCoordinate(),
+							generator.generateRandomCoordinate(), cpuPlayingCharacter);
 
 				} while (!validator.ticTacToe(gameBoard) || !validator.allGameBoardSpacesFilled(gameBoard));
 			}
