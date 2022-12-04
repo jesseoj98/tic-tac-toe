@@ -35,10 +35,14 @@ public class Validator {
 	public boolean isUserInputValid(int userInput) {
 		return userInput == 1 || userInput == 2 || userInput == 3 || userInput == 4 || userInput == 5 || userInput == 6
 				|| userInput == 7 || userInput == 8 || userInput == 9;
+		// return userInput > 0 && userInput < 10;
+		// return userInput >= 1 && userInput <= 9;
 	}
 
 	public boolean isUserInputCoordinatesValid(int userInput) {
 		return userInput == 1 || userInput == 2 || userInput == 3;
+		// return userInput > 0 && userInput < 4;
+		// return userInput >= 1 && userInput <= 3;
 	}
 
 	public boolean allGameBoardSpacesFilled(char[] simpleGameBoard) {
