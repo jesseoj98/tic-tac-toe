@@ -141,6 +141,7 @@ public class Application {
 
 					helper.insertIntoGameBoard(gameBoard, cpuInputXCoordinate - 1, cpuInputYCoordinate - 1,
 							cpuPlayingCharacter);
+					cpuCoordinatePositions.add(new Coordinate(userInputXCoordinate - 1, userInputYCoordinate - 1));
 
 				} while (!validator.ticTacToe(gameBoard) || !validator.allGameBoardSpacesFilled(gameBoard));
 			}
