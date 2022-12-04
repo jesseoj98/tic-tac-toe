@@ -139,8 +139,8 @@ public class Application {
 					} while (!helper.isSpaceAlreadyOccupied(gameBoard, cpuInputXCoordinate - 1,
 							cpuInputYCoordinate - 1));
 
-					helper.insertIntoGameBoard(gameBoard, generator.generateRandomCoordinate(),
-							generator.generateRandomCoordinate(), cpuPlayingCharacter);
+					helper.insertIntoGameBoard(gameBoard, cpuInputXCoordinate - 1, cpuInputYCoordinate - 1,
+							cpuPlayingCharacter);
 
 				} while (!validator.ticTacToe(gameBoard) || !validator.allGameBoardSpacesFilled(gameBoard));
 			}
