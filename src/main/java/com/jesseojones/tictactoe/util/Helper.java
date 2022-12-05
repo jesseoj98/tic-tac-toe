@@ -1,5 +1,8 @@
 package com.jesseojones.tictactoe.util;
 
+/**
+ * Helper class defines several helpful functions
+ */
 public class Helper {
 
 	/**
