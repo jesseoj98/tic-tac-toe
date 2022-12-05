@@ -3,8 +3,16 @@ package com.jesseojones.tictactoe.domain;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Mapping class defines helpful mapping information regarding the game board
+ */
 public class Mapping {
 
+	/**
+	 * Generates a mapping from Integer to Coordinate conversion
+	 * 
+	 * @return the mapping from Integer to Coordinate conversion
+	 */
 	public Map<Integer, Coordinate> integerToCoordinate() {
 		final Map<Integer, Coordinate> map = new HashMap<>();
 
@@ -21,6 +29,11 @@ public class Mapping {
 		return map;
 	}
 
+	/**
+	 * Generates a mapping from Coordinate to Integer conversion
+	 * 
+	 * @return the mapping from Coordinate to Integer conversion
+	 */
 	public Map<Coordinate, Integer> coordinateToInteger() {
 		final Map<Coordinate, Integer> map = new HashMap<>();
 
