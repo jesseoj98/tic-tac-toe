@@ -9,20 +9,30 @@ import com.jesseojones.tictactoe.util.Helper;
 import com.jesseojones.tictactoe.util.Printer;
 import com.jesseojones.tictactoe.util.Validator;
 
+/**
+ * Main application class
+ */
 public class Application {
 
+	/** Instantiation of classes */
 	private static Generator generator = new Generator();
 	private static Helper helper = new Helper();
 	private static Printer printer = new Printer();
 	private static Scanner scanner = new Scanner(System.in);
 	private static Validator validator = new Validator();
 
+	/** Declaration of variables */
 	static ArrayList<Integer> playerPositions = new ArrayList<>();
 	static ArrayList<Integer> cpuPositions = new ArrayList<>();
 
 	static ArrayList<Coordinate> playerCoordinatePositions = new ArrayList<>();
 	static ArrayList<Coordinate> cpuCoordinatePositions = new ArrayList<>();
 
+	/**
+	 * The main application method
+	 * 
+	 * @param args the String array args
+	 */
 	public static void main(String[] args) {
 
 		char playAgain;
