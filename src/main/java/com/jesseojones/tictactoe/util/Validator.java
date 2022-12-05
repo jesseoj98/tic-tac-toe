@@ -24,78 +24,78 @@ public class Validator {
 	private static final List<List<Coordinate>> winningCoordinates = generator.generateWinningCoordinates();
 
 	/**
-	 * Checks whether the user input playing character is valid
+	 * Checks whether the input playing character is valid
 	 * 
-	 * @param userInput the user input
-	 * @return whether the user input playing character is valid
+	 * @param input the input
+	 * @return whether the input playing character is valid
 	 */
-	public boolean isUserInputPlayingCharacterValid(char userInput) {
-		return userInput == 'x' || userInput == 'X' || userInput == 'o' || userInput == 'O';
+	public boolean isUserInputPlayingCharacterValid(char input) {
+		return input == 'x' || input == 'X' || input == 'o' || input == 'O';
 	}
 
 	/**
-	 * Checks whether the user input is valid
+	 * Checks whether the input is valid
 	 * 
-	 * @param userInput the user input
-	 * @return whether the user input is valid
+	 * @param input the input
+	 * @return whether the input is valid
 	 */
-	public boolean isUserInputValid(char userInput) {
-		return userInput == 'y' || userInput == 'Y' || userInput == 'n' || userInput == 'N';
+	public boolean isUserInputValid(char input) {
+		return input == 'y' || input == 'Y' || input == 'n' || input == 'N';
 	}
 
 	/**
 	 * Checks whether the play again character is valid
 	 * 
-	 * @param userInput the user input
+	 * @param input the input
 	 * @return whether the play again character is valid
 	 */
-	public boolean playAgain(char userInput) {
-		return userInput == 'y' || userInput == 'Y';
+	public boolean playAgain(char input) {
+		return input == 'y' || input == 'Y';
 	}
 
 	/**
 	 * Checks whether the cpu go first character is valid
 	 * 
-	 * @param userInput the user input
+	 * @param input the input
 	 * @return whether the cpu go first character is valid
 	 */
-	public boolean letCpuGoFirst(char userInput) {
-		return userInput == 'y' || userInput == 'Y';
+	public boolean letCpuGoFirst(char input) {
+		return input == 'y' || input == 'Y';
 	}
 
 	/**
-	 * Checks whether the user input game board type is valid
+	 * Checks whether the input game board type is valid
 	 * 
-	 * @param userInput the user input
-	 * @return whether the user input game board type is valid
+	 * @param input the input
+	 * @return whether the input game board type is valid
 	 */
-	public boolean isUserInputGameBoardTypeValid(char userInput) {
-		return userInput == 's' || userInput == 'S' || userInput == 'c' || userInput == 'C';
+	public boolean isUserInputGameBoardTypeValid(char input) {
+		return input == 's' || input == 'S' || input == 'c' || input == 'C';
 	}
 
 	/**
-	 * Checks whether the user input is valid
+	 * Checks whether the input is valid
 	 * 
-	 * @param userInput the user input
-	 * @return whether the user input is valid
+	 * @param input the input
+	 * @return whether the input is valid
 	 */
-	public boolean isUserInputValid(int userInput) {
-		return userInput == 1 || userInput == 2 || userInput == 3 || userInput == 4 || userInput == 5 || userInput == 6
-				|| userInput == 7 || userInput == 8 || userInput == 9;
-		// return userInput > 0 && userInput < 10;
-		// return userInput >= 1 && userInput <= 9;
+	public boolean isUserInputValid(int input) {
+		return input == 1 || input == 2 || input == 3 || input == 4 || input == 5 || input == 6 || input == 7
+				|| input == 8 || input == 9;
+		// return input > 0 && input < 10;
+		// return input >= 1 && input <= 9;
 	}
 
 	/**
-	 * Checks whether the user input coordinate is valid
+	 * Checks whether the input coordinate is valid
 	 * 
-	 * @param userInput the user input
-	 * @return whether the user input coordinate is valid
+	 * @param input the input
+	 * @return whether the input coordinate is valid
 	 */
-	public boolean isUserInputCoordinatesValid(int userInput) {
-		return userInput == 1 || userInput == 2 || userInput == 3;
-		// return userInput > 0 && userInput < 4;
-		// return userInput >= 1 && userInput <= 3;
+	public boolean isUserInputCoordinatesValid(int input) {
+		return input == 1 || input == 2 || input == 3;
+		// return input > 0 && input < 4;
+		// return input >= 1 && input <= 3;
 	}
 
 	/**
