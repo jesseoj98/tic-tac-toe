@@ -146,7 +146,7 @@ public class Result {
 		builder.append(winningSimpleCoordinates);
 		builder.append(", winningCoordinates=");
 		builder.append(winningCoordinates);
-		builder.append("]");
+		builder.append(']');
 		return builder.toString();
 	}
 

@@ -88,7 +88,7 @@ public class Coordinate {
 		builder.append(x);
 		builder.append(", y=");
 		builder.append(y);
-		builder.append("]");
+		builder.append(']');
 		return builder.toString();
 	}
 
