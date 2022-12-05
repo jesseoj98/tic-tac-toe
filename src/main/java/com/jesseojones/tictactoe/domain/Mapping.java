@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Mapping {
 
-	public Map<Integer, Coordinate> integerToCordinate() {
+	public Map<Integer, Coordinate> integerToCoordinate() {
 		final Map<Integer, Coordinate> map = new HashMap<>();
 
 		map.put(0, new Coordinate(0, 0));
