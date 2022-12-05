@@ -7,20 +7,40 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import com.jesseojones.tictactoe.domain.Coordinate;
 
+/**
+ * Generator class defines methods helpful for quick generation
+ */
 public class Generator {
 
+	/** The constant for a game board dimension */
 	private static final int GAME_BOARD_DIMENSIONS = 3;
 
+	/** The constant for the number of game board spaces */
 	private static final int GAME_BOARD_SPACES = 9;
 
+	/**
+	 * Generates a simple game board
+	 * 
+	 * @return a simple game board
+	 */
 	public char[] generateSimpleGameBoard() {
 		return new char[GAME_BOARD_SPACES];
 	}
 
+	/**
+	 * Generates a coordinate game board
+	 * 
+	 * @return a coordinate game board
+	 */
 	public char[][] generateCoordinateGameBoard() {
 		return new char[GAME_BOARD_DIMENSIONS][GAME_BOARD_DIMENSIONS];
 	}
 
+	/**
+	 * Generates simple coordinates
+	 * 
+	 * @return the simple coordinates
+	 */
 	public List<Integer> generateSimpleCoordinates() {
 		final ArrayList<Integer> simpleCoordinates = new ArrayList<>();
 		simpleCoordinates.add(0);
@@ -35,6 +55,11 @@ public class Generator {
 		return simpleCoordinates;
 	}
 
+	/**
+	 * Generates simple winning coordinates
+	 * 
+	 * @return the simple winning coordinates
+	 */
 	public List<List<Integer>> generateSimpleWinningCoordinates() {
 		final List<Integer> firstRow = Arrays.asList(0, 1, 2);
 		final List<Integer> secondRow = Arrays.asList(3, 4, 5);
@@ -58,6 +83,11 @@ public class Generator {
 		return winningCoordinates;
 	}
 
+	/**
+	 * Generates coordinates
+	 * 
+	 * @return the coordinates
+	 */
 	public List<Coordinate> generateCoordinates() {
 		final ArrayList<Coordinate> coordinates = new ArrayList<>();
 		coordinates.add(new Coordinate(0, 0));
@@ -72,6 +102,11 @@ public class Generator {
 		return coordinates;
 	}
 
+	/**
+	 * Generates winning coordinates
+	 * 
+	 * @return the winning coordinates
+	 */
 	public List<List<Coordinate>> generateWinningCoordinates() {
 		final List<Coordinate> firstRow = Arrays.asList(new Coordinate(0, 0), new Coordinate(1, 0),
 				new Coordinate(2, 0));
@@ -103,14 +138,29 @@ public class Generator {
 		return winningCoordinates;
 	}
 
+	/**
+	 * Generates a random simple coordinate
+	 * 
+	 * @return a random simple coordinate
+	 */
 	public int generateRandomSimpleCoordinate() {
 		return ThreadLocalRandom.current().nextInt(1, GAME_BOARD_SPACES);
 	}
 
+	/**
+	 * Generates a random coordinate
+	 * 
+	 * @return a random coordinate
+	 */
 	public int generateRandomCoordinate() {
 		return ThreadLocalRandom.current().nextInt(1, GAME_BOARD_DIMENSIONS);
 	}
 
+	/**
+	 * Generates a random coordinate object
+	 * 
+	 * @return a random coordinate object
+	 */
 	public Coordinate generateRandomCoordinateObject() {
 		final int xCoordinate = ThreadLocalRandom.current().nextInt(0, GAME_BOARD_DIMENSIONS);
 		final int yCoordinate = ThreadLocalRandom.current().nextInt(0, GAME_BOARD_DIMENSIONS);
