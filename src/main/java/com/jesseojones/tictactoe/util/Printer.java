@@ -143,6 +143,7 @@ public class Printer {
 	 * Determines if there is a match at the end of a simple row
 	 * 
 	 * @param index the index to check
+	 * 
 	 * @return whether there is a match at the end of a simple row
 	 */
 	private boolean endOfSimpleRowMatch(int index) {
@@ -153,6 +154,7 @@ public class Printer {
 	 * Determines if there is a match at the end of a coordinates row
 	 * 
 	 * @param index the index to check
+	 * 
 	 * @return whether there is a match at the end of a coordinates row
 	 */
 	private boolean endOfRowMatch(int index) {

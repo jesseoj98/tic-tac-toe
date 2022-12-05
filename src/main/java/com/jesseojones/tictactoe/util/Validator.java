@@ -27,6 +27,7 @@ public class Validator {
 	 * Checks whether the input playing character is valid
 	 * 
 	 * @param input the input
+	 * 
 	 * @return whether the input playing character is valid
 	 */
 	public boolean isInputPlayingCharacterValid(char input) {
@@ -37,6 +38,7 @@ public class Validator {
 	 * Checks whether the input is valid
 	 * 
 	 * @param input the input
+	 * 
 	 * @return whether the input is valid
 	 */
 	public boolean isInputValid(char input) {
@@ -47,6 +49,7 @@ public class Validator {
 	 * Checks whether the play again character is valid
 	 * 
 	 * @param input the input
+	 * 
 	 * @return whether the play again character is valid
 	 */
 	public boolean playAgain(char input) {
@@ -57,6 +60,7 @@ public class Validator {
 	 * Checks whether the cpu go first character is valid
 	 * 
 	 * @param input the input
+	 * 
 	 * @return whether the cpu go first character is valid
 	 */
 	public boolean letCpuGoFirst(char input) {
@@ -67,6 +71,7 @@ public class Validator {
 	 * Checks whether the input game board type is valid
 	 * 
 	 * @param input the input
+	 * 
 	 * @return whether the input game board type is valid
 	 */
 	public boolean isInputGameBoardTypeValid(char input) {
@@ -77,6 +82,7 @@ public class Validator {
 	 * Checks whether the input is valid
 	 * 
 	 * @param input the input
+	 * 
 	 * @return whether the input is valid
 	 */
 	public boolean isInputValid(int input) {
@@ -90,6 +96,7 @@ public class Validator {
 	 * Checks whether the input coordinate is valid
 	 * 
 	 * @param input the input
+	 * 
 	 * @return whether the input coordinate is valid
 	 */
 	public boolean isInputCoordinatesValid(int input) {
@@ -102,6 +109,7 @@ public class Validator {
 	 * Checks whether all spaces are filled on a simple game board
 	 * 
 	 * @param simpleGameBoard the simple game board
+	 * 
 	 * @return whether all spaces are filled on a simple game board
 	 */
 	public boolean allGameBoardSpacesFilled(char[] simpleGameBoard) {
@@ -117,6 +125,7 @@ public class Validator {
 	 * Checks whether tic tac toe happened on a simple game board
 	 * 
 	 * @param positions the positions to check
+	 * 
 	 * @return whether tic tac toe happened on a simple game board
 	 */
 	public boolean ticTacToeSimple(List<Integer> positions) {
@@ -132,6 +141,7 @@ public class Validator {
 	 * Checks whether all spaces are filled on a coordinate game board
 	 * 
 	 * @param coordinateGameBoard the coordinate game board
+	 * 
 	 * @return whether all spaces are filled on a coordinate game board
 	 */
 	public boolean allGameBoardSpacesFilled(char[][] coordinateGameBoard) {
@@ -149,6 +159,7 @@ public class Validator {
 	 * Checks whether tic tac toe happened on a coordinate game board
 	 * 
 	 * @param positions the positions to check
+	 * 
 	 * @return whether tic tac toe happened on a coordinate game board
 	 */
 	public boolean ticTacToeCoordinate(List<Coordinate> positions) {
