@@ -78,10 +78,6 @@ public class Validator {
 		return true;
 	}
 
-	public boolean ticTacToe(char[][] coordinateGameBoard) {
-		return false;
-	}
-
 	public boolean ticTacToeCoordinate(List<Coordinate> positions) {
 		for (List<Coordinate> coordinate : winningCoordinates) {
 			if (coordinate.containsAll(positions)) {
