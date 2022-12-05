@@ -21,4 +21,20 @@ public class Mapping {
 		return map;
 	}
 
+	public Map<Coordinate, Integer> coordinateToInteger() {
+		final Map<Coordinate, Integer> map = new HashMap<>();
+
+		map.put(new Coordinate(0, 0), 0);
+		map.put(new Coordinate(1, 0), 1);
+		map.put(new Coordinate(2, 0), 2);
+		map.put(new Coordinate(0, 1), 3);
+		map.put(new Coordinate(1, 1), 4);
+		map.put(new Coordinate(2, 1), 5);
+		map.put(new Coordinate(0, 2), 6);
+		map.put(new Coordinate(1, 2), 7);
+		map.put(new Coordinate(2, 2), 8);
+
+		return map;
+	}
+
 }
