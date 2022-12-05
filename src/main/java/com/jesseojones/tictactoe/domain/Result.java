@@ -4,9 +4,9 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Results class defines information about the game results
+ * Result class defines information about the game results
  */
-public class Results {
+public class Result {
 
 	/**
 	 * Indicator for if the player won
@@ -36,7 +36,7 @@ public class Results {
 	 * @param winningSimpleCoordinates the winning simple coordinates
 	 * @param winningCoordinates       the winning coordinates
 	 */
-	public Results(boolean playerWon, boolean cpuWon, List<Integer> winningSimpleCoordinates,
+	public Result(boolean playerWon, boolean cpuWon, List<Integer> winningSimpleCoordinates,
 			List<Coordinate> winningCoordinates) {
 		this.playerWon = playerWon;
 		this.cpuWon = cpuWon;
@@ -129,7 +129,7 @@ public class Results {
 		if (obj == null || getClass() != obj.getClass()) {
 			return false;
 		}
-		Results other = (Results) obj;
+		Result other = (Result) obj;
 		return cpuWon == other.cpuWon && playerWon == other.playerWon
 				&& Objects.equals(winningCoordinates, other.winningCoordinates)
 				&& Objects.equals(winningSimpleCoordinates, other.winningSimpleCoordinates);
@@ -138,7 +138,7 @@ public class Results {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Results [playerWon=");
+		builder.append("Result [playerWon=");
 		builder.append(playerWon);
 		builder.append(", cpuWon=");
 		builder.append(cpuWon);
