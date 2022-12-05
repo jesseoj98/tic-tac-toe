@@ -49,7 +49,7 @@ public class Application {
 
 			do {
 				userInput = scanner.next().charAt(0);
-			} while (!validator.isUserInputPlayingCharacterValid(userInput));
+			} while (!validator.isInputPlayingCharacterValid(userInput));
 
 			userPlayingCharacter = Character.toUpperCase(userInput);
 
@@ -59,7 +59,7 @@ public class Application {
 
 			do {
 				userInput = scanner.next().charAt(0);
-			} while (!validator.isUserInputValid(userInput));
+			} while (!validator.isInputValid(userInput));
 
 			letCpuGoFirst = validator.letCpuGoFirst(userInput);
 
@@ -70,7 +70,7 @@ public class Application {
 
 			do {
 				userInput = scanner.next().charAt(0);
-			} while (!validator.isUserInputGameBoardTypeValid(userInput));
+			} while (!validator.isInputGameBoardTypeValid(userInput));
 
 			System.out.println("\n---------------");
 
@@ -95,7 +95,7 @@ public class Application {
 
 					do {
 						userInputSimple = scanner.nextInt();
-					} while (!validator.isUserInputValid(userInputSimple)
+					} while (!validator.isInputValid(userInputSimple)
 							&& helper.isSpaceAlreadyOccupied(gameBoard, userInputSimple - 1));
 
 					helper.insertIntoGameBoard(gameBoard, userInputSimple - 1, userPlayingCharacter);
@@ -132,13 +132,13 @@ public class Application {
 
 					do {
 						userInputXCoordinate = scanner.nextInt();
-					} while (!validator.isUserInputCoordinatesValid(userInputXCoordinate));
+					} while (!validator.isInputCoordinatesValid(userInputXCoordinate));
 
 					System.out.println("Enter a y coordinate to place your move: ");
 
 					do {
 						userInputYCoordinate = scanner.nextInt();
-					} while (!validator.isUserInputCoordinatesValid(userInputYCoordinate) && !helper
+					} while (!validator.isInputCoordinatesValid(userInputYCoordinate) && !helper
 							.isSpaceAlreadyOccupied(gameBoard, userInputXCoordinate - 1, userInputYCoordinate - 1));
 
 					playerCoordinatePositions.add(new Coordinate(userInputXCoordinate - 1, userInputYCoordinate - 1));
@@ -162,7 +162,7 @@ public class Application {
 
 			do {
 				playAgain = scanner.next().charAt(0);
-			} while (validator.isUserInputValid(playAgain));
+			} while (validator.isInputValid(playAgain));
 
 		} while (validator.playAgain(playAgain));
 

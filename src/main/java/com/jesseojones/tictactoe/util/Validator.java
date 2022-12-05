@@ -29,7 +29,7 @@ public class Validator {
 	 * @param input the input
 	 * @return whether the input playing character is valid
 	 */
-	public boolean isUserInputPlayingCharacterValid(char input) {
+	public boolean isInputPlayingCharacterValid(char input) {
 		return input == 'x' || input == 'X' || input == 'o' || input == 'O';
 	}
 
@@ -39,7 +39,7 @@ public class Validator {
 	 * @param input the input
 	 * @return whether the input is valid
 	 */
-	public boolean isUserInputValid(char input) {
+	public boolean isInputValid(char input) {
 		return input == 'y' || input == 'Y' || input == 'n' || input == 'N';
 	}
 
@@ -69,7 +69,7 @@ public class Validator {
 	 * @param input the input
 	 * @return whether the input game board type is valid
 	 */
-	public boolean isUserInputGameBoardTypeValid(char input) {
+	public boolean isInputGameBoardTypeValid(char input) {
 		return input == 's' || input == 'S' || input == 'c' || input == 'C';
 	}
 
@@ -79,7 +79,7 @@ public class Validator {
 	 * @param input the input
 	 * @return whether the input is valid
 	 */
-	public boolean isUserInputValid(int input) {
+	public boolean isInputValid(int input) {
 		return input == 1 || input == 2 || input == 3 || input == 4 || input == 5 || input == 6 || input == 7
 				|| input == 8 || input == 9;
 		// return input > 0 && input < 10;
@@ -92,7 +92,7 @@ public class Validator {
 	 * @param input the input
 	 * @return whether the input coordinate is valid
 	 */
-	public boolean isUserInputCoordinatesValid(int input) {
+	public boolean isInputCoordinatesValid(int input) {
 		return input == 1 || input == 2 || input == 3;
 		// return input > 0 && input < 4;
 		// return input >= 1 && input <= 3;
