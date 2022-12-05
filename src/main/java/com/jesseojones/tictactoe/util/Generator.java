@@ -43,6 +43,7 @@ public class Generator {
 	 */
 	public List<Integer> generateSimpleCoordinates() {
 		final ArrayList<Integer> simpleCoordinates = new ArrayList<>();
+
 		simpleCoordinates.add(0);
 		simpleCoordinates.add(1);
 		simpleCoordinates.add(2);
@@ -52,6 +53,7 @@ public class Generator {
 		simpleCoordinates.add(6);
 		simpleCoordinates.add(7);
 		simpleCoordinates.add(8);
+
 		return simpleCoordinates;
 	}
 
@@ -71,6 +73,7 @@ public class Generator {
 		final List<Integer> forwardDiagonal = Arrays.asList(2, 4, 6);
 
 		final List<List<Integer>> winningCoordinates = new ArrayList<>();
+
 		winningCoordinates.add(firstRow);
 		winningCoordinates.add(secondRow);
 		winningCoordinates.add(thirdRow);
@@ -90,6 +93,7 @@ public class Generator {
 	 */
 	public List<Coordinate> generateCoordinates() {
 		final ArrayList<Coordinate> coordinates = new ArrayList<>();
+
 		coordinates.add(new Coordinate(0, 0));
 		coordinates.add(new Coordinate(0, 1));
 		coordinates.add(new Coordinate(0, 2));
@@ -99,6 +103,7 @@ public class Generator {
 		coordinates.add(new Coordinate(2, 0));
 		coordinates.add(new Coordinate(2, 1));
 		coordinates.add(new Coordinate(2, 2));
+
 		return coordinates;
 	}
 
@@ -126,6 +131,7 @@ public class Generator {
 				new Coordinate(0, 2));
 
 		final List<List<Coordinate>> winningCoordinates = new ArrayList<>();
+
 		winningCoordinates.add(firstRow);
 		winningCoordinates.add(secondRow);
 		winningCoordinates.add(thirdRow);
