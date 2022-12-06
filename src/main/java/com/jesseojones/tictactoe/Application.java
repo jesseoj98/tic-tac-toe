@@ -86,8 +86,9 @@ public class Application {
 					helper.insertIntoGameBoard(gameBoard, cpuFirstPlay, cpuPlayingCharacter);
 					cpuPositions.add(cpuFirstPlay);
 					System.out.println();
-					printer.printSimpleCoordinateGameBoard(gameBoard);
 				}
+
+				printer.printSimpleCoordinateGameBoard(gameBoard);
 
 				do {
 
