@@ -129,13 +129,13 @@ public class Application {
 
 				do {
 
-					System.out.println("Enter an x coordinate to place your move: ");
+					System.out.print("Enter an x coordinate to place your move: ");
 
 					do {
 						userInputXCoordinate = scanner.nextInt();
 					} while (!validator.isInputCoordinatesValid(userInputXCoordinate));
 
-					System.out.println("Enter a y coordinate to place your move: ");
+					System.out.print("Enter a y coordinate to place your move: ");
 
 					do {
 						userInputYCoordinate = scanner.nextInt();
