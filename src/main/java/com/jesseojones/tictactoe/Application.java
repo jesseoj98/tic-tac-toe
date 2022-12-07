@@ -171,7 +171,7 @@ public class Application {
 						|| !validator.allGameBoardSpacesFilled(gameBoard));
 			}
 
-			System.out.print("Play again? (y/n): ");
+			System.out.print("\nPlay again? (y/n): ");
 
 			do {
 				playAgain = scanner.next().charAt(0);
