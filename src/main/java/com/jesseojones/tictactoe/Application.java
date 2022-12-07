@@ -148,6 +148,8 @@ public class Application {
 					} while (!validator.isInputCoordinatesValid(userInputYCoordinate) && !helper
 							.isSpaceAlreadyOccupied(gameBoard, userInputXCoordinate - 1, userInputYCoordinate - 1));
 
+					helper.insertIntoGameBoard(gameBoard, userInputXCoordinate - 1, userInputYCoordinate - 1,
+							cpuPlayingCharacter);
 					playerCoordinatePositions.add(new Coordinate(userInputXCoordinate - 1, userInputYCoordinate - 1));
 
 					do {
