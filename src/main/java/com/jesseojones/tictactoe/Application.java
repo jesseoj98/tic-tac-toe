@@ -173,6 +173,9 @@ public class Application {
 						|| !validator.ticTacToeCoordinate(playerCoordinatePositions)
 						|| !validator.allGameBoardSpacesFilled(gameBoard));
 
+				final Result result = validator.getCoordinateGameResults(playerCoordinatePositions,
+						cpuCoordinatePositions);
+
 			}
 
 			System.out.print("\nPlay again? (y/n): ");

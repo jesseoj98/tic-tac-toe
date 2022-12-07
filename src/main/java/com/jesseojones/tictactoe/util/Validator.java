@@ -189,6 +189,21 @@ public class Validator {
 	}
 
 	/**
+	 * Retrieves the winning coordinate positions
+	 * 
+	 * @param positions the positions to check
+	 * @return the winning positions
+	 */
+	private List<Coordinate> retrieveWinningCoordinatePositions(List<Coordinate> positions) {
+		for (List<Coordinate> coordinate : winningCoordinates) {
+			if (coordinate.containsAll(positions)) {
+				return coordinate;
+			}
+		}
+		return Collections.emptyList();
+	}
+
+	/**
 	 * Retrieves the game results
 	 * 
 	 * @param playerPositions the player positions to check
@@ -200,6 +215,20 @@ public class Validator {
 		final List<Integer> winningPositions = playerWon ? retrieveWinningPositions(playerPositions)
 				: retrieveWinningPositions(cpuPositions);
 		return new Result(playerWon, !playerWon, winningPositions, null);
+	}
+
+	/**
+	 * Retrieves the game results
+	 * 
+	 * @param playerPositions the player positions to check
+	 * @param cpuPositions    the cpu positions to check
+	 * @return the results of the game
+	 */
+	public Result getCoordinateGameResults(List<Coordinate> playerPositions, List<Coordinate> cpuPositions) {
+		final boolean playerWon = ticTacToeCoordinate(playerPositions);
+		final List<Coordinate> winningPositions = playerWon ? retrieveWinningCoordinatePositions(playerPositions)
+				: retrieveWinningCoordinatePositions(cpuPositions);
+		return new Result(playerWon, !playerWon, null, winningPositions);
 	}
 
 }
