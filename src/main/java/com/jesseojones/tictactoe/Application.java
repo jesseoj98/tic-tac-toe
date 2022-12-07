@@ -135,7 +135,7 @@ public class Application {
 
 				do {
 
-					System.out.print("Enter an x coordinate to place your move: ");
+					System.out.print("\nEnter an x coordinate to place your move: ");
 
 					do {
 						userInputXCoordinate = scanner.nextInt();
