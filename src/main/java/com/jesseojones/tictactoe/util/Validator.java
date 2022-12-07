@@ -1,8 +1,10 @@
 package com.jesseojones.tictactoe.util;
 
+import java.util.Collections;
 import java.util.List;
 
 import com.jesseojones.tictactoe.domain.Coordinate;
+import com.jesseojones.tictactoe.domain.Result;
 
 /**
  * Validator class provides several validation methods
@@ -169,6 +171,35 @@ public class Validator {
 			}
 		}
 		return false;
+	}
+
+	/**
+	 * Retrieves the winning integer positions
+	 * 
+	 * @param positions the positions to check
+	 * @return the winning positions
+	 */
+	private List<Integer> retrieveWinningPositions(List<Integer> positions) {
+		for (List<Integer> coordinate : winningSimpleCoordinates) {
+			if (coordinate.containsAll(positions)) {
+				return coordinate;
+			}
+		}
+		return Collections.emptyList();
+	}
+
+	/**
+	 * Retrieves the game results
+	 * 
+	 * @param playerPositions the player positions to check
+	 * @param cpuPositions    the cpu positions to check
+	 * @return the results of the game
+	 */
+	public Result getGameResults(List<Integer> playerPositions, List<Integer> cpuPositions) {
+		final boolean playerWon = ticTacToeSimple(playerPositions);
+		final List<Integer> winningPositions = playerWon ? retrieveWinningPositions(playerPositions)
+				: retrieveWinningPositions(cpuPositions);
+		return new Result(playerWon, !playerWon, winningPositions, null);
 	}
 
 }

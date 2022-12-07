@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import com.jesseojones.tictactoe.domain.Coordinate;
+import com.jesseojones.tictactoe.domain.Result;
 import com.jesseojones.tictactoe.util.Generator;
 import com.jesseojones.tictactoe.util.Helper;
 import com.jesseojones.tictactoe.util.Printer;
@@ -114,6 +115,8 @@ public class Application {
 
 				} while (!validator.ticTacToeSimple(cpuPositions) || !validator.ticTacToeSimple(playerPositions)
 						|| !validator.allGameBoardSpacesFilled(gameBoard));
+				
+				final Result result = validator.getGameResults(playerPositions, cpuPositions);
 
 			} else {
 
