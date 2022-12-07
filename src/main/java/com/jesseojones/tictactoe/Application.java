@@ -115,7 +115,7 @@ public class Application {
 
 				} while (!validator.ticTacToeSimple(cpuPositions) || !validator.ticTacToeSimple(playerPositions)
 						|| !validator.allGameBoardSpacesFilled(gameBoard));
-				
+
 				final Result result = validator.getGameResults(playerPositions, cpuPositions);
 
 			} else {
@@ -172,6 +172,7 @@ public class Application {
 				} while (!validator.ticTacToeCoordinate(cpuCoordinatePositions)
 						|| !validator.ticTacToeCoordinate(playerCoordinatePositions)
 						|| !validator.allGameBoardSpacesFilled(gameBoard));
+
 			}
 
 			System.out.print("\nPlay again? (y/n): ");
