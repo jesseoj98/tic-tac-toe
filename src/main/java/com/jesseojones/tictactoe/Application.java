@@ -163,6 +163,9 @@ public class Application {
 							cpuPlayingCharacter);
 					cpuCoordinatePositions.add(new Coordinate(userInputXCoordinate - 1, userInputYCoordinate - 1));
 
+					System.out.println();
+					printer.printCoordinatesGameBoard(gameBoard);
+
 				} while (!validator.ticTacToeCoordinate(cpuCoordinatePositions)
 						|| !validator.ticTacToeCoordinate(playerCoordinatePositions)
 						|| !validator.allGameBoardSpacesFilled(gameBoard));
