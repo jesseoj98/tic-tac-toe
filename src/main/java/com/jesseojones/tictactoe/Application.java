@@ -128,7 +128,8 @@ public class Application {
 				if (letCpuGoFirst) {
 					final int cpuFirstPlayXCoordinate = generator.generateRandomCoordinate();
 					final int cpuFirstPlayYCoordinate = generator.generateRandomCoordinate();
-					helper.insertIntoGameBoard(gameBoard, cpuFirstPlayXCoordinate, cpuFirstPlayYCoordinate, cpuPlayingCharacter);
+					helper.insertIntoGameBoard(gameBoard, cpuFirstPlayXCoordinate, cpuFirstPlayYCoordinate,
+							cpuPlayingCharacter);
 					cpuCoordinatePositions.add(new Coordinate(cpuFirstPlayXCoordinate, cpuFirstPlayYCoordinate));
 					System.out.println();
 				}
