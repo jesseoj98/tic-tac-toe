@@ -186,9 +186,6 @@ public class Application {
 
 		} while (validator.playAgain(playAgain));
 
-		// collect game results
-		// tic tac toe? user or cpu won?
-		// no tic tac toe? -> game board is filled, no winner
 	}
 
 }
