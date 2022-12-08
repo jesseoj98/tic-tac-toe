@@ -23,13 +23,6 @@ public class Application {
 	private static Scanner scanner = new Scanner(System.in);
 	private static Validator validator = new Validator();
 
-	/** Declaration of variables */
-	static List<Integer> playerPositions = new ArrayList<>();
-	static List<Integer> cpuPositions = new ArrayList<>();
-
-	static List<Coordinate> playerCoordinatePositions = new ArrayList<>();
-	static List<Coordinate> cpuCoordinatePositions = new ArrayList<>();
-
 	/**
 	 * The main application method
 	 * 
@@ -44,6 +37,12 @@ public class Application {
 			char userInput;
 			char userPlayingCharacter;
 			boolean letCpuGoFirst;
+
+			List<Integer> playerPositions = new ArrayList<>();
+			List<Integer> cpuPositions = new ArrayList<>();
+
+			List<Coordinate> playerCoordinatePositions = new ArrayList<>();
+			List<Coordinate> cpuCoordinatePositions = new ArrayList<>();
 
 			System.out.println("Tic-tac-toe by Jesse Jones\n");
 
