@@ -1,6 +1,7 @@
 package com.jesseojones.tictactoe;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import com.jesseojones.tictactoe.domain.Coordinate;
@@ -23,11 +24,11 @@ public class Application {
 	private static Validator validator = new Validator();
 
 	/** Declaration of variables */
-	static ArrayList<Integer> playerPositions = new ArrayList<>();
-	static ArrayList<Integer> cpuPositions = new ArrayList<>();
+	static List<Integer> playerPositions = new ArrayList<>();
+	static List<Integer> cpuPositions = new ArrayList<>();
 
-	static ArrayList<Coordinate> playerCoordinatePositions = new ArrayList<>();
-	static ArrayList<Coordinate> cpuCoordinatePositions = new ArrayList<>();
+	static List<Coordinate> playerCoordinatePositions = new ArrayList<>();
+	static List<Coordinate> cpuCoordinatePositions = new ArrayList<>();
 
 	/**
 	 * The main application method
