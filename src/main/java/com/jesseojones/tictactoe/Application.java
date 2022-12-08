@@ -139,6 +139,7 @@ public class Application {
 				}
 
 				System.out.println();
+				printer.printCoordinatesGameBoard(gameBoard);
 
 				do {
 
