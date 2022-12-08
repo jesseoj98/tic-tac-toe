@@ -86,9 +86,9 @@ public class Application {
 					final int cpuFirstPlay = generator.generateRandomSimpleCoordinate();
 					helper.insertIntoGameBoard(gameBoard, cpuFirstPlay, cpuPlayingCharacter);
 					cpuPositions.add(cpuFirstPlay);
-					System.out.println();
 				}
 
+				System.out.println();
 				printer.printSimpleCoordinateGameBoard(gameBoard);
 
 				do {
@@ -136,8 +136,9 @@ public class Application {
 					helper.insertIntoGameBoard(gameBoard, cpuFirstPlayXCoordinate, cpuFirstPlayYCoordinate,
 							cpuPlayingCharacter);
 					cpuCoordinatePositions.add(new Coordinate(cpuFirstPlayXCoordinate, cpuFirstPlayYCoordinate));
-					System.out.println();
 				}
+
+				System.out.println();
 
 				do {
 
