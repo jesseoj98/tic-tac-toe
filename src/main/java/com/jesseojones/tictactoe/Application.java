@@ -116,9 +116,12 @@ public class Application {
 				} while (!validator.ticTacToeSimple(cpuPositions) || !validator.ticTacToeSimple(playerPositions)
 						|| !validator.allGameBoardSpacesFilled(gameBoard));
 
-				final Result result = validator.getGameResults(playerPositions, cpuPositions);
-
-				printer.handleResult(result);
+				if (validator.allGameBoardSpacesFilled(gameBoard)) {
+					final Result result = validator.getGameResults(playerPositions, cpuPositions);
+					printer.handleResult(result);
+				} else {
+					System.out.println("Tie! All game board spaces filled");
+				}
 
 			} else {
 
@@ -177,10 +180,13 @@ public class Application {
 						|| !validator.ticTacToeCoordinate(playerCoordinatePositions)
 						|| !validator.allGameBoardSpacesFilled(gameBoard));
 
-				final Result result = validator.getCoordinateGameResults(playerCoordinatePositions,
-						cpuCoordinatePositions);
-
-				printer.handleResult(result);
+				if (validator.allGameBoardSpacesFilled(gameBoard)) {
+					final Result result = validator.getCoordinateGameResults(playerCoordinatePositions,
+							cpuCoordinatePositions);
+					printer.handleResult(result);
+				} else {
+					System.out.println("Tie! All game board spaces filled");
+				}
 
 			}
 
