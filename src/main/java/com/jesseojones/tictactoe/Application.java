@@ -118,6 +118,8 @@ public class Application {
 
 				final Result result = validator.getGameResults(playerPositions, cpuPositions);
 
+				printer.handleResult(result);
+
 			} else {
 
 				int userInputXCoordinate;
@@ -175,6 +177,8 @@ public class Application {
 
 				final Result result = validator.getCoordinateGameResults(playerCoordinatePositions,
 						cpuCoordinatePositions);
+
+				printer.handleResult(result);
 
 			}
 

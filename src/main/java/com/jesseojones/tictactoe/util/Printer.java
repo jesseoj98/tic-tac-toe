@@ -1,5 +1,10 @@
 package com.jesseojones.tictactoe.util;
 
+import java.util.List;
+
+import com.jesseojones.tictactoe.domain.Coordinate;
+import com.jesseojones.tictactoe.domain.Result;
+
 /**
  * Printer class defines several functions to help with printing state of game
  * boards
@@ -196,6 +201,62 @@ public class Printer {
 		} else {
 			return Character.toString(gameBoardSpace);
 		}
+	}
+
+	/**
+	 * Handles the result of the game by printing out the winning message
+	 * 
+	 * @param result the result of the game
+	 */
+	public void handleResult(Result result) {
+		if (result.isPlayerWon()) {
+			System.out.println("Congratulations! You won with positions ");
+		} else {
+			System.out.println("Too bad! Cpu won with positions ");
+		}
+		if (!result.getWinningSimpleCoordinates().isEmpty()) {
+			System.out.print(printPositions(result.getWinningSimpleCoordinates()));
+		} else {
+			System.out.print(printCoordinates(result.getWinningCoordinates()));
+		}
+	}
+
+	/**
+	 * Prints out the winning integer positions
+	 * 
+	 * @param positions the winning integer positions
+	 * @return the winning integer positions as a String
+	 */
+	private String printPositions(List<Integer> positions) {
+		StringBuilder spots = new StringBuilder();
+		int count = 0;
+		for (Integer position : positions) {
+			if (count == 2) {
+				spots.append(spots + Integer.toString(position));
+			}
+			spots.append(spots + Integer.toString(position) + ", ");
+			count++;
+		}
+		return spots.toString();
+	}
+
+	/**
+	 * Prints out the winning coordinate positions
+	 * 
+	 * @param coordinates the winning coordinate positions
+	 * @return the winning coordinate positions as a String
+	 */
+	private String printCoordinates(List<Coordinate> coordinates) {
+		StringBuilder spots = new StringBuilder();
+		int count = 0;
+		for (Coordinate position : coordinates) {
+			if (count == 2) {
+				spots.append(spots + "[" + position.getX() + ", " + position.getY() + "]");
+			}
+			spots.append(spots + "[" + position.getX() + ", " + position.getY() + "]" + ", ");
+			count++;
+		}
+		return spots.toString();
 	}
 
 }
