@@ -1,10 +1,10 @@
-package com.jesseojones.tictactoe.util;
+package com.jesseoj98.tictactoe.util;
 
 import java.util.Collections;
 import java.util.List;
 
-import com.jesseojones.tictactoe.domain.Coordinate;
-import com.jesseojones.tictactoe.domain.Result;
+import com.jesseoj98.tictactoe.domain.Coordinate;
+import com.jesseoj98.tictactoe.domain.Result;
 
 /**
  * Validator class provides several validation methods

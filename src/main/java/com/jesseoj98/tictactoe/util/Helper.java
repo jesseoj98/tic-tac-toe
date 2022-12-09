@@ -1,4 +1,4 @@
-package com.jesseojones.tictactoe.util;
+package com.jesseoj98.tictactoe.util;
 
 /**
  * Helper class defines several helpful functions

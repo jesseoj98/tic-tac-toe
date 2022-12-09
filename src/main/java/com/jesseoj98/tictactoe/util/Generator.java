@@ -1,11 +1,11 @@
-package com.jesseojones.tictactoe.util;
+package com.jesseoj98.tictactoe.util;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-import com.jesseojones.tictactoe.domain.Coordinate;
+import com.jesseoj98.tictactoe.domain.Coordinate;
 
 /**
  * Generator class defines methods helpful for quick generation

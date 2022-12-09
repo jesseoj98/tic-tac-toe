@@ -1,15 +1,15 @@
-package com.jesseojones.tictactoe;
+package com.jesseoj98.tictactoe;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import com.jesseojones.tictactoe.domain.Coordinate;
-import com.jesseojones.tictactoe.domain.Result;
-import com.jesseojones.tictactoe.util.Generator;
-import com.jesseojones.tictactoe.util.Helper;
-import com.jesseojones.tictactoe.util.Printer;
-import com.jesseojones.tictactoe.util.Validator;
+import com.jesseoj98.tictactoe.domain.Coordinate;
+import com.jesseoj98.tictactoe.domain.Result;
+import com.jesseoj98.tictactoe.util.Generator;
+import com.jesseoj98.tictactoe.util.Helper;
+import com.jesseoj98.tictactoe.util.Printer;
+import com.jesseoj98.tictactoe.util.Validator;
 
 /**
  * Main application class

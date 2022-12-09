@@ -1,4 +1,4 @@
-package com.jesseojones.tictactoe.domain;
+package com.jesseoj98.tictactoe.domain;
 
 import java.util.HashMap;
 import java.util.Map;
