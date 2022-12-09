@@ -4,18 +4,13 @@ import java.util.Collections;
 import java.util.List;
 
 import com.jesseoj98.tictactoe.domain.Coordinate;
+import com.jesseoj98.tictactoe.domain.GameBoard;
 import com.jesseoj98.tictactoe.domain.Result;
 
 /**
  * Validator class provides several validation methods
  */
 public class Validator {
-
-	/** The constant for a game board dimension */
-	private static final int GAME_BOARD_DIMENSIONS = 3;
-
-	/** The constant for the number of game board spaces */
-	private static final int GAME_BOARD_SPACES = 9;
 
 	/** Instantiation of classes */
 	private static final Generator generator = new Generator();
@@ -115,7 +110,7 @@ public class Validator {
 	 * @return whether all spaces are filled on a simple game board
 	 */
 	public boolean allGameBoardSpacesFilled(char[] simpleGameBoard) {
-		for (int i = 0; i < GAME_BOARD_SPACES; i++) {
+		for (int i = 0; i < GameBoard.GAME_BOARD_SPACES; i++) {
 			if (!helper.isSpaceAlreadyOccupied(simpleGameBoard[i])) {
 				return false;
 			}
@@ -147,8 +142,8 @@ public class Validator {
 	 * @return whether all spaces are filled on a coordinate game board
 	 */
 	public boolean allGameBoardSpacesFilled(char[][] coordinateGameBoard) {
-		for (int i = 0; i < GAME_BOARD_DIMENSIONS; i++) {
-			for (int j = 0; j < GAME_BOARD_DIMENSIONS; j++) {
+		for (int i = 0; i < GameBoard.GAME_BOARD_DIMENSION; i++) {
+			for (int j = 0; j < GameBoard.GAME_BOARD_DIMENSION; j++) {
 				if (!helper.isSpaceAlreadyOccupied(coordinateGameBoard, i, j)) {
 					return false;
 				}

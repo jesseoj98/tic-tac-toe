@@ -3,6 +3,7 @@ package com.jesseoj98.tictactoe.util;
 import java.util.List;
 
 import com.jesseoj98.tictactoe.domain.Coordinate;
+import com.jesseoj98.tictactoe.domain.GameBoard;
 import com.jesseoj98.tictactoe.domain.Result;
 
 /**
@@ -10,12 +11,6 @@ import com.jesseoj98.tictactoe.domain.Result;
  * boards
  */
 public class Printer {
-
-	/** The constant for a game board dimension */
-	private static final int GAME_BOARD_DIMENSIONS = 3;
-
-	/** The constant for the number of game board spaces */
-	private static final int GAME_BOARD_SPACES = 9;
 
 	/** Instantation of helper class */
 	private static Helper helper = new Helper();
@@ -27,7 +22,7 @@ public class Printer {
 		System.out.println("\nSimple Game Board");
 		System.out.println("\nEnter a single digit to place your move\n");
 		printSimpleCoordinateGameBoardDivider();
-		for (int i = 0; i < GAME_BOARD_SPACES; i++) {
+		for (int i = 0; i < GameBoard.GAME_BOARD_SPACES; i++) {
 			if (endOfSimpleRowMatch(i)) {
 				System.out.println(" " + (i + 1) + " |");
 				printSimpleCoordinateGameBoardDivider();
@@ -48,7 +43,7 @@ public class Printer {
 	 */
 	public void printSimpleCoordinateGameBoard(char[] gameBoard) {
 		printSimpleCoordinateGameBoardDivider();
-		for (int i = 0; i < GAME_BOARD_SPACES; i++) {
+		for (int i = 0; i < GameBoard.GAME_BOARD_SPACES; i++) {
 			if (endOfSimpleRowMatch(i)) {
 				System.out.println(" " + printGameBoardSpace(gameBoard[i], i) + " |");
 				printSimpleCoordinateGameBoardDivider();
@@ -69,7 +64,7 @@ public class Printer {
 	 */
 	public void printCoordinatesGameBoard(char[][] gameBoard) {
 		printTopOfCoordinatesGameBoard();
-		for (int i = 0; i < GAME_BOARD_DIMENSIONS; i++) {
+		for (int i = 0; i < GameBoard.GAME_BOARD_DIMENSION; i++) {
 			printGameBoardRow(gameBoard, i);
 			if (endOfRowMatch(i)) {
 				printCoordinatesGameBoardDivider();
@@ -86,7 +81,7 @@ public class Printer {
 	 */
 	private void printGameBoardRow(char[][] gameBoard, int rowNumber) {
 		System.out.print((rowNumber + 1) + " |");
-		for (int i = 0; i < GAME_BOARD_DIMENSIONS; i++) {
+		for (int i = 0; i < GameBoard.GAME_BOARD_DIMENSION; i++) {
 			if (endOfRowMatch(i)) {
 				System.out.print(" " + printGameBoardSpace(gameBoard[rowNumber][i], i) + " |");
 			} else {
@@ -103,8 +98,8 @@ public class Printer {
 		System.out.println("\nCoordinates Game Board");
 		System.out.println("\nEnter an x coordinate and a y coordinate to place your move\n");
 		printSimpleCoordinateGameBoardDivider();
-		for (int i = 0; i < GAME_BOARD_DIMENSIONS; i++) {
-			for (int j = 0; j < GAME_BOARD_DIMENSIONS; j++) {
+		for (int i = 0; i < GameBoard.GAME_BOARD_DIMENSION; i++) {
+			for (int j = 0; j < GameBoard.GAME_BOARD_DIMENSION; j++) {
 				System.out.print("|" + (j + 1) + "," + (i + 1));
 				if (!endOfRowMatch(j)) {
 					System.out.println("|");
@@ -163,7 +158,7 @@ public class Printer {
 	 * @return whether there is a match at the end of a coordinates row
 	 */
 	private boolean endOfRowMatch(int index) {
-		return index != GAME_BOARD_DIMENSIONS - 1;
+		return index != GameBoard.GAME_BOARD_DIMENSION - 1;
 	}
 
 	/**

@@ -6,17 +6,12 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 import com.jesseoj98.tictactoe.domain.Coordinate;
+import com.jesseoj98.tictactoe.domain.GameBoard;
 
 /**
  * Generator class defines methods helpful for quick generation
  */
 public class Generator {
-
-	/** The constant for a game board dimension */
-	private static final int GAME_BOARD_DIMENSIONS = 3;
-
-	/** The constant for the number of game board spaces */
-	private static final int GAME_BOARD_SPACES = 9;
 
 	/**
 	 * Generates a simple game board
@@ -24,7 +19,7 @@ public class Generator {
 	 * @return a simple game board
 	 */
 	public char[] generateSimpleGameBoard() {
-		return new char[GAME_BOARD_SPACES];
+		return new char[GameBoard.GAME_BOARD_SPACES];
 	}
 
 	/**
@@ -33,7 +28,7 @@ public class Generator {
 	 * @return a coordinate game board
 	 */
 	public char[][] generateCoordinateGameBoard() {
-		return new char[GAME_BOARD_DIMENSIONS][GAME_BOARD_DIMENSIONS];
+		return new char[GameBoard.GAME_BOARD_DIMENSION][GameBoard.GAME_BOARD_DIMENSION];
 	}
 
 	/**
@@ -150,7 +145,7 @@ public class Generator {
 	 * @return a random simple coordinate
 	 */
 	public int generateRandomSimpleCoordinate() {
-		return ThreadLocalRandom.current().nextInt(1, GAME_BOARD_SPACES);
+		return ThreadLocalRandom.current().nextInt(1, GameBoard.GAME_BOARD_SPACES);
 	}
 
 	/**
@@ -159,7 +154,7 @@ public class Generator {
 	 * @return a random coordinate
 	 */
 	public int generateRandomCoordinate() {
-		return ThreadLocalRandom.current().nextInt(1, GAME_BOARD_DIMENSIONS);
+		return ThreadLocalRandom.current().nextInt(1, GameBoard.GAME_BOARD_DIMENSION);
 	}
 
 	/**
@@ -168,8 +163,8 @@ public class Generator {
 	 * @return a random coordinate object
 	 */
 	public Coordinate generateRandomCoordinateObject() {
-		final int xCoordinate = ThreadLocalRandom.current().nextInt(0, GAME_BOARD_DIMENSIONS);
-		final int yCoordinate = ThreadLocalRandom.current().nextInt(0, GAME_BOARD_DIMENSIONS);
+		final int xCoordinate = ThreadLocalRandom.current().nextInt(0, GameBoard.GAME_BOARD_DIMENSION);
+		final int yCoordinate = ThreadLocalRandom.current().nextInt(0, GameBoard.GAME_BOARD_DIMENSION);
 		return new Coordinate(xCoordinate, yCoordinate);
 	}
 }
