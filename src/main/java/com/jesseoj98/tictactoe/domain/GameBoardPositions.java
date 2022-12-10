@@ -1,7 +1,7 @@
 package com.jesseoj98.tictactoe.domain;
 
 /**
- * Game board position enum defines simple game board positions
+ * Game board positions enum defines simple game board positions
  */
 public enum GameBoardPositions {
 
