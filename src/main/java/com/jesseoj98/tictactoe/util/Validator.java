@@ -135,6 +135,39 @@ public class Validator {
 	}
 
 	/**
+	 * Checks whether a tic tac toe has occured
+	 * 
+	 * @param gameBoard        the simple game board
+	 * @param playingCharacter the playing character
+	 * @return whether or not a tic tac toe occurs
+	 */
+	public boolean ticTacToe(char[] gameBoard, char playingCharacter) {
+		final String ticTacToe = new StringBuilder().append(playingCharacter).append(playingCharacter)
+				.append(playingCharacter).toString();
+
+		final String firstRow = new StringBuilder().append(gameBoard[0]).append(gameBoard[1]).append(gameBoard[2])
+				.toString();
+		final String secondRow = new StringBuilder().append(gameBoard[3]).append(gameBoard[4]).append(gameBoard[5])
+				.toString();
+		final String thirdRow = new StringBuilder().append(gameBoard[6]).append(gameBoard[7]).append(gameBoard[8])
+				.toString();
+		final String firstColumn = new StringBuilder().append(gameBoard[0]).append(gameBoard[3]).append(gameBoard[6])
+				.toString();
+		final String secondColumn = new StringBuilder().append(gameBoard[1]).append(gameBoard[4]).append(gameBoard[7])
+				.toString();
+		final String thirdColumn = new StringBuilder().append(gameBoard[2]).append(gameBoard[5]).append(gameBoard[8])
+				.toString();
+		final String backwardDiagonal = new StringBuilder().append(gameBoard[0]).append(gameBoard[4])
+				.append(gameBoard[8]).toString();
+		final String forwardDiagonal = new StringBuilder().append(gameBoard[2]).append(gameBoard[4])
+				.append(gameBoard[6]).toString();
+
+		return ticTacToe.equals(firstRow) || ticTacToe.equals(secondRow) || ticTacToe.equals(thirdRow)
+				|| ticTacToe.equals(firstColumn) || ticTacToe.equals(secondColumn) || ticTacToe.equals(thirdColumn)
+				|| ticTacToe.equals(backwardDiagonal) || ticTacToe.equals(forwardDiagonal);
+	}
+
+	/**
 	 * Checks whether all spaces are filled on a coordinate game board
 	 * 
 	 * @param coordinateGameBoard the coordinate game board
