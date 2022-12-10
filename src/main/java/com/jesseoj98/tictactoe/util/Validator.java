@@ -145,25 +145,25 @@ public class Validator {
 		final String ticTacToe = new StringBuilder().append(playingCharacter).append(playingCharacter)
 				.append(playingCharacter).toString();
 
-		final String firstRow = new StringBuilder().append(gameBoard[0]).append(gameBoard[1]).append(gameBoard[2])
+		final String topRow = new StringBuilder().append(gameBoard[0]).append(gameBoard[1]).append(gameBoard[2])
 				.toString();
-		final String secondRow = new StringBuilder().append(gameBoard[3]).append(gameBoard[4]).append(gameBoard[5])
+		final String middleRow = new StringBuilder().append(gameBoard[3]).append(gameBoard[4]).append(gameBoard[5])
 				.toString();
-		final String thirdRow = new StringBuilder().append(gameBoard[6]).append(gameBoard[7]).append(gameBoard[8])
+		final String bottomRow = new StringBuilder().append(gameBoard[6]).append(gameBoard[7]).append(gameBoard[8])
 				.toString();
-		final String firstColumn = new StringBuilder().append(gameBoard[0]).append(gameBoard[3]).append(gameBoard[6])
+		final String leftColumn = new StringBuilder().append(gameBoard[0]).append(gameBoard[3]).append(gameBoard[6])
 				.toString();
-		final String secondColumn = new StringBuilder().append(gameBoard[1]).append(gameBoard[4]).append(gameBoard[7])
+		final String middleColumn = new StringBuilder().append(gameBoard[1]).append(gameBoard[4]).append(gameBoard[7])
 				.toString();
-		final String thirdColumn = new StringBuilder().append(gameBoard[2]).append(gameBoard[5]).append(gameBoard[8])
+		final String rightColumn = new StringBuilder().append(gameBoard[2]).append(gameBoard[5]).append(gameBoard[8])
 				.toString();
 		final String backwardDiagonal = new StringBuilder().append(gameBoard[0]).append(gameBoard[4])
 				.append(gameBoard[8]).toString();
 		final String forwardDiagonal = new StringBuilder().append(gameBoard[2]).append(gameBoard[4])
 				.append(gameBoard[6]).toString();
 
-		return ticTacToe.equals(firstRow) || ticTacToe.equals(secondRow) || ticTacToe.equals(thirdRow)
-				|| ticTacToe.equals(firstColumn) || ticTacToe.equals(secondColumn) || ticTacToe.equals(thirdColumn)
+		return ticTacToe.equals(topRow) || ticTacToe.equals(middleRow) || ticTacToe.equals(bottomRow)
+				|| ticTacToe.equals(leftColumn) || ticTacToe.equals(middleColumn) || ticTacToe.equals(rightColumn)
 				|| ticTacToe.equals(backwardDiagonal) || ticTacToe.equals(forwardDiagonal);
 	}
 
