@@ -1,11 +1,7 @@
 package com.jesseoj98.tictactoe;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
-import com.jesseoj98.tictactoe.domain.Coordinate;
-import com.jesseoj98.tictactoe.domain.Result;
 import com.jesseoj98.tictactoe.util.Generator;
 import com.jesseoj98.tictactoe.util.Helper;
 import com.jesseoj98.tictactoe.util.Printer;
@@ -37,12 +33,6 @@ public class Application {
 			char userInput;
 			char userPlayingCharacter;
 			boolean letCpuGoFirst;
-
-			List<Integer> playerPositions = new ArrayList<>();
-			List<Integer> cpuPositions = new ArrayList<>();
-
-			List<Coordinate> playerCoordinatePositions = new ArrayList<>();
-			List<Coordinate> cpuCoordinatePositions = new ArrayList<>();
 
 			System.out.println("Tic-tac-toe by Jesse Jones\n");
 
@@ -85,7 +75,6 @@ public class Application {
 				if (letCpuGoFirst) {
 					final int cpuFirstPlay = generator.generateRandomSimpleCoordinate();
 					helper.insertIntoGameBoard(gameBoard, cpuFirstPlay, cpuPlayingCharacter);
-					cpuPositions.add(cpuFirstPlay);
 				}
 
 				System.out.println();
@@ -101,27 +90,19 @@ public class Application {
 							&& helper.isSpaceAlreadyOccupied(gameBoard, userInputSimple - 1));
 
 					helper.insertIntoGameBoard(gameBoard, userInputSimple - 1, userPlayingCharacter);
-					playerPositions.add(userInputSimple - 1);
 
 					do {
 						cpuInputSimple = generator.generateRandomSimpleCoordinate();
 					} while (helper.isSpaceAlreadyOccupied(gameBoard, cpuInputSimple - 1));
 
 					helper.insertIntoGameBoard(gameBoard, cpuInputSimple - 1, cpuPlayingCharacter);
-					cpuPositions.add(cpuInputSimple - 1);
 
 					System.out.println();
 					printer.printSimpleCoordinateGameBoard(gameBoard);
 
-				} while (!validator.ticTacToeSimple(cpuPositions) || !validator.ticTacToeSimple(playerPositions)
+				} while (!validator.ticTacToe(gameBoard, userPlayingCharacter)
+						|| !validator.ticTacToe(gameBoard, cpuPlayingCharacter)
 						|| !validator.allGameBoardSpacesFilled(gameBoard));
-
-				if (validator.allGameBoardSpacesFilled(gameBoard)) {
-					final Result result = validator.getGameResults(playerPositions, cpuPositions);
-					printer.handleResult(result);
-				} else {
-					System.out.println("Tie! All game board spaces filled");
-				}
 
 			} else {
 
@@ -138,7 +119,6 @@ public class Application {
 					final int cpuFirstPlayYCoordinate = generator.generateRandomCoordinate();
 					helper.insertIntoGameBoard(gameBoard, cpuFirstPlayXCoordinate, cpuFirstPlayYCoordinate,
 							cpuPlayingCharacter);
-					cpuCoordinatePositions.add(new Coordinate(cpuFirstPlayXCoordinate, cpuFirstPlayYCoordinate));
 				}
 
 				System.out.println();
@@ -161,7 +141,6 @@ public class Application {
 
 					helper.insertIntoGameBoard(gameBoard, userInputXCoordinate - 1, userInputYCoordinate - 1,
 							cpuPlayingCharacter);
-					playerCoordinatePositions.add(new Coordinate(userInputXCoordinate - 1, userInputYCoordinate - 1));
 
 					do {
 						cpuInputXCoordinate = generator.generateRandomCoordinate();
@@ -171,22 +150,13 @@ public class Application {
 
 					helper.insertIntoGameBoard(gameBoard, cpuInputXCoordinate - 1, cpuInputYCoordinate - 1,
 							cpuPlayingCharacter);
-					cpuCoordinatePositions.add(new Coordinate(userInputXCoordinate - 1, userInputYCoordinate - 1));
 
 					System.out.println();
 					printer.printCoordinatesGameBoard(gameBoard);
 
-				} while (!validator.ticTacToeCoordinate(cpuCoordinatePositions)
-						|| !validator.ticTacToeCoordinate(playerCoordinatePositions)
+				} while (!validator.ticTacToe(gameBoard, cpuPlayingCharacter)
+						|| !validator.ticTacToe(gameBoard, cpuPlayingCharacter)
 						|| !validator.allGameBoardSpacesFilled(gameBoard));
-
-				if (validator.allGameBoardSpacesFilled(gameBoard)) {
-					final Result result = validator.getCoordinateGameResults(playerCoordinatePositions,
-							cpuCoordinatePositions);
-					printer.handleResult(result);
-				} else {
-					System.out.println("Tie! All game board spaces filled");
-				}
 
 			}
 

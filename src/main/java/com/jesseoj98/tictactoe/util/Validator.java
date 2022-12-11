@@ -1,11 +1,6 @@
 package com.jesseoj98.tictactoe.util;
 
-import java.util.Collections;
-import java.util.List;
-
-import com.jesseoj98.tictactoe.domain.Coordinate;
 import com.jesseoj98.tictactoe.domain.GameBoard;
-import com.jesseoj98.tictactoe.domain.Result;
 
 /**
  * Validator class provides several validation methods
@@ -13,12 +8,7 @@ import com.jesseoj98.tictactoe.domain.Result;
 public class Validator {
 
 	/** Instantiation of classes */
-	private static final Generator generator = new Generator();
 	private static final Helper helper = new Helper();
-
-	/** Declaration of variables */
-	private static final List<List<Integer>> winningSimpleCoordinates = generator.generateSimpleWinningCoordinates();
-	private static final List<List<Coordinate>> winningCoordinates = generator.generateWinningCoordinates();
 
 	/**
 	 * Checks whether the input playing character is valid
@@ -116,22 +106,6 @@ public class Validator {
 			}
 		}
 		return true;
-	}
-
-	/**
-	 * Checks whether tic tac toe happened on a simple game board
-	 * 
-	 * @param positions the positions to check
-	 * 
-	 * @return whether tic tac toe happened on a simple game board
-	 */
-	public boolean ticTacToeSimple(List<Integer> positions) {
-		for (List<Integer> coordinate : winningSimpleCoordinates) {
-			if (coordinate.containsAll(positions)) {
-				return true;
-			}
-		}
-		return false;
 	}
 
 	/**
@@ -324,80 +298,6 @@ public class Validator {
 			}
 		}
 		return true;
-	}
-
-	/**
-	 * Checks whether tic tac toe happened on a coordinate game board
-	 * 
-	 * @param positions the positions to check
-	 * 
-	 * @return whether tic tac toe happened on a coordinate game board
-	 */
-	public boolean ticTacToeCoordinate(List<Coordinate> positions) {
-		for (List<Coordinate> coordinate : winningCoordinates) {
-			if (coordinate.containsAll(positions)) {
-				return true;
-			}
-		}
-		return false;
-	}
-
-	/**
-	 * Retrieves the winning integer positions
-	 * 
-	 * @param positions the positions to check
-	 * @return the winning positions
-	 */
-	private List<Integer> retrieveWinningPositions(List<Integer> positions) {
-		for (List<Integer> coordinate : winningSimpleCoordinates) {
-			if (coordinate.containsAll(positions)) {
-				return coordinate;
-			}
-		}
-		return Collections.emptyList();
-	}
-
-	/**
-	 * Retrieves the winning coordinate positions
-	 * 
-	 * @param positions the positions to check
-	 * @return the winning positions
-	 */
-	private List<Coordinate> retrieveWinningCoordinatePositions(List<Coordinate> positions) {
-		for (List<Coordinate> coordinate : winningCoordinates) {
-			if (coordinate.containsAll(positions)) {
-				return coordinate;
-			}
-		}
-		return Collections.emptyList();
-	}
-
-	/**
-	 * Retrieves the game results
-	 * 
-	 * @param playerPositions the player positions to check
-	 * @param cpuPositions    the cpu positions to check
-	 * @return the results of the game
-	 */
-	public Result getGameResults(List<Integer> playerPositions, List<Integer> cpuPositions) {
-		final boolean playerWon = ticTacToeSimple(playerPositions);
-		final List<Integer> winningPositions = playerWon ? retrieveWinningPositions(playerPositions)
-				: retrieveWinningPositions(cpuPositions);
-		return new Result(playerWon, !playerWon, winningPositions, null);
-	}
-
-	/**
-	 * Retrieves the game results
-	 * 
-	 * @param playerPositions the player positions to check
-	 * @param cpuPositions    the cpu positions to check
-	 * @return the results of the game
-	 */
-	public Result getCoordinateGameResults(List<Coordinate> playerPositions, List<Coordinate> cpuPositions) {
-		final boolean playerWon = ticTacToeCoordinate(playerPositions);
-		final List<Coordinate> winningPositions = playerWon ? retrieveWinningCoordinatePositions(playerPositions)
-				: retrieveWinningCoordinatePositions(cpuPositions);
-		return new Result(playerWon, !playerWon, null, winningPositions);
 	}
 
 }
