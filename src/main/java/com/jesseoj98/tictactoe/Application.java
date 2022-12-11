@@ -140,7 +140,7 @@ public class Application {
 							.isSpaceAlreadyOccupied(gameBoard, userInputXCoordinate - 1, userInputYCoordinate - 1));
 
 					helper.insertIntoGameBoard(gameBoard, userInputXCoordinate - 1, userInputYCoordinate - 1,
-							cpuPlayingCharacter);
+							userPlayingCharacter);
 
 					do {
 						cpuInputXCoordinate = generator.generateRandomCoordinate();
@@ -154,7 +154,7 @@ public class Application {
 					System.out.println();
 					printer.printCoordinatesGameBoard(gameBoard);
 
-				} while (!validator.ticTacToe(gameBoard, cpuPlayingCharacter)
+				} while (!validator.ticTacToe(gameBoard, userPlayingCharacter)
 						|| !validator.ticTacToe(gameBoard, cpuPlayingCharacter)
 						|| !validator.allGameBoardSpacesFilled(gameBoard));
 
