@@ -101,8 +101,8 @@ public class Application {
 					printer.printSimpleCoordinateGameBoard(gameBoard);
 
 				} while (!validator.ticTacToe(gameBoard, userPlayingCharacter)
-						|| !validator.ticTacToe(gameBoard, cpuPlayingCharacter)
-						|| !validator.allGameBoardSpacesFilled(gameBoard));
+						&& !validator.ticTacToe(gameBoard, cpuPlayingCharacter)
+						&& !validator.allGameBoardSpacesFilled(gameBoard));
 
 			} else {
 
@@ -155,8 +155,8 @@ public class Application {
 					printer.printCoordinatesGameBoard(gameBoard);
 
 				} while (!validator.ticTacToe(gameBoard, userPlayingCharacter)
-						|| !validator.ticTacToe(gameBoard, cpuPlayingCharacter)
-						|| !validator.allGameBoardSpacesFilled(gameBoard));
+						&& !validator.ticTacToe(gameBoard, cpuPlayingCharacter)
+						&& !validator.allGameBoardSpacesFilled(gameBoard));
 
 			}
 
