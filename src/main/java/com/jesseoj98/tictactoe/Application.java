@@ -165,7 +165,7 @@ public class Application {
 			do {
 				playAgain = scanner.next().charAt(0);
 			} while (!validator.isInputValid(playAgain));
-			
+
 			System.out.println();
 
 		} while (validator.playAgain(playAgain));
