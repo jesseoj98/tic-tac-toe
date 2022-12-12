@@ -91,6 +91,10 @@ public class Application {
 
 					helper.insertIntoGameBoard(gameBoard, userInputSimple - 1, userPlayingCharacter);
 
+					if (validator.ticTacToe(gameBoard, userPlayingCharacter)) {
+						break;
+					}
+
 					do {
 						cpuInputSimple = generator.generateRandomSimpleCoordinate();
 					} while (helper.isSpaceAlreadyOccupied(gameBoard, cpuInputSimple - 1));
@@ -141,6 +145,10 @@ public class Application {
 
 					helper.insertIntoGameBoard(gameBoard, userInputXCoordinate - 1, userInputYCoordinate - 1,
 							userPlayingCharacter);
+
+					if (validator.ticTacToe(gameBoard, userPlayingCharacter)) {
+						break;
+					}
 
 					do {
 						cpuInputXCoordinate = generator.generateRandomCoordinate();
