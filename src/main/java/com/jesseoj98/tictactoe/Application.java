@@ -170,6 +170,8 @@ public class Application {
 
 		} while (validator.playAgain(playAgain));
 
+		System.out.println("Thanks for playing!");
+
 	}
 
 }
