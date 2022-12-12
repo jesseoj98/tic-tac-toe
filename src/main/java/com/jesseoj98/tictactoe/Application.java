@@ -91,7 +91,8 @@ public class Application {
 
 					helper.insertIntoGameBoard(gameBoard, userInputSimple - 1, userPlayingCharacter);
 
-					if (validator.ticTacToe(gameBoard, userPlayingCharacter)) {
+					if (validator.ticTacToe(gameBoard, userPlayingCharacter)
+							|| validator.allGameBoardSpacesFilled(gameBoard)) {
 						break;
 					}
 
@@ -145,7 +146,8 @@ public class Application {
 					helper.insertIntoGameBoard(gameBoard, userInputXCoordinate - 1, userInputYCoordinate - 1,
 							userPlayingCharacter);
 
-					if (validator.ticTacToe(gameBoard, userPlayingCharacter)) {
+					if (validator.ticTacToe(gameBoard, userPlayingCharacter)
+							|| validator.allGameBoardSpacesFilled(gameBoard)) {
 						break;
 					}
 
