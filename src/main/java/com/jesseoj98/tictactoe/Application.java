@@ -104,8 +104,7 @@ public class Application {
 					System.out.println();
 					printer.printSimpleCoordinateGameBoard(gameBoard);
 
-				} while (!validator.ticTacToe(gameBoard, userPlayingCharacter)
-						&& !validator.ticTacToe(gameBoard, cpuPlayingCharacter)
+				} while (!validator.ticTacToe(gameBoard, cpuPlayingCharacter)
 						&& !validator.allGameBoardSpacesFilled(gameBoard));
 
 			} else {
@@ -162,8 +161,7 @@ public class Application {
 					System.out.println();
 					printer.printCoordinatesGameBoard(gameBoard);
 
-				} while (!validator.ticTacToe(gameBoard, userPlayingCharacter)
-						&& !validator.ticTacToe(gameBoard, cpuPlayingCharacter)
+				} while (!validator.ticTacToe(gameBoard, cpuPlayingCharacter)
 						&& !validator.allGameBoardSpacesFilled(gameBoard));
 
 			}
