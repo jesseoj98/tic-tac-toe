@@ -122,6 +122,9 @@ public class TicTacToe {
 		} while (!validator.ticTacToe(gameBoard, cpuPlayingCharacter)
 				&& !validator.allGameBoardSpacesFilled(gameBoard));
 
+		System.out.println();
+		printer.printSimpleCoordinateGameBoard(gameBoard);
+
 	}
 
 	/**
@@ -186,6 +189,9 @@ public class TicTacToe {
 
 		} while (!validator.ticTacToe(gameBoard, cpuPlayingCharacter)
 				&& !validator.allGameBoardSpacesFilled(gameBoard));
+
+		System.out.println();
+		printer.printCoordinatesGameBoard(gameBoard);
 
 	}
 
