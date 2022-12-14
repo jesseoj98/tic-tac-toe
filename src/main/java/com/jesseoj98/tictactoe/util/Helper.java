@@ -1,5 +1,7 @@
 package com.jesseoj98.tictactoe.util;
 
+import com.jesseoj98.tictactoe.domain.Coordinate;
+
 /**
  * Helper class defines several helpful functions
  */
@@ -53,6 +55,17 @@ public class Helper {
 	 */
 	public void insertIntoGameBoard(char[] gameBoard, int userInput, char playingCharacter) {
 		gameBoard[userInput] = playingCharacter;
+	}
+
+	/**
+	 * Inserts a playing character into the coordinate game board
+	 * 
+	 * @param gameBoard        The coordinate game board
+	 * @param coordinate       The coordinate to insert into
+	 * @param playingCharacter The playing character to insert
+	 */
+	public void insertIntoGameBoard(char[][] gameBoard, Coordinate coordinate, char playingCharacter) {
+		gameBoard[coordinate.getX()][coordinate.getY()] = playingCharacter;
 	}
 
 	/**
