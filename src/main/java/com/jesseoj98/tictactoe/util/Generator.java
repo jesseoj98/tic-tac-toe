@@ -34,7 +34,7 @@ public class Generator {
 	 * @return a random simple coordinate
 	 */
 	public int generateRandomSimpleCoordinate() {
-		return ThreadLocalRandom.current().nextInt(1, GameBoard.GAME_BOARD_SPACES);
+		return ThreadLocalRandom.current().nextInt(1, GameBoard.GAME_BOARD_SPACES + 1);
 	}
 
 	/**
@@ -43,7 +43,7 @@ public class Generator {
 	 * @return a random coordinate
 	 */
 	public int generateRandomCoordinate() {
-		return ThreadLocalRandom.current().nextInt(1, GameBoard.GAME_BOARD_DIMENSION);
+		return ThreadLocalRandom.current().nextInt(1, GameBoard.GAME_BOARD_DIMENSION + 1);
 	}
 
 	/**
