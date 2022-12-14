@@ -167,7 +167,7 @@ public class TicTacToe {
 			do {
 				userInputYCoordinate = scanner.nextInt();
 			} while (!validator.isInputCoordinatesValid(userInputYCoordinate)
-					&& !helper.isSpaceAlreadyOccupied(gameBoard, userInputYCoordinate - 1, userInputXCoordinate - 1));
+					&& helper.isSpaceAlreadyOccupied(gameBoard, userInputYCoordinate - 1, userInputXCoordinate - 1));
 
 			helper.insertIntoGameBoard(gameBoard, userInputYCoordinate - 1, userInputXCoordinate - 1,
 					userPlayingCharacter);
@@ -179,7 +179,7 @@ public class TicTacToe {
 			do {
 				cpuInputXCoordinate = generator.generateRandomCoordinate();
 				cpuInputYCoordinate = generator.generateRandomCoordinate();
-			} while (!helper.isSpaceAlreadyOccupied(gameBoard, cpuInputYCoordinate - 1, cpuInputXCoordinate - 1));
+			} while (helper.isSpaceAlreadyOccupied(gameBoard, cpuInputYCoordinate - 1, cpuInputXCoordinate - 1));
 
 			helper.insertIntoGameBoard(gameBoard, cpuInputYCoordinate - 1, cpuInputXCoordinate - 1,
 					cpuPlayingCharacter);
