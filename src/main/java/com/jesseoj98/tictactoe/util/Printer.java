@@ -65,30 +65,20 @@ public class Printer {
 	public void printCoordinatesGameBoard(char[][] gameBoard) {
 		printTopOfCoordinatesGameBoard();
 		for (int i = 0; i < GameBoard.GAME_BOARD_DIMENSION; i++) {
-			printGameBoardRow(gameBoard, i);
-			if (endOfRowMatch(i)) {
+			System.out.print((i + 1) + " ");
+			for (int j = 0; j < GameBoard.GAME_BOARD_DIMENSION; j++) {
+				if (helper.isSpaceAlreadyOccupied(gameBoard[i][j])) {
+					System.out.print("| " + gameBoard[i][j] + " ");
+				} else {
+					System.out.print("|" + (j + 1) + "," + (i + 1));
+				}
+			}
+			System.out.println("| " + (i + 1));
+			if (i != GameBoard.GAME_BOARD_DIMENSION - 1) {
 				printCoordinatesGameBoardDivider();
 			}
 		}
 		printBottomOfCoordinatesGameBoard();
-	}
-
-	/**
-	 * Prints a game board row
-	 * 
-	 * @param gameBoard the coordinates game board
-	 * @param rowNumber the row number
-	 */
-	private void printGameBoardRow(char[][] gameBoard, int rowNumber) {
-		System.out.print((rowNumber + 1) + " |");
-		for (int i = 0; i < GameBoard.GAME_BOARD_DIMENSION; i++) {
-			if (endOfRowMatch(i)) {
-				System.out.print(" " + printGameBoardSpace(gameBoard[rowNumber][i], i) + " |");
-			} else {
-				System.out.println(" " + printGameBoardSpace(gameBoard[rowNumber][i], i));
-			}
-		}
-		System.out.println(" | " + (rowNumber + 1));
 	}
 
 	/**
