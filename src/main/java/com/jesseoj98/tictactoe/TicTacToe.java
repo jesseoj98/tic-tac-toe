@@ -147,7 +147,7 @@ public class TicTacToe {
 		if (letCpuGoFirst) {
 			final int cpuFirstPlayXCoordinate = generator.generateRandomCoordinate();
 			final int cpuFirstPlayYCoordinate = generator.generateRandomCoordinate();
-			helper.insertIntoGameBoard(gameBoard, cpuFirstPlayXCoordinate, cpuFirstPlayYCoordinate,
+			helper.insertIntoGameBoard(gameBoard, cpuFirstPlayXCoordinate - 1, cpuFirstPlayYCoordinate - 1,
 					cpuPlayingCharacter);
 		}
 
