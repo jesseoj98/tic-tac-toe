@@ -152,17 +152,17 @@ public class Validator {
 		final String ticTacToe = new StringBuilder().append(playingCharacter).append(playingCharacter)
 				.append(playingCharacter).toString();
 
-		final String topRow = new StringBuilder().append(gameBoard[0][0]).append(gameBoard[1][0])
-				.append(gameBoard[2][0]).toString();
-		final String middleRow = new StringBuilder().append(gameBoard[0][1]).append(gameBoard[1][1])
-				.append(gameBoard[2][1]).toString();
-		final String bottomRow = new StringBuilder().append(gameBoard[0][2]).append(gameBoard[1][2])
-				.append(gameBoard[2][2]).toString();
-		final String leftColumn = new StringBuilder().append(gameBoard[0][0]).append(gameBoard[0][1])
+		final String topRow = new StringBuilder().append(gameBoard[0][0]).append(gameBoard[0][1])
 				.append(gameBoard[0][2]).toString();
-		final String middleColumn = new StringBuilder().append(gameBoard[1][0]).append(gameBoard[1][1])
+		final String middleRow = new StringBuilder().append(gameBoard[1][0]).append(gameBoard[1][1])
 				.append(gameBoard[1][2]).toString();
-		final String rightColumn = new StringBuilder().append(gameBoard[2][0]).append(gameBoard[2][1])
+		final String bottomRow = new StringBuilder().append(gameBoard[2][0]).append(gameBoard[2][1])
+				.append(gameBoard[2][2]).toString();
+		final String leftColumn = new StringBuilder().append(gameBoard[0][0]).append(gameBoard[1][0])
+				.append(gameBoard[2][0]).toString();
+		final String middleColumn = new StringBuilder().append(gameBoard[0][1]).append(gameBoard[1][1])
+				.append(gameBoard[2][1]).toString();
+		final String rightColumn = new StringBuilder().append(gameBoard[0][2]).append(gameBoard[1][2])
 				.append(gameBoard[2][2]).toString();
 		final String backwardDiagonal = new StringBuilder().append(gameBoard[0][0]).append(gameBoard[1][1])
 				.append(gameBoard[2][2]).toString();
