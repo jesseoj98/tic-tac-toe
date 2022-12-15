@@ -217,9 +217,9 @@ public class Printer {
 		final StringBuilder spots = new StringBuilder();
 		for (int i = 0; i < positions.size(); i++) {
 			if (i != positions.size() - 1) {
-				spots.append(Integer.toString(positions.get(i)) + ", ");
+				spots.append((Integer.toString(positions.get(i)) + 1) + ", ");
 			} else {
-				spots.append(Integer.toString(positions.get(i)));
+				spots.append((Integer.toString(positions.get(i)) + 1));
 			}
 		}
 		return spots.toString();
@@ -237,9 +237,10 @@ public class Printer {
 		final StringBuilder spots = new StringBuilder();
 		for (int i = 0; i < coordinates.size(); i++) {
 			if (i != coordinates.size() - 1) {
-				spots.append("[" + coordinates.get(i).getX() + ", " + coordinates.get(i).getY() + "]" + ", ");
+				spots.append(
+						"[" + (coordinates.get(i).getX() + 1) + ", " + (coordinates.get(i).getY() + 1) + "]" + ", ");
 			} else {
-				spots.append("[" + coordinates.get(i).getX() + ", " + coordinates.get(i).getY() + "]");
+				spots.append("[" + (coordinates.get(i).getX() + 1) + ", " + (coordinates.get(i).getY() + 1) + "]");
 			}
 		}
 		return spots.toString();
