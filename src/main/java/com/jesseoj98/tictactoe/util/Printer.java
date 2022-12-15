@@ -213,16 +213,16 @@ public class Printer {
 	 * @return the winning integer positions as a String
 	 */
 	private String printPositions(List<Integer> positions) {
-		StringBuilder spots = new StringBuilder();
-		int count = 0;
-		for (Integer position : positions) {
-			if (count == 2) {
-				spots.append(spots + Integer.toString(position));
+		final StringBuilder spots = new StringBuilder();
+		for (int i = 0; i < positions.size(); i++) {
+			if (i != positions.size() - 1) {
+				spots.append(spots + Integer.toString(positions.get(i)) + ", ");
+			} else {
+				spots.append(spots + Integer.toString(positions.get(i)));
 			}
-			spots.append(spots + Integer.toString(position) + ", ");
-			count++;
 		}
 		return spots.toString();
+
 	}
 
 	/**
@@ -232,14 +232,13 @@ public class Printer {
 	 * @return the winning coordinate positions as a String
 	 */
 	private String printCoordinates(List<Coordinate> coordinates) {
-		StringBuilder spots = new StringBuilder();
-		int count = 0;
-		for (Coordinate position : coordinates) {
-			if (count == 2) {
-				spots.append(spots + "[" + position.getX() + ", " + position.getY() + "]");
+		final StringBuilder spots = new StringBuilder();
+		for (int i = 0; i < coordinates.size(); i++) {
+			if (i != coordinates.size() - 1) {
+				spots.append(spots + "[" + coordinates.get(i).getX() + ", " + coordinates.get(i).getY() + "]" + ", ");
+			} else {
+				spots.append(spots + "[" + coordinates.get(i).getX() + ", " + coordinates.get(i).getY() + "]");
 			}
-			spots.append(spots + "[" + position.getX() + ", " + position.getY() + "]" + ", ");
-			count++;
 		}
 		return spots.toString();
 	}
