@@ -199,7 +199,7 @@ public class Printer {
 		} else {
 			System.out.print("Too bad! Cpu won with positions ");
 		}
-		if (!result.getWinningSimpleCoordinates().isEmpty()) {
+		if (result.getWinningSimpleCoordinates() != null) {
 			System.out.print(printPositions(result.getWinningSimpleCoordinates()));
 		} else {
 			System.out.print(printCoordinates(result.getWinningCoordinates()));
