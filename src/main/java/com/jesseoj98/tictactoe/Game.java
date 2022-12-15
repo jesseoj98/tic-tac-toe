@@ -90,7 +90,7 @@ public class Game {
 
 		if (letCpuGoFirst) {
 			final int cpuFirstPlay = generator.generateRandomSimpleCoordinate();
-			helper.insertIntoGameBoard(gameBoard, cpuFirstPlay, cpuPlayingCharacter);
+			helper.insertIntoGameBoard(gameBoard, cpuFirstPlay - 1, cpuPlayingCharacter);
 		}
 
 		System.out.println();
