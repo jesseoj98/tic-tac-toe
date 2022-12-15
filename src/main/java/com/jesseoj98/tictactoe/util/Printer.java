@@ -195,9 +195,9 @@ public class Printer {
 	 */
 	public void handleResult(Result result) {
 		if (result.isPlayerWon()) {
-			System.out.println("Congratulations! You won with positions ");
+			System.out.print("Congratulations! You won with positions ");
 		} else {
-			System.out.println("Too bad! Cpu won with positions ");
+			System.out.print("Too bad! Cpu won with positions ");
 		}
 		if (!result.getWinningSimpleCoordinates().isEmpty()) {
 			System.out.print(printPositions(result.getWinningSimpleCoordinates()));
