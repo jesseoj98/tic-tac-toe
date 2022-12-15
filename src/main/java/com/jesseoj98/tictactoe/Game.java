@@ -139,6 +139,7 @@ public class Game {
 			printer.handleResult(result);
 			System.out.println();
 		}
+
 	}
 
 	/**
