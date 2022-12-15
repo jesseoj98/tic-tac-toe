@@ -11,6 +11,9 @@ public class GameBoard {
 	/** The constant for the number of game board spaces */
 	public static final int GAME_BOARD_SPACES = 9;
 
+	/**
+	 * No-args constructor
+	 */
 	private GameBoard() {
 	}
 

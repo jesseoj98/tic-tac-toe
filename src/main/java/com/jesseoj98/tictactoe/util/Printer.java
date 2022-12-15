@@ -210,6 +210,7 @@ public class Printer {
 	 * Prints out the winning integer positions
 	 * 
 	 * @param positions the winning integer positions
+	 * 
 	 * @return the winning integer positions as a String
 	 */
 	private String printPositions(List<Integer> positions) {
@@ -229,6 +230,7 @@ public class Printer {
 	 * Prints out the winning coordinate positions
 	 * 
 	 * @param coordinates the winning coordinate positions
+	 * 
 	 * @return the winning coordinate positions as a String
 	 */
 	private String printCoordinates(List<Coordinate> coordinates) {
