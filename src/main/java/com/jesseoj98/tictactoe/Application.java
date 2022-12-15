@@ -13,7 +13,7 @@ import com.jesseoj98.tictactoe.util.Validator;
 public class Application {
 
 	/** Instantiation of classes */
-	private static TicTacToe ticTacToe = new TicTacToe();
+	private static Game game = new Game();
 	private static Scanner scanner = new Scanner(System.in);
 	private static Validator validator = new Validator();
 
@@ -28,7 +28,7 @@ public class Application {
 
 		do {
 
-			ticTacToe.ticTacToe();
+			game.ticTacToe();
 
 			do {
 				playAgain = scanner.next().charAt(0);

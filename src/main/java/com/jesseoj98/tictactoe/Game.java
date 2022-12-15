@@ -11,7 +11,7 @@ import com.jesseoj98.tictactoe.util.Validator;
 /**
  * Tic-tac-toe class represents the tic-tac-toe game
  */
-public class TicTacToe {
+public class Game {
 
 	/** Instantiation of classes */
 	private static Generator generator = new Generator();
