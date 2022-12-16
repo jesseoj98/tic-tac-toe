@@ -217,9 +217,9 @@ public class Printer {
 		final StringBuilder spots = new StringBuilder();
 		for (int i = 0; i < positions.size(); i++) {
 			if (i != positions.size() - 1) {
-				spots.append((Integer.toString(positions.get(i)) + 1) + ", ");
+				spots.append(Integer.toString(positions.get(i) + 1) + ", ");
 			} else {
-				spots.append((Integer.toString(positions.get(i)) + 1));
+				spots.append(Integer.toString(positions.get(i) + 1));
 			}
 		}
 		return spots.toString();
