@@ -10,7 +10,7 @@ import com.jesseoj98.tictactoe.util.Validator;
 /**
  * Main application class
  */
-public class Application {
+public class TicTacToe {
 
 	/** Instantiation of classes */
 	private static Game game = new Game();
