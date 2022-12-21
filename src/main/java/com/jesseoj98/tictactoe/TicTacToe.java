@@ -2,9 +2,6 @@ package com.jesseoj98.tictactoe;
 
 import java.util.Scanner;
 
-import com.jesseoj98.tictactoe.util.Generator;
-import com.jesseoj98.tictactoe.util.Helper;
-import com.jesseoj98.tictactoe.util.Printer;
 import com.jesseoj98.tictactoe.util.Validator;
 
 /**
