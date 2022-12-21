@@ -238,9 +238,9 @@ public class Printer {
 		for (int i = 0; i < coordinates.size(); i++) {
 			if (i != coordinates.size() - 1) {
 				spots.append(
-						"[" + (coordinates.get(i).getX() + 1) + ", " + (coordinates.get(i).getY() + 1) + "]" + ", ");
+						"[" + (coordinates.get(i).getY() + 1) + ", " + (coordinates.get(i).getX() + 1) + "]" + ", ");
 			} else {
-				spots.append("[" + (coordinates.get(i).getX() + 1) + ", " + (coordinates.get(i).getY() + 1) + "]");
+				spots.append("[" + (coordinates.get(i).getY() + 1) + ", " + (coordinates.get(i).getX() + 1) + "]");
 			}
 		}
 		return spots.toString();
