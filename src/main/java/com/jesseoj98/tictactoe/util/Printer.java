@@ -193,7 +193,7 @@ public class Printer {
 	 * 
 	 * @param result the result of the game
 	 */
-	public void handleResult(Result result) {
+	public void printResult(Result result) {
 		if (result.isPlayerWon()) {
 			System.out.print("Congratulations! You won with positions ");
 		} else {

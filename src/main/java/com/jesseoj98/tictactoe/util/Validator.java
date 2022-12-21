@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.jesseoj98.tictactoe.domain.Coordinate;
 import com.jesseoj98.tictactoe.domain.GameBoard;
+import com.jesseoj98.tictactoe.domain.Result;
 
 /**
  * Validator class provides several validation methods
@@ -13,6 +14,7 @@ public class Validator {
 
 	/** Instantiation of classes */
 	private static final Helper helper = new Helper();
+	private static final Printer printer = new Printer();
 
 	/**
 	 * Checks whether the input playing character is valid
@@ -394,6 +396,48 @@ public class Validator {
 			}
 		}
 		return true;
+	}
+
+	/**
+	 * Handles the result of the simple game board
+	 * 
+	 * @param playerWon            the indicator for if the player won
+	 * @param cpuWon               the indicator for if the cpu won
+	 * @param gameBoard            the simple game board
+	 * @param userPlayingCharacter the user playing character
+	 * @param cpuPlayingCharacter  the cpu playing character
+	 */
+	public void handleResult(boolean playerWon, boolean cpuWon, char[] gameBoard, char userPlayingCharacter,
+			char cpuPlayingCharacter) {
+		if (!playerWon && !cpuWon) {
+			System.out.println("Tie!");
+		} else {
+			final Result result = new Result(playerWon, cpuWon,
+					retrieveWinningPositions(gameBoard, playerWon ? userPlayingCharacter : cpuPlayingCharacter), null);
+			printer.printResult(result);
+			System.out.println();
+		}
+	}
+
+	/**
+	 * Handles the result of the coordinates game board
+	 * 
+	 * @param playerWon            the indicator for if the player won
+	 * @param cpuWon               the indicator for if the cpu won
+	 * @param gameBoard            the coordinates game board
+	 * @param userPlayingCharacter the user playing character
+	 * @param cpuPlayingCharacter  the cpu playing character
+	 */
+	public void handleResult(boolean playerWon, boolean cpuWon, char[][] gameBoard, char userPlayingCharacter,
+			char cpuPlayingCharacter) {
+		if (!playerWon && !cpuWon) {
+			System.out.println("Tie!");
+		} else {
+			final Result result = new Result(playerWon, cpuWon, null,
+					retrieveWinningPositions(gameBoard, playerWon ? userPlayingCharacter : cpuPlayingCharacter));
+			printer.printResult(result);
+			System.out.println();
+		}
 	}
 
 }

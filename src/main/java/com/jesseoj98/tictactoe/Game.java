@@ -2,7 +2,6 @@ package com.jesseoj98.tictactoe;
 
 import java.util.Scanner;
 
-import com.jesseoj98.tictactoe.domain.Result;
 import com.jesseoj98.tictactoe.util.Generator;
 import com.jesseoj98.tictactoe.util.Helper;
 import com.jesseoj98.tictactoe.util.Printer;
@@ -130,15 +129,7 @@ public class Game {
 		final boolean cpuWon = validator.ticTacToe(gameBoard, cpuPlayingCharacter);
 
 		System.out.println();
-
-		if (!playerWon && !cpuWon) {
-			System.out.println("Tie!");
-		} else {
-			final Result result = new Result(playerWon, cpuWon, validator.retrieveWinningPositions(gameBoard,
-					playerWon ? userPlayingCharacter : cpuPlayingCharacter), null);
-			printer.handleResult(result);
-			System.out.println();
-		}
+		validator.handleResult(playerWon, cpuWon, gameBoard, userPlayingCharacter, cpuPlayingCharacter);
 
 	}
 
@@ -212,15 +203,7 @@ public class Game {
 		final boolean cpuWon = validator.ticTacToe(gameBoard, cpuPlayingCharacter);
 
 		System.out.println();
-
-		if (!playerWon && !cpuWon) {
-			System.out.println("Tie!");
-		} else {
-			final Result result = new Result(playerWon, cpuWon, null, validator.retrieveWinningPositions(gameBoard,
-					playerWon ? userPlayingCharacter : cpuPlayingCharacter));
-			printer.handleResult(result);
-			System.out.println();
-		}
+		validator.handleResult(playerWon, cpuWon, gameBoard, userPlayingCharacter, cpuPlayingCharacter);
 
 	}
 
