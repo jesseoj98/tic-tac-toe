@@ -28,7 +28,7 @@ public class TicTacToe {
 
 		do {
 
-			game.ticTacToe();
+			game.playGame();
 
 			do {
 				playAgain = scanner.next().charAt(0);

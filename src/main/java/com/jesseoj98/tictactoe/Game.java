@@ -23,7 +23,7 @@ public class Game {
 	/**
 	 * Plays the tic-tac-toe game
 	 */
-	public void ticTacToe() {
+	public void playGame() {
 
 		char userInput;
 		char userPlayingCharacter;
