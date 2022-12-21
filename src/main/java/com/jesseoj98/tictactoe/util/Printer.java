@@ -13,7 +13,7 @@ import com.jesseoj98.tictactoe.domain.Result;
 public class Printer {
 
 	/** Instantation of helper class */
-	private static Helper helper = new Helper();
+	private static final Helper helper = new Helper();
 
 	/**
 	 * Prints a simple sample coordinates game board

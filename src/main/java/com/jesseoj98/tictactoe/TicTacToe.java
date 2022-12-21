@@ -13,9 +13,9 @@ import com.jesseoj98.tictactoe.util.Validator;
 public class TicTacToe {
 
 	/** Instantiation of classes */
-	private static Game game = new Game();
-	private static Scanner scanner = new Scanner(System.in);
-	private static Validator validator = new Validator();
+	private static final Game game = new Game();
+	private static final Scanner scanner = new Scanner(System.in);
+	private static final Validator validator = new Validator();
 
 	/**
 	 * The main application method

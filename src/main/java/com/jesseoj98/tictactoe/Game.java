@@ -14,11 +14,11 @@ import com.jesseoj98.tictactoe.util.Validator;
 public class Game {
 
 	/** Instantiation of classes */
-	private static Generator generator = new Generator();
-	private static Helper helper = new Helper();
-	private static Printer printer = new Printer();
-	private static Scanner scanner = new Scanner(System.in);
-	private static Validator validator = new Validator();
+	private static final Generator generator = new Generator();
+	private static final Helper helper = new Helper();
+	private static final Printer printer = new Printer();
+	private static final Scanner scanner = new Scanner(System.in);
+	private static final Validator validator = new Validator();
 
 	/**
 	 * Plays the tic-tac-toe game
