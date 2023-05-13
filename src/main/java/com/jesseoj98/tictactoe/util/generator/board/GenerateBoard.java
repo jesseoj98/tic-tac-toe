@@ -26,4 +26,5 @@ public class GenerateBoard implements GenerateGameBoard {
 	public char[][] generateCoordinate() {
 		return new char[GameBoard.GAME_BOARD_DIMENSION][GameBoard.GAME_BOARD_DIMENSION];
 	}
+
 }
