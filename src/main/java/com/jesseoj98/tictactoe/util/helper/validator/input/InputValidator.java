@@ -1,4 +1,4 @@
-package com.jesseoj98.tictactoe.util.helper.validator;
+package com.jesseoj98.tictactoe.util.helper.validator.input;
 
 /**
  * Input validator class provides implementations to validate user or cpu game

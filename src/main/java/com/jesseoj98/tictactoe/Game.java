@@ -8,7 +8,7 @@ import com.jesseoj98.tictactoe.util.generator.board.GenerateBoard;
 import com.jesseoj98.tictactoe.util.generator.coordinate.GenerateCoordinate;
 import com.jesseoj98.tictactoe.util.helper.inserter.BoardInserter;
 import com.jesseoj98.tictactoe.util.helper.occupier.BoardOccupier;
-import com.jesseoj98.tictactoe.util.helper.validator.InputValidator;
+import com.jesseoj98.tictactoe.util.helper.validator.input.InputValidator;
 
 /**
  * Tic-tac-toe class represents the tic-tac-toe game

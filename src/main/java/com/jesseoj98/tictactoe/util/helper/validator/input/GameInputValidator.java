@@ -1,4 +1,4 @@
-package com.jesseoj98.tictactoe.util.helper.validator;
+package com.jesseoj98.tictactoe.util.helper.validator.input;
 
 /**
  * Game input validator interface supplies blueprints to validate user or cpu

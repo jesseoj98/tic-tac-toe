@@ -2,7 +2,7 @@ package com.jesseoj98.tictactoe;
 
 import java.util.Scanner;
 
-import com.jesseoj98.tictactoe.util.helper.validator.InputValidator;
+import com.jesseoj98.tictactoe.util.helper.validator.input.InputValidator;
 
 /**
  * Main application class
