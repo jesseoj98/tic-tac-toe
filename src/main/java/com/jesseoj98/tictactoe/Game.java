@@ -8,6 +8,7 @@ import com.jesseoj98.tictactoe.util.generator.board.GenerateBoard;
 import com.jesseoj98.tictactoe.util.generator.coordinate.GenerateCoordinate;
 import com.jesseoj98.tictactoe.util.helper.inserter.BoardInserter;
 import com.jesseoj98.tictactoe.util.helper.occupier.BoardOccupier;
+import com.jesseoj98.tictactoe.util.helper.validator.InputValidator;
 
 /**
  * Tic-tac-toe class represents the tic-tac-toe game
@@ -20,6 +21,8 @@ public class Game {
 
 	private static final BoardOccupier bo = new BoardOccupier();
 	private static final BoardInserter bi = new BoardInserter();
+
+	private static final InputValidator iv = new InputValidator();
 
 	private static final Printer printer = new Printer();
 	private static final Scanner scanner = new Scanner(System.in);
@@ -40,7 +43,7 @@ public class Game {
 
 		do {
 			userInput = scanner.next().charAt(0);
-		} while (!validator.isInputPlayingCharacterValid(userInput));
+		} while (!iv.isValidPlayingCharacter(userInput));
 
 		userPlayingCharacter = Character.toUpperCase(userInput);
 
@@ -50,9 +53,9 @@ public class Game {
 
 		do {
 			userInput = scanner.next().charAt(0);
-		} while (!validator.isInputValid(userInput));
+		} while (!iv.isYesOrNo(userInput));
 
-		letCpuGoFirst = validator.letCpuGoFirst(userInput);
+		letCpuGoFirst = iv.isYes(userInput);
 
 		printer.printSimpleCoordinateSampleGameBoard();
 		printer.printCoordinatesSampleGameBoard();
@@ -61,7 +64,7 @@ public class Game {
 
 		do {
 			userInput = scanner.next().charAt(0);
-		} while (!validator.isInputGameBoardTypeValid(userInput));
+		} while (!iv.isValidBoardType(userInput));
 
 		System.out.println("\n---------------");
 
@@ -107,7 +110,7 @@ public class Game {
 
 			do {
 				userInputSimple = scanner.nextInt();
-			} while (!validator.isInputValid(userInputSimple)
+			} while (!iv.isValidBoardSpace(userInputSimple)
 					&& bo.isSpaceAlreadyOccupied(gameBoard, userInputSimple - 1));
 
 			bi.insertIntoGameBoard(gameBoard, userInputSimple - 1, userPlayingCharacter);
@@ -172,13 +175,13 @@ public class Game {
 
 			do {
 				userInputXCoordinate = scanner.nextInt();
-			} while (!validator.isInputCoordinatesValid(userInputXCoordinate));
+			} while (!iv.isValidCoordinatesSpace(userInputXCoordinate));
 
 			System.out.print("Enter a y coordinate to place your move: ");
 
 			do {
 				userInputYCoordinate = scanner.nextInt();
-			} while (!validator.isInputCoordinatesValid(userInputYCoordinate)
+			} while (!iv.isValidCoordinatesSpace(userInputYCoordinate)
 					&& bo.isSpaceAlreadyOccupied(gameBoard, userInputYCoordinate - 1, userInputXCoordinate - 1));
 
 			bi.insertIntoGameBoard(gameBoard, userInputYCoordinate - 1, userInputXCoordinate - 1, userPlayingCharacter);

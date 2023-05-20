@@ -2,7 +2,7 @@ package com.jesseoj98.tictactoe;
 
 import java.util.Scanner;
 
-import com.jesseoj98.tictactoe.util.Validator;
+import com.jesseoj98.tictactoe.util.helper.validator.InputValidator;
 
 /**
  * Main application class
@@ -10,9 +10,10 @@ import com.jesseoj98.tictactoe.util.Validator;
 public class TicTacToe {
 
 	/** Instantiation of classes */
+	private static final InputValidator iv = new InputValidator();
+
 	private static final Game game = new Game();
 	private static final Scanner scanner = new Scanner(System.in);
-	private static final Validator validator = new Validator();
 
 	/**
 	 * The main application method
@@ -29,11 +30,11 @@ public class TicTacToe {
 
 			do {
 				playAgain = scanner.next().charAt(0);
-			} while (!validator.isInputValid(playAgain));
+			} while (!iv.isYesOrNo(playAgain));
 
 			System.out.println();
 
-		} while (validator.playAgain(playAgain));
+		} while (iv.isYes(playAgain));
 
 		System.out.println("Thanks for playing!");
 
