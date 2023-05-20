@@ -8,6 +8,7 @@ import com.jesseoj98.tictactoe.util.generator.board.GenerateBoard;
 import com.jesseoj98.tictactoe.util.generator.coordinate.GenerateCoordinate;
 import com.jesseoj98.tictactoe.util.helper.inserter.BoardInserter;
 import com.jesseoj98.tictactoe.util.helper.occupier.BoardOccupier;
+import com.jesseoj98.tictactoe.util.helper.validator.board.BoardValidator;
 import com.jesseoj98.tictactoe.util.helper.validator.input.InputValidator;
 
 /**
@@ -21,6 +22,7 @@ public class Game {
 
 	private static final BoardOccupier bo = new BoardOccupier();
 	private static final BoardInserter bi = new BoardInserter();
+	private static final BoardValidator bv = new BoardValidator();
 
 	private static final InputValidator iv = new InputValidator();
 
@@ -115,7 +117,7 @@ public class Game {
 
 			bi.insertIntoBoard(gameBoard, userInputSimple - 1, userPlayingCharacter);
 
-			if (validator.ticTacToe(gameBoard, userPlayingCharacter) || validator.allGameBoardSpacesFilled(gameBoard)) {
+			if (validator.ticTacToe(gameBoard, userPlayingCharacter) || bv.areAllBoardSpacesFilled(gameBoard)) {
 				break;
 			}
 
@@ -129,7 +131,7 @@ public class Game {
 			printer.printSimpleCoordinateGameBoard(gameBoard);
 
 		} while (!validator.ticTacToe(gameBoard, cpuPlayingCharacter)
-				&& !validator.allGameBoardSpacesFilled(gameBoard));
+				&& !bv.areAllBoardSpacesFilled(gameBoard));
 
 		System.out.println();
 		printer.printSimpleCoordinateGameBoard(gameBoard);
@@ -186,7 +188,7 @@ public class Game {
 
 			bi.insertIntoBoard(gameBoard, userInputYCoordinate - 1, userInputXCoordinate - 1, userPlayingCharacter);
 
-			if (validator.ticTacToe(gameBoard, userPlayingCharacter) || validator.allGameBoardSpacesFilled(gameBoard)) {
+			if (validator.ticTacToe(gameBoard, userPlayingCharacter) || bv.areAllBoardSpacesFilled(gameBoard)) {
 				break;
 			}
 
@@ -201,7 +203,7 @@ public class Game {
 			printer.printCoordinatesGameBoard(gameBoard);
 
 		} while (!validator.ticTacToe(gameBoard, cpuPlayingCharacter)
-				&& !validator.allGameBoardSpacesFilled(gameBoard));
+				&& !bv.areAllBoardSpacesFilled(gameBoard));
 
 		System.out.println();
 		printer.printCoordinatesGameBoard(gameBoard);

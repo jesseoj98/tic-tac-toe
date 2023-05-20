@@ -4,9 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.jesseoj98.tictactoe.domain.Coordinate;
-import com.jesseoj98.tictactoe.domain.GameBoard;
 import com.jesseoj98.tictactoe.domain.Result;
-import com.jesseoj98.tictactoe.util.helper.occupier.BoardOccupier;
 
 /**
  * Validator class provides several validation methods
@@ -14,24 +12,7 @@ import com.jesseoj98.tictactoe.util.helper.occupier.BoardOccupier;
 public class Validator {
 
 	/** Instantiation of classes */
-	private static final BoardOccupier bo = new BoardOccupier();
 	private static final Printer printer = new Printer();
-
-	/**
-	 * Checks whether all spaces are filled on a simple game board
-	 * 
-	 * @param simpleGameBoard the simple game board
-	 * 
-	 * @return whether all spaces are filled on a simple game board
-	 */
-	public boolean allGameBoardSpacesFilled(char[] simpleGameBoard) {
-		for (int i = 0; i < GameBoard.GAME_BOARD_SPACES; i++) {
-			if (!bo.isSpaceOccupied(simpleGameBoard[i])) {
-				return false;
-			}
-		}
-		return true;
-	}
 
 	/**
 	 * Checks whether a tic tac toe has occured
@@ -297,24 +278,6 @@ public class Validator {
 			winningPositions.add(new Coordinate(0, 2));
 		}
 		return winningPositions;
-	}
-
-	/**
-	 * Checks whether all spaces are filled on a coordinate game board
-	 * 
-	 * @param coordinateGameBoard the coordinate game board
-	 * 
-	 * @return whether all spaces are filled on a coordinate game board
-	 */
-	public boolean allGameBoardSpacesFilled(char[][] coordinateGameBoard) {
-		for (int i = 0; i < GameBoard.GAME_BOARD_DIMENSION; i++) {
-			for (int j = 0; j < GameBoard.GAME_BOARD_DIMENSION; j++) {
-				if (!bo.isSpaceOccupied(coordinateGameBoard, i, j)) {
-					return false;
-				}
-			}
-		}
-		return true;
 	}
 
 	/**
