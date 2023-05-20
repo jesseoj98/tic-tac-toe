@@ -6,6 +6,7 @@ import java.util.List;
 import com.jesseoj98.tictactoe.domain.Coordinate;
 import com.jesseoj98.tictactoe.domain.GameBoard;
 import com.jesseoj98.tictactoe.domain.Result;
+import com.jesseoj98.tictactoe.util.helper.occupier.BoardOccupier;
 
 /**
  * Validator class provides several validation methods
@@ -13,7 +14,7 @@ import com.jesseoj98.tictactoe.domain.Result;
 public class Validator {
 
 	/** Instantiation of classes */
-	private static final Helper helper = new Helper();
+	private static final BoardOccupier bo = new BoardOccupier();
 	private static final Printer printer = new Printer();
 
 	/**
@@ -107,7 +108,7 @@ public class Validator {
 	 */
 	public boolean allGameBoardSpacesFilled(char[] simpleGameBoard) {
 		for (int i = 0; i < GameBoard.GAME_BOARD_SPACES; i++) {
-			if (!helper.isSpaceAlreadyOccupied(simpleGameBoard[i])) {
+			if (!bo.isSpaceAlreadyOccupied(simpleGameBoard[i])) {
 				return false;
 			}
 		}
@@ -390,7 +391,7 @@ public class Validator {
 	public boolean allGameBoardSpacesFilled(char[][] coordinateGameBoard) {
 		for (int i = 0; i < GameBoard.GAME_BOARD_DIMENSION; i++) {
 			for (int j = 0; j < GameBoard.GAME_BOARD_DIMENSION; j++) {
-				if (!helper.isSpaceAlreadyOccupied(coordinateGameBoard, i, j)) {
+				if (!bo.isSpaceAlreadyOccupied(coordinateGameBoard, i, j)) {
 					return false;
 				}
 			}
