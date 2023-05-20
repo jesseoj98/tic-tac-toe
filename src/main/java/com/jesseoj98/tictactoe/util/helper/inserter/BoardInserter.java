@@ -15,7 +15,7 @@ public class BoardInserter implements GameBoardInserter {
 	 * @param playingCharacter The playing character to insert
 	 */
 	@Override
-	public void insertIntoGameBoard(char[] gameBoard, int userInput, char playingCharacter) {
+	public void insertIntoBoard(char[] gameBoard, int userInput, char playingCharacter) {
 		gameBoard[userInput] = playingCharacter;
 	}
 
@@ -27,7 +27,7 @@ public class BoardInserter implements GameBoardInserter {
 	 * @param playingCharacter The playing character to insert
 	 */
 	@Override
-	public void insertIntoGameBoard(char[][] gameBoard, Coordinate coordinate, char playingCharacter) {
+	public void insertIntoBoard(char[][] gameBoard, Coordinate coordinate, char playingCharacter) {
 		gameBoard[coordinate.getX()][coordinate.getY()] = playingCharacter;
 	}
 
@@ -40,7 +40,7 @@ public class BoardInserter implements GameBoardInserter {
 	 * @param playingCharacter The playing character to insert
 	 */
 	@Override
-	public void insertIntoGameBoard(char[][] gameBoard, int xCoordinate, int yCoordinate, char playingCharacter) {
+	public void insertIntoBoard(char[][] gameBoard, int xCoordinate, int yCoordinate, char playingCharacter) {
 		gameBoard[xCoordinate][yCoordinate] = playingCharacter;
 	}
 

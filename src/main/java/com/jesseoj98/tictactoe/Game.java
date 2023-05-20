@@ -98,7 +98,7 @@ public class Game {
 
 		if (letCpuGoFirst) {
 			final int cpuFirstPlay = gc.generateCoordinate();
-			bi.insertIntoGameBoard(gameBoard, cpuFirstPlay - 1, cpuPlayingCharacter);
+			bi.insertIntoBoard(gameBoard, cpuFirstPlay - 1, cpuPlayingCharacter);
 		}
 
 		System.out.println();
@@ -111,9 +111,9 @@ public class Game {
 			do {
 				userInputSimple = scanner.nextInt();
 			} while (!iv.isValidBoardSpace(userInputSimple)
-					&& bo.isSpaceAlreadyOccupied(gameBoard, userInputSimple - 1));
+					&& bo.isSpaceOccupied(gameBoard, userInputSimple - 1));
 
-			bi.insertIntoGameBoard(gameBoard, userInputSimple - 1, userPlayingCharacter);
+			bi.insertIntoBoard(gameBoard, userInputSimple - 1, userPlayingCharacter);
 
 			if (validator.ticTacToe(gameBoard, userPlayingCharacter) || validator.allGameBoardSpacesFilled(gameBoard)) {
 				break;
@@ -121,9 +121,9 @@ public class Game {
 
 			do {
 				cpuInputSimple = gc.generateSimple();
-			} while (bo.isSpaceAlreadyOccupied(gameBoard, cpuInputSimple - 1));
+			} while (bo.isSpaceOccupied(gameBoard, cpuInputSimple - 1));
 
-			bi.insertIntoGameBoard(gameBoard, cpuInputSimple - 1, cpuPlayingCharacter);
+			bi.insertIntoBoard(gameBoard, cpuInputSimple - 1, cpuPlayingCharacter);
 
 			System.out.println();
 			printer.printSimpleCoordinateGameBoard(gameBoard);
@@ -162,7 +162,7 @@ public class Game {
 		if (letCpuGoFirst) {
 			final int cpuFirstPlayXCoordinate = gc.generateCoordinate();
 			final int cpuFirstPlayYCoordinate = gc.generateCoordinate();
-			bi.insertIntoGameBoard(gameBoard, cpuFirstPlayYCoordinate - 1, cpuFirstPlayXCoordinate - 1,
+			bi.insertIntoBoard(gameBoard, cpuFirstPlayYCoordinate - 1, cpuFirstPlayXCoordinate - 1,
 					cpuPlayingCharacter);
 		}
 
@@ -182,9 +182,9 @@ public class Game {
 			do {
 				userInputYCoordinate = scanner.nextInt();
 			} while (!iv.isValidCoordinatesSpace(userInputYCoordinate)
-					&& bo.isSpaceAlreadyOccupied(gameBoard, userInputYCoordinate - 1, userInputXCoordinate - 1));
+					&& bo.isSpaceOccupied(gameBoard, userInputYCoordinate - 1, userInputXCoordinate - 1));
 
-			bi.insertIntoGameBoard(gameBoard, userInputYCoordinate - 1, userInputXCoordinate - 1, userPlayingCharacter);
+			bi.insertIntoBoard(gameBoard, userInputYCoordinate - 1, userInputXCoordinate - 1, userPlayingCharacter);
 
 			if (validator.ticTacToe(gameBoard, userPlayingCharacter) || validator.allGameBoardSpacesFilled(gameBoard)) {
 				break;
@@ -193,9 +193,9 @@ public class Game {
 			do {
 				cpuInputXCoordinate = gc.generateCoordinate();
 				cpuInputYCoordinate = gc.generateCoordinate();
-			} while (bo.isSpaceAlreadyOccupied(gameBoard, cpuInputYCoordinate - 1, cpuInputXCoordinate - 1));
+			} while (bo.isSpaceOccupied(gameBoard, cpuInputYCoordinate - 1, cpuInputXCoordinate - 1));
 
-			bi.insertIntoGameBoard(gameBoard, cpuInputYCoordinate - 1, cpuInputXCoordinate - 1, cpuPlayingCharacter);
+			bi.insertIntoBoard(gameBoard, cpuInputYCoordinate - 1, cpuInputXCoordinate - 1, cpuPlayingCharacter);
 
 			System.out.println();
 			printer.printCoordinatesGameBoard(gameBoard);

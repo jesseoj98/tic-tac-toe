@@ -6,10 +6,10 @@ package com.jesseoj98.tictactoe.util.helper.occupier;
  */
 public interface GameBoardOccupier {
 
-	public boolean isSpaceAlreadyOccupied(char input);
+	public boolean isSpaceOccupied(char input);
 
-	public boolean isSpaceAlreadyOccupied(char[] gameBoard, int input);
+	public boolean isSpaceOccupied(char[] gameBoard, int input);
 
-	public boolean isSpaceAlreadyOccupied(char[][] gameBoard, int xCoordinate, int yCoordinate);
+	public boolean isSpaceOccupied(char[][] gameBoard, int xCoordinate, int yCoordinate);
 
 }

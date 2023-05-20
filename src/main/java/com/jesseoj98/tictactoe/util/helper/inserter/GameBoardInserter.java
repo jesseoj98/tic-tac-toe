@@ -7,10 +7,10 @@ import com.jesseoj98.tictactoe.domain.Coordinate;
  */
 public interface GameBoardInserter {
 
-	public void insertIntoGameBoard(char[] gameBoard, int userInput, char playingCharacter);
+	public void insertIntoBoard(char[] gameBoard, int userInput, char playingCharacter);
 
-	public void insertIntoGameBoard(char[][] gameBoard, Coordinate coordinate, char playingCharacter);
+	public void insertIntoBoard(char[][] gameBoard, Coordinate coordinate, char playingCharacter);
 
-	public void insertIntoGameBoard(char[][] gameBoard, int xCoordinate, int yCoordinate, char playingCharacter);
+	public void insertIntoBoard(char[][] gameBoard, int xCoordinate, int yCoordinate, char playingCharacter);
 
 }

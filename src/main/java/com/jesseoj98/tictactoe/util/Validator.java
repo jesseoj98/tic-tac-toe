@@ -26,7 +26,7 @@ public class Validator {
 	 */
 	public boolean allGameBoardSpacesFilled(char[] simpleGameBoard) {
 		for (int i = 0; i < GameBoard.GAME_BOARD_SPACES; i++) {
-			if (!bo.isSpaceAlreadyOccupied(simpleGameBoard[i])) {
+			if (!bo.isSpaceOccupied(simpleGameBoard[i])) {
 				return false;
 			}
 		}
@@ -309,7 +309,7 @@ public class Validator {
 	public boolean allGameBoardSpacesFilled(char[][] coordinateGameBoard) {
 		for (int i = 0; i < GameBoard.GAME_BOARD_DIMENSION; i++) {
 			for (int j = 0; j < GameBoard.GAME_BOARD_DIMENSION; j++) {
-				if (!bo.isSpaceAlreadyOccupied(coordinateGameBoard, i, j)) {
+				if (!bo.isSpaceOccupied(coordinateGameBoard, i, j)) {
 					return false;
 				}
 			}

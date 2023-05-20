@@ -68,7 +68,7 @@ public class Printer {
 		for (int i = 0; i < GameBoard.GAME_BOARD_DIMENSION; i++) {
 			System.out.print((i + 1) + " ");
 			for (int j = 0; j < GameBoard.GAME_BOARD_DIMENSION; j++) {
-				if (bo.isSpaceAlreadyOccupied(gameBoard[i][j])) {
+				if (bo.isSpaceOccupied(gameBoard[i][j])) {
 					System.out.print("| " + gameBoard[i][j] + " ");
 				} else {
 					System.out.print("|" + (j + 1) + "," + (i + 1));
@@ -161,7 +161,7 @@ public class Printer {
 	 * @return the game board space to print
 	 */
 	private String printGameBoardSpace(char gameBoardSpace, int index) {
-		if (!bo.isSpaceAlreadyOccupied(gameBoardSpace)) {
+		if (!bo.isSpaceOccupied(gameBoardSpace)) {
 			switch (index) {
 			case 0:
 				return "1";
