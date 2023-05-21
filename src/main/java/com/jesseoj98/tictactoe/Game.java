@@ -10,6 +10,7 @@ import com.jesseoj98.tictactoe.util.helper.inserter.BoardInserter;
 import com.jesseoj98.tictactoe.util.helper.occupier.BoardOccupier;
 import com.jesseoj98.tictactoe.util.helper.validator.board.BoardValidator;
 import com.jesseoj98.tictactoe.util.helper.validator.input.InputValidator;
+import com.jesseoj98.tictactoe.util.helper.validator.tictactoe.TicTacToeValidator;
 
 /**
  * Tic-tac-toe class represents the tic-tac-toe game
@@ -25,6 +26,8 @@ public class Game {
 	private static final BoardValidator bv = new BoardValidator();
 
 	private static final InputValidator iv = new InputValidator();
+	
+	private static final TicTacToeValidator tttv = new TicTacToeValidator();
 
 	private static final Printer printer = new Printer();
 	private static final Scanner scanner = new Scanner(System.in);
@@ -117,7 +120,7 @@ public class Game {
 
 			bi.insertIntoBoard(gameBoard, userInputSimple - 1, userPlayingCharacter);
 
-			if (validator.ticTacToe(gameBoard, userPlayingCharacter) || bv.areAllBoardSpacesFilled(gameBoard)) {
+			if (tttv.ticTacToe(gameBoard, userPlayingCharacter) || bv.areAllBoardSpacesFilled(gameBoard)) {
 				break;
 			}
 
@@ -130,14 +133,14 @@ public class Game {
 			System.out.println();
 			printer.printSimpleCoordinateGameBoard(gameBoard);
 
-		} while (!validator.ticTacToe(gameBoard, cpuPlayingCharacter)
+		} while (!tttv.ticTacToe(gameBoard, cpuPlayingCharacter)
 				&& !bv.areAllBoardSpacesFilled(gameBoard));
 
 		System.out.println();
 		printer.printSimpleCoordinateGameBoard(gameBoard);
 
-		final boolean playerWon = validator.ticTacToe(gameBoard, userPlayingCharacter);
-		final boolean cpuWon = validator.ticTacToe(gameBoard, cpuPlayingCharacter);
+		final boolean playerWon = tttv.ticTacToe(gameBoard, userPlayingCharacter);
+		final boolean cpuWon = tttv.ticTacToe(gameBoard, cpuPlayingCharacter);
 
 		System.out.println();
 		validator.handleResult(playerWon, cpuWon, gameBoard, userPlayingCharacter, cpuPlayingCharacter);
@@ -188,7 +191,7 @@ public class Game {
 
 			bi.insertIntoBoard(gameBoard, userInputYCoordinate - 1, userInputXCoordinate - 1, userPlayingCharacter);
 
-			if (validator.ticTacToe(gameBoard, userPlayingCharacter) || bv.areAllBoardSpacesFilled(gameBoard)) {
+			if (tttv.ticTacToe(gameBoard, userPlayingCharacter) || bv.areAllBoardSpacesFilled(gameBoard)) {
 				break;
 			}
 
@@ -202,14 +205,14 @@ public class Game {
 			System.out.println();
 			printer.printCoordinatesGameBoard(gameBoard);
 
-		} while (!validator.ticTacToe(gameBoard, cpuPlayingCharacter)
+		} while (!tttv.ticTacToe(gameBoard, cpuPlayingCharacter)
 				&& !bv.areAllBoardSpacesFilled(gameBoard));
 
 		System.out.println();
 		printer.printCoordinatesGameBoard(gameBoard);
 
-		final boolean playerWon = validator.ticTacToe(gameBoard, userPlayingCharacter);
-		final boolean cpuWon = validator.ticTacToe(gameBoard, cpuPlayingCharacter);
+		final boolean playerWon = tttv.ticTacToe(gameBoard, userPlayingCharacter);
+		final boolean cpuWon = tttv.ticTacToe(gameBoard, cpuPlayingCharacter);
 
 		System.out.println();
 		validator.handleResult(playerWon, cpuWon, gameBoard, userPlayingCharacter, cpuPlayingCharacter);
