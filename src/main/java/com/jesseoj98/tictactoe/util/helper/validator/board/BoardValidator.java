@@ -10,7 +10,7 @@ public class BoardValidator {
 
 	/** Instantiation of classes */
 	private static final BoardOccupier bo = new BoardOccupier();
-	
+
 	/**
 	 * Checks whether all spaces are filled on a simple game board
 	 * 
@@ -26,7 +26,7 @@ public class BoardValidator {
 		}
 		return true;
 	}
-	
+
 	/**
 	 * Checks whether all spaces are filled on a coordinate game board
 	 * 

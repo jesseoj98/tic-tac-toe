@@ -22,11 +22,11 @@ public class Game {
 	private static final BoardInserter bi = new BoardInserter();
 	private static final BoardOccupier bo = new BoardOccupier();
 	private static final BoardValidator bv = new BoardValidator();
-	
+
 	private static final CoordinateGenerator cg = new CoordinateGenerator();
 
 	private static final InputValidator iv = new InputValidator();
-	
+
 	private static final TicTacToeValidator tttv = new TicTacToeValidator();
 
 	private static final Printer printer = new Printer();
@@ -115,8 +115,7 @@ public class Game {
 
 			do {
 				userInputSimple = scanner.nextInt();
-			} while (!iv.isValidBoardSpace(userInputSimple)
-					&& bo.isSpaceOccupied(gameBoard, userInputSimple - 1));
+			} while (!iv.isValidBoardSpace(userInputSimple) && bo.isSpaceOccupied(gameBoard, userInputSimple - 1));
 
 			bi.insertIntoBoard(gameBoard, userInputSimple - 1, userPlayingCharacter);
 
@@ -133,8 +132,7 @@ public class Game {
 			System.out.println();
 			printer.printSimpleCoordinateGameBoard(gameBoard);
 
-		} while (!tttv.ticTacToe(gameBoard, cpuPlayingCharacter)
-				&& !bv.areAllBoardSpacesFilled(gameBoard));
+		} while (!tttv.ticTacToe(gameBoard, cpuPlayingCharacter) && !bv.areAllBoardSpacesFilled(gameBoard));
 
 		System.out.println();
 		printer.printSimpleCoordinateGameBoard(gameBoard);
@@ -205,8 +203,7 @@ public class Game {
 			System.out.println();
 			printer.printCoordinatesGameBoard(gameBoard);
 
-		} while (!tttv.ticTacToe(gameBoard, cpuPlayingCharacter)
-				&& !bv.areAllBoardSpacesFilled(gameBoard));
+		} while (!tttv.ticTacToe(gameBoard, cpuPlayingCharacter) && !bv.areAllBoardSpacesFilled(gameBoard));
 
 		System.out.println();
 		printer.printCoordinatesGameBoard(gameBoard);
