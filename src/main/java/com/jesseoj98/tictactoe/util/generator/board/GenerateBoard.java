@@ -5,14 +5,13 @@ import com.jesseoj98.tictactoe.domain.GameBoard;
 /**
  * Generate board class provides implementations to generate game boards
  */
-public class GenerateBoard implements GenerateGameBoard {
+public class GenerateBoard {
 
 	/**
 	 * Generates a simple game board
 	 * 
 	 * @return a simple game board
 	 */
-	@Override
 	public char[] generateSimple() {
 		return new char[GameBoard.GAME_BOARD_SPACES];
 	}
@@ -22,7 +21,6 @@ public class GenerateBoard implements GenerateGameBoard {
 	 * 
 	 * @return a coordinate game board
 	 */
-	@Override
 	public char[][] generateCoordinate() {
 		return new char[GameBoard.GAME_BOARD_DIMENSION][GameBoard.GAME_BOARD_DIMENSION];
 	}

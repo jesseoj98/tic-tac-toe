@@ -8,14 +8,13 @@ import com.jesseoj98.tictactoe.domain.GameBoard;
  * Generate coordinate class provides implementations to generate game
  * coordinates
  */
-public class GenerateCoordinate implements GenerateGameCoordinate {
+public class GenerateCoordinate {
 
 	/**
 	 * Generates a random simple coordinate
 	 * 
 	 * @return a random simple coordinate
 	 */
-	@Override
 	public int generateSimple() {
 		return ThreadLocalRandom.current().nextInt(1, GameBoard.GAME_BOARD_SPACES + 1);
 	}
@@ -25,7 +24,6 @@ public class GenerateCoordinate implements GenerateGameCoordinate {
 	 * 
 	 * @return a random coordinate
 	 */
-	@Override
 	public int generateCoordinate() {
 		return ThreadLocalRandom.current().nextInt(1, GameBoard.GAME_BOARD_DIMENSION + 1);
 	}
