@@ -8,7 +8,7 @@ import com.jesseoj98.tictactoe.domain.GameBoard;
  * Generate coordinate class provides implementations to generate game
  * coordinates
  */
-public class GenerateCoordinate {
+public class CoordinateGenerator {
 
 	/**
 	 * Generates a random simple coordinate

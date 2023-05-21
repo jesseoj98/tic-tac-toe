@@ -5,7 +5,7 @@ import com.jesseoj98.tictactoe.domain.GameBoard;
 /**
  * Generate board class provides implementations to generate game boards
  */
-public class GenerateBoard {
+public class BoardGenerator {
 
 	/**
 	 * Generates a simple game board

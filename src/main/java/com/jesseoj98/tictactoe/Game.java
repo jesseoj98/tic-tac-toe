@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 import com.jesseoj98.tictactoe.util.Printer;
 import com.jesseoj98.tictactoe.util.Validator;
-import com.jesseoj98.tictactoe.util.generator.board.GenerateBoard;
-import com.jesseoj98.tictactoe.util.generator.coordinate.GenerateCoordinate;
+import com.jesseoj98.tictactoe.util.generator.board.BoardGenerator;
+import com.jesseoj98.tictactoe.util.generator.coordinate.CoordinateGenerator;
 import com.jesseoj98.tictactoe.util.helper.inserter.BoardInserter;
 import com.jesseoj98.tictactoe.util.helper.occupier.BoardOccupier;
 import com.jesseoj98.tictactoe.util.helper.validator.board.BoardValidator;
@@ -18,8 +18,8 @@ import com.jesseoj98.tictactoe.util.helper.validator.tictactoe.TicTacToeValidato
 public class Game {
 
 	/** Instantiation of classes */
-	private static final GenerateBoard gb = new GenerateBoard();
-	private static final GenerateCoordinate gc = new GenerateCoordinate();
+	private static final BoardGenerator gb = new BoardGenerator();
+	private static final CoordinateGenerator gc = new CoordinateGenerator();
 
 	private static final BoardOccupier bo = new BoardOccupier();
 	private static final BoardInserter bi = new BoardInserter();
