@@ -3,7 +3,6 @@ package com.jesseoj98.tictactoe;
 import java.util.Scanner;
 
 import com.jesseoj98.tictactoe.util.Printer;
-import com.jesseoj98.tictactoe.util.Validator;
 import com.jesseoj98.tictactoe.util.generator.board.BoardGenerator;
 import com.jesseoj98.tictactoe.util.generator.coordinate.CoordinateGenerator;
 import com.jesseoj98.tictactoe.util.helper.inserter.BoardInserter;
@@ -11,6 +10,7 @@ import com.jesseoj98.tictactoe.util.helper.occupier.BoardOccupier;
 import com.jesseoj98.tictactoe.util.helper.validator.board.BoardValidator;
 import com.jesseoj98.tictactoe.util.helper.validator.input.InputValidator;
 import com.jesseoj98.tictactoe.util.helper.validator.tictactoe.TicTacToeValidator;
+import com.jesseoj98.tictactoe.util.printer.ResultPrinter;
 
 /**
  * Tic-tac-toe class represents the tic-tac-toe game
@@ -27,11 +27,12 @@ public class Game {
 
 	private static final InputValidator iv = new InputValidator();
 
+	private static final ResultPrinter rp = new ResultPrinter();
+
 	private static final TicTacToeValidator tttv = new TicTacToeValidator();
 
 	private static final Printer printer = new Printer();
 	private static final Scanner scanner = new Scanner(System.in);
-	private static final Validator validator = new Validator();
 
 	/**
 	 * Plays the tic-tac-toe game
@@ -141,7 +142,7 @@ public class Game {
 		final boolean cpuWon = tttv.ticTacToe(gameBoard, cpuPlayingCharacter);
 
 		System.out.println();
-		validator.handleResult(playerWon, cpuWon, gameBoard, userPlayingCharacter, cpuPlayingCharacter);
+		rp.handleResult(playerWon, cpuWon, gameBoard, userPlayingCharacter, cpuPlayingCharacter);
 
 	}
 
@@ -212,7 +213,7 @@ public class Game {
 		final boolean cpuWon = tttv.ticTacToe(gameBoard, cpuPlayingCharacter);
 
 		System.out.println();
-		validator.handleResult(playerWon, cpuWon, gameBoard, userPlayingCharacter, cpuPlayingCharacter);
+		rp.handleResult(playerWon, cpuWon, gameBoard, userPlayingCharacter, cpuPlayingCharacter);
 
 	}
 

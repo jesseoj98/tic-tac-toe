@@ -1,12 +1,13 @@
-package com.jesseoj98.tictactoe.util;
+package com.jesseoj98.tictactoe.util.printer;
 
 import com.jesseoj98.tictactoe.domain.Result;
+import com.jesseoj98.tictactoe.util.Printer;
 import com.jesseoj98.tictactoe.util.helper.retriever.ResultRetriever;
 
 /**
- * Validator class provides several validation methods
+ * Result printer class provides implementations to print the results of the game
  */
-public class Validator {
+public class ResultPrinter {
 
 	/** Instantiation of classes */
 	private static final Printer printer = new Printer();
