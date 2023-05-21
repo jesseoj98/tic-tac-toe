@@ -4,7 +4,7 @@ package com.jesseoj98.tictactoe.util.helper.occupier;
  * Board occupier class provides implementations to check game boards for space
  * occupancy
  */
-public class BoardOccupier implements GameBoardOccupier {
+public class BoardOccupier {
 
 	/**
 	 * Checks to see whether a space is already occupied
@@ -13,7 +13,6 @@ public class BoardOccupier implements GameBoardOccupier {
 	 * 
 	 * @return boolean for whether the space is occupied or not
 	 */
-	@Override
 	public boolean isSpaceOccupied(char input) {
 		return input == 'X' || input == 'O';
 	}
@@ -27,7 +26,6 @@ public class BoardOccupier implements GameBoardOccupier {
 	 * @return boolean for whether the space is occupied or not on the simple game
 	 *         board
 	 */
-	@Override
 	public boolean isSpaceOccupied(char[] gameBoard, int input) {
 		return gameBoard[input] == 'X' || gameBoard[input] == 'O';
 	}
@@ -43,7 +41,6 @@ public class BoardOccupier implements GameBoardOccupier {
 	 * @return boolean for whether the space is occupied or not on the coordinate
 	 *         game board
 	 */
-	@Override
 	public boolean isSpaceOccupied(char[][] gameBoard, int xCoordinate, int yCoordinate) {
 		return gameBoard[xCoordinate][yCoordinate] == 'X' || gameBoard[xCoordinate][yCoordinate] == 'O';
 	}

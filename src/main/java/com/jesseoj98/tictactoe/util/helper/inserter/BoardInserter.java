@@ -3,7 +3,7 @@ package com.jesseoj98.tictactoe.util.helper.inserter;
 /**
  * Board inserter class provides implementations to insert into game boards
  */
-public class BoardInserter implements GameBoardInserter {
+public class BoardInserter {
 
 	/**
 	 * Inserts a playing character into the simple game board
@@ -12,7 +12,6 @@ public class BoardInserter implements GameBoardInserter {
 	 * @param userInput        The user input to insert into
 	 * @param playingCharacter The playing character to insert
 	 */
-	@Override
 	public void insertIntoBoard(char[] gameBoard, int userInput, char playingCharacter) {
 		gameBoard[userInput] = playingCharacter;
 	}
@@ -25,7 +24,6 @@ public class BoardInserter implements GameBoardInserter {
 	 * @param yCoordinate      The y coordinate to insert into
 	 * @param playingCharacter The playing character to insert
 	 */
-	@Override
 	public void insertIntoBoard(char[][] gameBoard, int xCoordinate, int yCoordinate, char playingCharacter) {
 		gameBoard[xCoordinate][yCoordinate] = playingCharacter;
 	}
