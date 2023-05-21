@@ -8,7 +8,7 @@ import com.jesseoj98.tictactoe.domain.Coordinate;
 /**
  * Results retriever class defines implementations for retrieving game results
  */
-public class ResultsRetriever {
+public class ResultRetriever {
 
 	/**
 	 * Retrieves the winning simple positions of a tic-tac-toe

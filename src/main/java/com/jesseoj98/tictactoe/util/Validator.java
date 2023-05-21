@@ -1,7 +1,7 @@
 package com.jesseoj98.tictactoe.util;
 
 import com.jesseoj98.tictactoe.domain.Result;
-import com.jesseoj98.tictactoe.util.helper.retriever.ResultsRetriever;
+import com.jesseoj98.tictactoe.util.helper.retriever.ResultRetriever;
 
 /**
  * Validator class provides several validation methods
@@ -11,7 +11,7 @@ public class Validator {
 	/** Instantiation of classes */
 	private static final Printer printer = new Printer();
 
-	private static final ResultsRetriever rv = new ResultsRetriever();
+	private static final ResultRetriever rv = new ResultRetriever();
 
 	/**
 	 * Handles the result of the simple game board
