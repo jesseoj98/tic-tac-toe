@@ -19,11 +19,11 @@ public class Game {
 
 	/** Instantiation of classes */
 	private static final BoardGenerator bg = new BoardGenerator();
-	private static final CoordinateGenerator cg = new CoordinateGenerator();
-
-	private static final BoardOccupier bo = new BoardOccupier();
 	private static final BoardInserter bi = new BoardInserter();
+	private static final BoardOccupier bo = new BoardOccupier();
 	private static final BoardValidator bv = new BoardValidator();
+	
+	private static final CoordinateGenerator cg = new CoordinateGenerator();
 
 	private static final InputValidator iv = new InputValidator();
 	
