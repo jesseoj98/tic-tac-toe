@@ -18,8 +18,8 @@ import com.jesseoj98.tictactoe.util.helper.validator.tictactoe.TicTacToeValidato
 public class Game {
 
 	/** Instantiation of classes */
-	private static final BoardGenerator gb = new BoardGenerator();
-	private static final CoordinateGenerator gc = new CoordinateGenerator();
+	private static final BoardGenerator bg = new BoardGenerator();
+	private static final CoordinateGenerator cg = new CoordinateGenerator();
 
 	private static final BoardOccupier bo = new BoardOccupier();
 	private static final BoardInserter bi = new BoardInserter();
@@ -99,10 +99,10 @@ public class Game {
 		int userInputSimple;
 		int cpuInputSimple;
 
-		final char[] gameBoard = gb.generateSimple();
+		final char[] gameBoard = bg.generateSimple();
 
 		if (letCpuGoFirst) {
-			final int cpuFirstPlay = gc.generateCoordinate();
+			final int cpuFirstPlay = cg.generateCoordinate();
 			bi.insertIntoBoard(gameBoard, cpuFirstPlay - 1, cpuPlayingCharacter);
 		}
 
@@ -125,7 +125,7 @@ public class Game {
 			}
 
 			do {
-				cpuInputSimple = gc.generateSimple();
+				cpuInputSimple = cg.generateSimple();
 			} while (bo.isSpaceOccupied(gameBoard, cpuInputSimple - 1));
 
 			bi.insertIntoBoard(gameBoard, cpuInputSimple - 1, cpuPlayingCharacter);
@@ -162,11 +162,11 @@ public class Game {
 		int cpuInputXCoordinate;
 		int cpuInputYCoordinate;
 
-		final char[][] gameBoard = gb.generateCoordinate();
+		final char[][] gameBoard = bg.generateCoordinate();
 
 		if (letCpuGoFirst) {
-			final int cpuFirstPlayXCoordinate = gc.generateCoordinate();
-			final int cpuFirstPlayYCoordinate = gc.generateCoordinate();
+			final int cpuFirstPlayXCoordinate = cg.generateCoordinate();
+			final int cpuFirstPlayYCoordinate = cg.generateCoordinate();
 			bi.insertIntoBoard(gameBoard, cpuFirstPlayYCoordinate - 1, cpuFirstPlayXCoordinate - 1,
 					cpuPlayingCharacter);
 		}
@@ -196,8 +196,8 @@ public class Game {
 			}
 
 			do {
-				cpuInputXCoordinate = gc.generateCoordinate();
-				cpuInputYCoordinate = gc.generateCoordinate();
+				cpuInputXCoordinate = cg.generateCoordinate();
+				cpuInputYCoordinate = cg.generateCoordinate();
 			} while (bo.isSpaceOccupied(gameBoard, cpuInputYCoordinate - 1, cpuInputXCoordinate - 1));
 
 			bi.insertIntoBoard(gameBoard, cpuInputYCoordinate - 1, cpuInputXCoordinate - 1, cpuPlayingCharacter);
