@@ -3,8 +3,12 @@ package com.jesseoj98.tictactoe.util.helper.validator.board;
 import com.jesseoj98.tictactoe.domain.GameBoard;
 import com.jesseoj98.tictactoe.util.helper.occupier.BoardOccupier;
 
+/**
+ * Board validator class provides implementations to validate game boards
+ */
 public class BoardValidator {
 
+	/** Instantiation of classes */
 	private static final BoardOccupier bo = new BoardOccupier();
 	
 	/**
