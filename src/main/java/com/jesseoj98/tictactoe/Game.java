@@ -12,12 +12,8 @@ import com.jesseoj98.tictactoe.util.helper.validator.input.InputValidator;
 import com.jesseoj98.tictactoe.util.helper.validator.tictactoe.TicTacToeValidator;
 import com.jesseoj98.tictactoe.util.printer.ResultPrinter;
 
-/**
- * Tic-tac-toe class represents the tic-tac-toe game
- */
 public class Game {
 
-	/** Instantiation of classes */
 	private static final BoardGenerator bg = new BoardGenerator();
 	private static final BoardInserter bi = new BoardInserter();
 	private static final BoardOccupier bo = new BoardOccupier();
@@ -34,9 +30,6 @@ public class Game {
 	private static final Printer printer = new Printer();
 	private static final Scanner scanner = new Scanner(System.in);
 
-	/**
-	 * Plays the tic-tac-toe game
-	 */
 	public void playGame() {
 
 		char userInput;
@@ -88,13 +81,6 @@ public class Game {
 
 	}
 
-	/**
-	 * Plays a simple game of tic-tac-toe
-	 * 
-	 * @param userPlayingCharacter the user playing character
-	 * @param cpuPlayingCharacter  the cpu playing character
-	 * @param letCpuGoFirst        whether the cpu is to go first
-	 */
 	private void playSimpleGame(char userPlayingCharacter, char cpuPlayingCharacter, boolean letCpuGoFirst) {
 
 		int userInputSimple;
@@ -146,13 +132,6 @@ public class Game {
 
 	}
 
-	/**
-	 * Plays a coordinate game of tic-tac-toe
-	 * 
-	 * @param userPlayingCharacter the user playing character
-	 * @param cpuPlayingCharacter  the cpu playing character
-	 * @param letCpuGoFirst        whether the cpu is to go first
-	 */
 	private void playCoordinatesGame(char userPlayingCharacter, char cpuPlayingCharacter, boolean letCpuGoFirst) {
 
 		int userInputXCoordinate;

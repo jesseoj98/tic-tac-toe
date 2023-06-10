@@ -1,18 +1,7 @@
 package com.jesseoj98.tictactoe.util.helper.validator.tictactoe;
 
-/**
- * Tic-tac-toe validator class provides implementations to validate if a
- * tic-tac-toe has occurred
- */
 public class TicTacToeValidator {
 
-	/**
-	 * Checks whether a tic tac toe has occured
-	 * 
-	 * @param gameBoard        the simple game board
-	 * @param playingCharacter the playing character
-	 * @return whether or not a tic tac toe occurs
-	 */
 	public boolean ticTacToe(char[] gameBoard, char playingCharacter) {
 		final String ticTacToe = new StringBuilder().append(playingCharacter).append(playingCharacter)
 				.append(playingCharacter).toString();
@@ -39,13 +28,6 @@ public class TicTacToeValidator {
 				|| ticTacToe.equals(backwardDiagonal) || ticTacToe.equals(forwardDiagonal);
 	}
 
-	/**
-	 * Checks whether a tic tac toe has occured
-	 * 
-	 * @param gameBoard        the coordinates game board
-	 * @param playingCharacter the playing character
-	 * @return whether or not a tic tac toe occurs
-	 */
 	public boolean ticTacToe(char[][] gameBoard, char playingCharacter) {
 		final String ticTacToe = new StringBuilder().append(playingCharacter).append(playingCharacter)
 				.append(playingCharacter).toString();

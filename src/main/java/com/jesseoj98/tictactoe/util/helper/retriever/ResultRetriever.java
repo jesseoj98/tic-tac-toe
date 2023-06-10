@@ -5,19 +5,8 @@ import java.util.List;
 
 import com.jesseoj98.tictactoe.domain.Coordinate;
 
-/**
- * Results retriever class defines implementations for retrieving game results
- */
 public class ResultRetriever {
 
-	/**
-	 * Retrieves the winning simple positions of a tic-tac-toe
-	 * 
-	 * @param gameBoard        the simple game board
-	 * @param playingCharacter the playing character
-	 * 
-	 * @return the list of winning simple positions
-	 */
 	public List<Integer> retrieveWinningPositions(char[] gameBoard, char playingCharacter) {
 		final List<Integer> winningPositions = new ArrayList<>();
 		final String ticTacToe = new StringBuilder().append(playingCharacter).append(playingCharacter)
@@ -83,14 +72,6 @@ public class ResultRetriever {
 		return winningPositions;
 	}
 
-	/**
-	 * Retrieves the winning coordinate positions of a tic-tac-toe
-	 * 
-	 * @param gameBoard        the coordinates game board
-	 * @param playingCharacter the playing character
-	 * 
-	 * @return the list of winning coordinate positions
-	 */
 	public List<Coordinate> retrieveWinningPositions(char[][] gameBoard, char playingCharacter) {
 		final List<Coordinate> winningPositions = new ArrayList<>();
 		final String ticTacToe = new StringBuilder().append(playingCharacter).append(playingCharacter)

@@ -4,25 +4,12 @@ import com.jesseoj98.tictactoe.domain.Result;
 import com.jesseoj98.tictactoe.util.Printer;
 import com.jesseoj98.tictactoe.util.helper.retriever.ResultRetriever;
 
-/**
- * Result printer class provides implementations to print the results of the game
- */
 public class ResultPrinter {
 
-	/** Instantiation of classes */
 	private static final Printer printer = new Printer();
 
 	private static final ResultRetriever rv = new ResultRetriever();
 
-	/**
-	 * Handles the result of the simple game board
-	 * 
-	 * @param playerWon            the indicator for if the player won
-	 * @param cpuWon               the indicator for if the cpu won
-	 * @param gameBoard            the simple game board
-	 * @param userPlayingCharacter the user playing character
-	 * @param cpuPlayingCharacter  the cpu playing character
-	 */
 	public void handleResult(boolean playerWon, boolean cpuWon, char[] gameBoard, char userPlayingCharacter,
 			char cpuPlayingCharacter) {
 		if (!playerWon && !cpuWon) {
@@ -36,15 +23,6 @@ public class ResultPrinter {
 		}
 	}
 
-	/**
-	 * Handles the result of the coordinates game board
-	 * 
-	 * @param playerWon            the indicator for if the player won
-	 * @param cpuWon               the indicator for if the cpu won
-	 * @param gameBoard            the coordinates game board
-	 * @param userPlayingCharacter the user playing character
-	 * @param cpuPlayingCharacter  the cpu playing character
-	 */
 	public void handleResult(boolean playerWon, boolean cpuWon, char[][] gameBoard, char userPlayingCharacter,
 			char cpuPlayingCharacter) {
 		if (!playerWon && !cpuWon) {

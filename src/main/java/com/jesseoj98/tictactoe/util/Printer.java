@@ -7,18 +7,10 @@ import com.jesseoj98.tictactoe.domain.GameBoard;
 import com.jesseoj98.tictactoe.domain.Result;
 import com.jesseoj98.tictactoe.util.helper.occupier.BoardOccupier;
 
-/**
- * Printer class defines several functions to help with printing state of game
- * boards
- */
 public class Printer {
 
-	/** Instantation of helper class */
 	private static final BoardOccupier bo = new BoardOccupier();
 
-	/**
-	 * Prints a simple sample coordinates game board
-	 */
 	public void printSimpleCoordinateSampleGameBoard() {
 		System.out.println("\nSimple Game Board");
 		System.out.println("\nEnter a single digit to place your move\n");
@@ -37,11 +29,6 @@ public class Printer {
 		}
 	}
 
-	/**
-	 * Prints a simple coordinates game board
-	 * 
-	 * @param gameBoard the simple game board
-	 */
 	public void printSimpleCoordinateGameBoard(char[] gameBoard) {
 		printSimpleCoordinateGameBoardDivider();
 		for (int i = 0; i < GameBoard.GAME_BOARD_SPACES; i++) {
@@ -58,11 +45,6 @@ public class Printer {
 		}
 	}
 
-	/**
-	 * Prints a coordinates game board
-	 * 
-	 * @param gameBoard the coordinates game board
-	 */
 	public void printCoordinatesGameBoard(char[][] gameBoard) {
 		printTopOfCoordinatesGameBoard();
 		for (int i = 0; i < GameBoard.GAME_BOARD_DIMENSION; i++) {
@@ -82,9 +64,6 @@ public class Printer {
 		printBottomOfCoordinatesGameBoard();
 	}
 
-	/**
-	 * Prints a sample coordinates game board
-	 */
 	public void printCoordinatesSampleGameBoard() {
 		System.out.println("\nCoordinates Game Board");
 		System.out.println("\nEnter an x coordinate and a y coordinate to place your move\n");
@@ -100,66 +79,32 @@ public class Printer {
 		}
 	}
 
-	/**
-	 * Prints the top of the coordinates game board
-	 */
 	private void printTopOfCoordinatesGameBoard() {
 		System.out.println("    1   2   3");
 		printCoordinatesGameBoardDivider();
 	}
 
-	/**
-	 * Prints a simple coordinate game board divider
-	 */
 	private void printSimpleCoordinateGameBoardDivider() {
 		System.out.println("|---|---|---|");
 	}
 
-	/**
-	 * Prints a coordinates game board divider
-	 */
 	private void printCoordinatesGameBoardDivider() {
 		System.out.println("  |---|---|---|");
 	}
 
-	/**
-	 * Prints the bottom of a coordinates game board
-	 */
 	private void printBottomOfCoordinatesGameBoard() {
 		printCoordinatesGameBoardDivider();
 		System.out.println("    1   2   3");
 	}
 
-	/**
-	 * Determines if there is a match at the end of a simple row
-	 * 
-	 * @param index the index to check
-	 * 
-	 * @return whether there is a match at the end of a simple row
-	 */
 	private boolean endOfSimpleRowMatch(int index) {
 		return index == 2 || index == 5 || index == 8;
 	}
 
-	/**
-	 * Determines if there is a match at the end of a coordinates row
-	 * 
-	 * @param index the index to check
-	 * 
-	 * @return whether there is a match at the end of a coordinates row
-	 */
 	private boolean endOfRowMatch(int index) {
 		return index != GameBoard.GAME_BOARD_DIMENSION - 1;
 	}
 
-	/**
-	 * Prints a game board space
-	 * 
-	 * @param gameBoardSpace the game board space to print
-	 * @param index          the index to check
-	 * 
-	 * @return the game board space to print
-	 */
 	private String printGameBoardSpace(char gameBoardSpace, int index) {
 		if (!bo.isSpaceOccupied(gameBoardSpace)) {
 			switch (index) {
@@ -189,11 +134,6 @@ public class Printer {
 		}
 	}
 
-	/**
-	 * Handles the result of the game by printing out the winning message
-	 * 
-	 * @param result the result of the game
-	 */
 	public void printResult(Result result) {
 		if (result.isPlayerWon()) {
 			System.out.print("Congratulations! You won with positions ");
@@ -207,13 +147,6 @@ public class Printer {
 		}
 	}
 
-	/**
-	 * Prints out the winning integer positions
-	 * 
-	 * @param positions the winning integer positions
-	 * 
-	 * @return the winning integer positions as a String
-	 */
 	private String printPositions(List<Integer> positions) {
 		final StringBuilder spots = new StringBuilder();
 		for (int i = 0; i < positions.size(); i++) {
@@ -227,13 +160,6 @@ public class Printer {
 
 	}
 
-	/**
-	 * Prints out the winning coordinate positions
-	 * 
-	 * @param coordinates the winning coordinate positions
-	 * 
-	 * @return the winning coordinate positions as a String
-	 */
 	private String printCoordinates(List<Coordinate> coordinates) {
 		final StringBuilder spots = new StringBuilder();
 		for (int i = 0; i < coordinates.size(); i++) {
