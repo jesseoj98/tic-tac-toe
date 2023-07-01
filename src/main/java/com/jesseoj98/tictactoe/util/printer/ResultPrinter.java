@@ -1,12 +1,12 @@
 package com.jesseoj98.tictactoe.util.printer;
 
 import com.jesseoj98.tictactoe.domain.Result;
-import com.jesseoj98.tictactoe.util.Printer;
 import com.jesseoj98.tictactoe.util.helper.retriever.ResultRetriever;
+import com.jesseoj98.tictactoe.util.printer.result.ResultsPrinter;
 
 public class ResultPrinter {
 
-	private static final Printer printer = new Printer();
+	private static final ResultsPrinter rp = new ResultsPrinter();
 
 	private static final ResultRetriever rv = new ResultRetriever();
 
@@ -18,7 +18,7 @@ public class ResultPrinter {
 			final Result result = new Result(playerWon, cpuWon,
 					rv.retrieveWinningPositions(gameBoard, playerWon ? userPlayingCharacter : cpuPlayingCharacter),
 					null);
-			printer.printResult(result);
+			rp.printResult(result);
 			System.out.println();
 		}
 	}
@@ -30,7 +30,7 @@ public class ResultPrinter {
 		} else {
 			final Result result = new Result(playerWon, cpuWon, null,
 					rv.retrieveWinningPositions(gameBoard, playerWon ? userPlayingCharacter : cpuPlayingCharacter));
-			printer.printResult(result);
+			rp.printResult(result);
 			System.out.println();
 		}
 	}
