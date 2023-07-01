@@ -7,7 +7,6 @@ import com.jesseoj98.tictactoe.util.printer.result.ResultsPrinter;
 public class ResultPrinter {
 
 	private static final ResultsPrinter rp = new ResultsPrinter();
-
 	private static final ResultRetriever rv = new ResultRetriever();
 
 	public void handleResult(boolean playerWon, boolean cpuWon, char[] gameBoard, char userPlayingCharacter,
