@@ -17,13 +17,13 @@ public class ActualCoordinateBoardPrinter {
     private static final SpacePrinter sp = new SpacePrinter();
 
     public void printActualBoardSequence(char[][] gameBoard) {
-        bsp.printNumbers(4, 3);
+        bsp.printNumbers(4, 3, true);
         printActualBoard(gameBoard);
-        bsp.printNumbers(4, 3);
+        bsp.printNumbers(4, 3, true);
     }
 
     private void printActualBoard(char[][] gameBoard) {
-        bsp.printBoardDivider(0, 3);
+        bsp.printBoardDivider(2, 3);
         for (int i = 0; i < GameBoard.GAME_BOARD_DIMENSION; i++) {
             System.out.print((i + 1) + " ");
             for (int j = 0; j < GameBoard.GAME_BOARD_DIMENSION; j++) {
@@ -35,9 +35,9 @@ public class ActualCoordinateBoardPrinter {
             }
             System.out.println("| " + (i + 1));
             if (i != GameBoard.GAME_BOARD_DIMENSION - 1) {
-                bsp.printBoardDivider(0, 3);
+                bsp.printBoardDivider(2, 3);
             }
         }
-        bsp.printBoardDivider(0, 3);
+        bsp.printBoardDivider(2, 3);
     }
 }
