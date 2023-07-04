@@ -105,7 +105,7 @@ public class Game {
 
 			do {
 				userInputSimple = scanner.nextInt();
-			} while (!iv.isValidBoardSpace(userInputSimple) && bo.isSpaceOccupied(gameBoard, userInputSimple - 1));
+			} while (!iv.isValidBoardSpace(userInputSimple) || bo.isSpaceOccupied(gameBoard, userInputSimple - 1));
 
 			bi.insertIntoBoard(gameBoard, userInputSimple - 1, userPlayingCharacter);
 
@@ -160,15 +160,16 @@ public class Game {
 			System.out.print("\nEnter an x coordinate to place your move: ");
 
 			do {
-				userInputXCoordinate = scanner.nextInt();
-			} while (!iv.isValidCoordinatesSpace(userInputXCoordinate));
+				do {
+					userInputXCoordinate = scanner.nextInt();
+				} while (!iv.isValidCoordinatesSpace(userInputXCoordinate));
 
-			System.out.print("Enter a y coordinate to place your move: ");
+				System.out.print("Enter a y coordinate to place your move: ");
 
-			do {
-				userInputYCoordinate = scanner.nextInt();
-			} while (!iv.isValidCoordinatesSpace(userInputYCoordinate)
-					&& bo.isSpaceOccupied(gameBoard, userInputYCoordinate - 1, userInputXCoordinate - 1));
+				do {
+					userInputYCoordinate = scanner.nextInt();
+				} while (!iv.isValidCoordinatesSpace(userInputYCoordinate));
+			} while (bo.isSpaceOccupied(gameBoard, userInputYCoordinate - 1, userInputXCoordinate - 1));
 
 			bi.insertIntoBoard(gameBoard, userInputYCoordinate - 1, userInputXCoordinate - 1, userPlayingCharacter);
 
