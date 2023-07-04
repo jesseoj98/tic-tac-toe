@@ -31,8 +31,8 @@ public class Game {
 
 	private static final ResultPrinter resultPrinter = new ResultPrinter();
 
-	private static final SampleCoordinateBoardPrinter cbp = new SampleCoordinateBoardPrinter();
-	private static final SampleSimpleBoardPrinter sbp = new SampleSimpleBoardPrinter();
+	private static final SampleCoordinateBoardPrinter sampleCoordinateBoardPrinter = new SampleCoordinateBoardPrinter();
+	private static final SampleSimpleBoardPrinter sampleSimpleBoardPrinter = new SampleSimpleBoardPrinter();
 
 	private static final Scanner scanner = new Scanner(System.in);
 
@@ -64,8 +64,8 @@ public class Game {
 
 		letCpuGoFirst = inputValidator.isYes(userInput);
 
-		sbp.printSampleBoardSequence();
-		cbp.printSampleBoardSequence();
+		sampleSimpleBoardPrinter.printSampleBoardSequence();
+		sampleCoordinateBoardPrinter.printSampleBoardSequence();
 
 		System.out.print("\nChoose a game board type (s/c): ");
 
