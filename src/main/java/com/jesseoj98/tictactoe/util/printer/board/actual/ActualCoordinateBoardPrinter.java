@@ -6,9 +6,10 @@ import com.jesseoj98.tictactoe.util.printer.board.structure.BoardStructurePrinte
 
 public class ActualCoordinateBoardPrinter {
 
+    private static final BoardOccupier boardOccupier = new BoardOccupier();
+
     private static final BoardStructurePrinter boardStructurePrinter = new BoardStructurePrinter();
 
-    private static final BoardOccupier boardOccupier = new BoardOccupier();
 
     public void printActualBoardSequence(char[][] gameBoard) {
         boardStructurePrinter.printNumbers(4, 3, true);

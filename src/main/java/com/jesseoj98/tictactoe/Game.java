@@ -17,25 +17,26 @@ import com.jesseoj98.tictactoe.util.printer.board.sample.SampleSimpleBoardPrinte
 
 public class Game {
 
+	private static final ActualCoordinateBoardPrinter actualCoordinateBoardPrinter = new ActualCoordinateBoardPrinter();
+	private static final ActualSimpleBoardPrinter actualSimpleBoardPrinter = new ActualSimpleBoardPrinter();
+
 	private static final BoardGenerator boardGenerator = new BoardGenerator();
 	private static final BoardInserter boardInserter = new BoardInserter();
 	private static final BoardOccupier boardOccupier = new BoardOccupier();
 	private static final BoardValidator boardValidator = new BoardValidator();
 
-	private static final SampleCoordinateBoardPrinter cbp = new SampleCoordinateBoardPrinter();
-	private static final SampleSimpleBoardPrinter sbp = new SampleSimpleBoardPrinter();
-
 	private static final CoordinateGenerator coordinateGenerator = new CoordinateGenerator();
-
+	
 	private static final InputValidator inputValidator = new InputValidator();
 
 	private static final ResultPrinter resultPrinter = new ResultPrinter();
 
-	private static final TicTacToeValidator ticTacToeValidator = new TicTacToeValidator();
+	private static final SampleCoordinateBoardPrinter cbp = new SampleCoordinateBoardPrinter();
+	private static final SampleSimpleBoardPrinter sbp = new SampleSimpleBoardPrinter();
 
-	private static final ActualCoordinateBoardPrinter actualCoordinateBoardPrinter = new ActualCoordinateBoardPrinter();
-	private static final ActualSimpleBoardPrinter actualSimpleBoardPrinter = new ActualSimpleBoardPrinter();
 	private static final Scanner scanner = new Scanner(System.in);
+
+	private static final TicTacToeValidator ticTacToeValidator = new TicTacToeValidator();
 
 	public void playGame() {
 

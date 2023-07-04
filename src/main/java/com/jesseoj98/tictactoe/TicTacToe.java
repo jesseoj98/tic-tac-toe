@@ -6,9 +6,10 @@ import com.jesseoj98.tictactoe.util.helper.validator.input.InputValidator;
 
 public class TicTacToe {
 
+	private static final Game game = new Game();
+
 	private static final InputValidator inputValidator = new InputValidator();
 
-	private static final Game game = new Game();
 	private static final Scanner scanner = new Scanner(System.in);
 
 	public static void main(String[] args) {
