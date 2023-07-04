@@ -4,10 +4,10 @@ import com.jesseoj98.tictactoe.util.helper.occupier.BoardOccupier;
 
 public class SpacePrinter {
 
-    private static final BoardOccupier bo = new BoardOccupier();
+    private static final BoardOccupier boardOccupier = new BoardOccupier();
 
     public String printSpace(char space, int index) {
-        if (!bo.isSpaceOccupied(space)) {
+        if (!boardOccupier.isSpaceOccupied(space)) {
             return switch (index) {
                 case 0 -> "1";
                 case 1 -> "2";

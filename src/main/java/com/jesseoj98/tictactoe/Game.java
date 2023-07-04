@@ -17,24 +17,24 @@ import com.jesseoj98.tictactoe.util.printer.board.sample.SampleSimpleBoardPrinte
 
 public class Game {
 
-	private static final BoardGenerator bg = new BoardGenerator();
-	private static final BoardInserter bi = new BoardInserter();
-	private static final BoardOccupier bo = new BoardOccupier();
-	private static final BoardValidator bv = new BoardValidator();
+	private static final BoardGenerator boardGenerator = new BoardGenerator();
+	private static final BoardInserter boardInserter = new BoardInserter();
+	private static final BoardOccupier boardOccupier = new BoardOccupier();
+	private static final BoardValidator boardValidator = new BoardValidator();
 
 	private static final SampleCoordinateBoardPrinter cbp = new SampleCoordinateBoardPrinter();
 	private static final SampleSimpleBoardPrinter sbp = new SampleSimpleBoardPrinter();
 
-	private static final CoordinateGenerator cg = new CoordinateGenerator();
+	private static final CoordinateGenerator coordinateGenerator = new CoordinateGenerator();
 
-	private static final InputValidator iv = new InputValidator();
+	private static final InputValidator inputValidator = new InputValidator();
 
-	private static final ResultPrinter rp = new ResultPrinter();
+	private static final ResultPrinter resultPrinter = new ResultPrinter();
 
-	private static final TicTacToeValidator tttv = new TicTacToeValidator();
+	private static final TicTacToeValidator ticTacToeValidator = new TicTacToeValidator();
 
-	private static final ActualCoordinateBoardPrinter acbp = new ActualCoordinateBoardPrinter();
-	private static final ActualSimpleBoardPrinter asbp = new ActualSimpleBoardPrinter();
+	private static final ActualCoordinateBoardPrinter actualCoordinateBoardPrinter = new ActualCoordinateBoardPrinter();
+	private static final ActualSimpleBoardPrinter actualSimpleBoardPrinter = new ActualSimpleBoardPrinter();
 	private static final Scanner scanner = new Scanner(System.in);
 
 	public void playGame() {
@@ -49,7 +49,7 @@ public class Game {
 
 		do {
 			userInput = scanner.next().charAt(0);
-		} while (!iv.isValidPlayingCharacter(userInput));
+		} while (!inputValidator.isValidPlayingCharacter(userInput));
 
 		userPlayingCharacter = Character.toUpperCase(userInput);
 
@@ -59,9 +59,9 @@ public class Game {
 
 		do {
 			userInput = scanner.next().charAt(0);
-		} while (iv.isYesOrNo(userInput));
+		} while (inputValidator.isYesOrNo(userInput));
 
-		letCpuGoFirst = iv.isYes(userInput);
+		letCpuGoFirst = inputValidator.isYes(userInput);
 
 		sbp.printSampleBoardSequence();
 		cbp.printSampleBoardSequence();
@@ -70,7 +70,7 @@ public class Game {
 
 		do {
 			userInput = scanner.next().charAt(0);
-		} while (!iv.isValidBoardType(userInput));
+		} while (!inputValidator.isValidBoardType(userInput));
 
 		System.out.println("\n---------------");
 
@@ -89,15 +89,15 @@ public class Game {
 		int userInputSimple;
 		int cpuInputSimple;
 
-		final char[] gameBoard = bg.generateSimple();
+		final char[] gameBoard = boardGenerator.generateSimple();
 
 		if (letCpuGoFirst) {
-			final int cpuFirstPlay = cg.generateCoordinate();
-			bi.insertIntoBoard(gameBoard, cpuFirstPlay - 1, cpuPlayingCharacter);
+			final int cpuFirstPlay = coordinateGenerator.generateCoordinate();
+			boardInserter.insertIntoBoard(gameBoard, cpuFirstPlay - 1, cpuPlayingCharacter);
 		}
 
 		System.out.println();
-		asbp.printActualBoardSequence(gameBoard);
+		actualSimpleBoardPrinter.printActualBoardSequence(gameBoard);
 
 		do {
 
@@ -105,33 +105,33 @@ public class Game {
 
 			do {
 				userInputSimple = scanner.nextInt();
-			} while (!iv.isValidBoardSpace(userInputSimple) || bo.isSpaceOccupied(gameBoard, userInputSimple - 1));
+			} while (!inputValidator.isValidBoardSpace(userInputSimple) || boardOccupier.isSpaceOccupied(gameBoard, userInputSimple - 1));
 
-			bi.insertIntoBoard(gameBoard, userInputSimple - 1, userPlayingCharacter);
+			boardInserter.insertIntoBoard(gameBoard, userInputSimple - 1, userPlayingCharacter);
 
-			if (tttv.ticTacToe(gameBoard, userPlayingCharacter) || bv.areAllBoardSpacesFilled(gameBoard)) {
+			if (ticTacToeValidator.ticTacToe(gameBoard, userPlayingCharacter) || boardValidator.areAllBoardSpacesFilled(gameBoard)) {
 				break;
 			}
 
 			do {
-				cpuInputSimple = cg.generateSimple();
-			} while (bo.isSpaceOccupied(gameBoard, cpuInputSimple - 1));
+				cpuInputSimple = coordinateGenerator.generateSimple();
+			} while (boardOccupier.isSpaceOccupied(gameBoard, cpuInputSimple - 1));
 
-			bi.insertIntoBoard(gameBoard, cpuInputSimple - 1, cpuPlayingCharacter);
+			boardInserter.insertIntoBoard(gameBoard, cpuInputSimple - 1, cpuPlayingCharacter);
 
 			System.out.println();
-			asbp.printActualBoardSequence(gameBoard);
+			actualSimpleBoardPrinter.printActualBoardSequence(gameBoard);
 
-		} while (!tttv.ticTacToe(gameBoard, cpuPlayingCharacter) && !bv.areAllBoardSpacesFilled(gameBoard));
-
-		System.out.println();
-		asbp.printActualBoardSequence(gameBoard);
-
-		final boolean playerWon = tttv.ticTacToe(gameBoard, userPlayingCharacter);
-		final boolean cpuWon = tttv.ticTacToe(gameBoard, cpuPlayingCharacter);
+		} while (!ticTacToeValidator.ticTacToe(gameBoard, cpuPlayingCharacter) && !boardValidator.areAllBoardSpacesFilled(gameBoard));
 
 		System.out.println();
-		rp.handleResult(playerWon, cpuWon, gameBoard, userPlayingCharacter, cpuPlayingCharacter);
+		actualSimpleBoardPrinter.printActualBoardSequence(gameBoard);
+
+		final boolean playerWon = ticTacToeValidator.ticTacToe(gameBoard, userPlayingCharacter);
+		final boolean cpuWon = ticTacToeValidator.ticTacToe(gameBoard, cpuPlayingCharacter);
+
+		System.out.println();
+		resultPrinter.handleResult(playerWon, cpuWon, gameBoard, userPlayingCharacter, cpuPlayingCharacter);
 
 	}
 
@@ -143,17 +143,17 @@ public class Game {
 		int cpuInputXCoordinate;
 		int cpuInputYCoordinate;
 
-		final char[][] gameBoard = bg.generateCoordinate();
+		final char[][] gameBoard = boardGenerator.generateCoordinate();
 
 		if (letCpuGoFirst) {
-			final int cpuFirstPlayXCoordinate = cg.generateCoordinate();
-			final int cpuFirstPlayYCoordinate = cg.generateCoordinate();
-			bi.insertIntoBoard(gameBoard, cpuFirstPlayYCoordinate - 1, cpuFirstPlayXCoordinate - 1,
+			final int cpuFirstPlayXCoordinate = coordinateGenerator.generateCoordinate();
+			final int cpuFirstPlayYCoordinate = coordinateGenerator.generateCoordinate();
+			boardInserter.insertIntoBoard(gameBoard, cpuFirstPlayYCoordinate - 1, cpuFirstPlayXCoordinate - 1,
 					cpuPlayingCharacter);
 		}
 
 		System.out.println();
-		acbp.printActualBoardSequence(gameBoard);
+		actualCoordinateBoardPrinter.printActualBoardSequence(gameBoard);
 
 		do {
 
@@ -163,42 +163,42 @@ public class Game {
 
 				do {
 					userInputXCoordinate = scanner.nextInt();
-				} while (iv.isValidCoordinatesSpace(userInputXCoordinate));
+				} while (inputValidator.isValidCoordinatesSpace(userInputXCoordinate));
 
 				System.out.print("Enter a y coordinate to place your move: ");
 
 				do {
 					userInputYCoordinate = scanner.nextInt();
-				} while (iv.isValidCoordinatesSpace(userInputYCoordinate));
+				} while (inputValidator.isValidCoordinatesSpace(userInputYCoordinate));
 
-			} while (bo.isSpaceOccupied(gameBoard, userInputYCoordinate - 1, userInputXCoordinate - 1));
+			} while (boardOccupier.isSpaceOccupied(gameBoard, userInputYCoordinate - 1, userInputXCoordinate - 1));
 
-			bi.insertIntoBoard(gameBoard, userInputYCoordinate - 1, userInputXCoordinate - 1, userPlayingCharacter);
+			boardInserter.insertIntoBoard(gameBoard, userInputYCoordinate - 1, userInputXCoordinate - 1, userPlayingCharacter);
 
-			if (tttv.ticTacToe(gameBoard, userPlayingCharacter) || bv.areAllBoardSpacesFilled(gameBoard)) {
+			if (ticTacToeValidator.ticTacToe(gameBoard, userPlayingCharacter) || boardValidator.areAllBoardSpacesFilled(gameBoard)) {
 				break;
 			}
 
 			do {
-				cpuInputXCoordinate = cg.generateCoordinate();
-				cpuInputYCoordinate = cg.generateCoordinate();
-			} while (bo.isSpaceOccupied(gameBoard, cpuInputYCoordinate - 1, cpuInputXCoordinate - 1));
+				cpuInputXCoordinate = coordinateGenerator.generateCoordinate();
+				cpuInputYCoordinate = coordinateGenerator.generateCoordinate();
+			} while (boardOccupier.isSpaceOccupied(gameBoard, cpuInputYCoordinate - 1, cpuInputXCoordinate - 1));
 
-			bi.insertIntoBoard(gameBoard, cpuInputYCoordinate - 1, cpuInputXCoordinate - 1, cpuPlayingCharacter);
+			boardInserter.insertIntoBoard(gameBoard, cpuInputYCoordinate - 1, cpuInputXCoordinate - 1, cpuPlayingCharacter);
 
 			System.out.println();
-			acbp.printActualBoardSequence(gameBoard);
+			actualCoordinateBoardPrinter.printActualBoardSequence(gameBoard);
 
-		} while (!tttv.ticTacToe(gameBoard, cpuPlayingCharacter) && !bv.areAllBoardSpacesFilled(gameBoard));
-
-		System.out.println();
-		acbp.printActualBoardSequence(gameBoard);
-
-		final boolean playerWon = tttv.ticTacToe(gameBoard, userPlayingCharacter);
-		final boolean cpuWon = tttv.ticTacToe(gameBoard, cpuPlayingCharacter);
+		} while (!ticTacToeValidator.ticTacToe(gameBoard, cpuPlayingCharacter) && !boardValidator.areAllBoardSpacesFilled(gameBoard));
 
 		System.out.println();
-		rp.handleResult(playerWon, cpuWon, gameBoard, userPlayingCharacter, cpuPlayingCharacter);
+		actualCoordinateBoardPrinter.printActualBoardSequence(gameBoard);
+
+		final boolean playerWon = ticTacToeValidator.ticTacToe(gameBoard, userPlayingCharacter);
+		final boolean cpuWon = ticTacToeValidator.ticTacToe(gameBoard, cpuPlayingCharacter);
+
+		System.out.println();
+		resultPrinter.handleResult(playerWon, cpuWon, gameBoard, userPlayingCharacter, cpuPlayingCharacter);
 
 	}
 

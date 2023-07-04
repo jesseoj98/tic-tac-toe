@@ -6,14 +6,14 @@ import com.jesseoj98.tictactoe.util.printer.board.structure.BoardStructurePrinte
 
 public class SampleCoordinateBoardPrinter implements SampleBoardPrinter {
 
-    private static final BoardStructurePrinter bsp = new BoardStructurePrinter();
+    private static final BoardStructurePrinter boardStructurePrinter = new BoardStructurePrinter();
 
-    private static final PrinterValidator pv = new PrinterValidator();
+    private static final PrinterValidator printerValidator = new PrinterValidator();
 
     @Override
     public void printSampleBoardSequence() {
         printInstructions();
-        bsp.printBoardDivider(0, 3);
+        boardStructurePrinter.printBoardDivider(0, 3);
         printSampleBoard();
     }
 
@@ -21,9 +21,9 @@ public class SampleCoordinateBoardPrinter implements SampleBoardPrinter {
         for (int i = 0; i < GameBoard.GAME_BOARD_DIMENSION; i++) {
             for (int j = 0; j < GameBoard.GAME_BOARD_DIMENSION; j++) {
                 System.out.print("|" + (j + 1) + "," + (i + 1));
-                if (!pv.endOfRowMatch(j)) {
+                if (!printerValidator.endOfRowMatch(j)) {
                     System.out.println("|");
-                    bsp.printBoardDivider(0, 3);
+                    boardStructurePrinter.printBoardDivider(0, 3);
                 }
             }
         }
