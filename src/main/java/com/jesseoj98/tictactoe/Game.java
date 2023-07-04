@@ -59,7 +59,7 @@ public class Game {
 
 		do {
 			userInput = scanner.next().charAt(0);
-		} while (!iv.isYesOrNo(userInput));
+		} while (iv.isYesOrNo(userInput));
 
 		letCpuGoFirst = iv.isYes(userInput);
 
@@ -162,13 +162,13 @@ public class Game {
 			do {
 				do {
 					userInputXCoordinate = scanner.nextInt();
-				} while (!iv.isValidCoordinatesSpace(userInputXCoordinate));
+				} while (iv.isValidCoordinatesSpace(userInputXCoordinate));
 
 				System.out.print("Enter a y coordinate to place your move: ");
 
 				do {
 					userInputYCoordinate = scanner.nextInt();
-				} while (!iv.isValidCoordinatesSpace(userInputYCoordinate));
+				} while (iv.isValidCoordinatesSpace(userInputYCoordinate));
 			} while (bo.isSpaceOccupied(gameBoard, userInputYCoordinate - 1, userInputXCoordinate - 1));
 
 			bi.insertIntoBoard(gameBoard, userInputYCoordinate - 1, userInputXCoordinate - 1, userPlayingCharacter);

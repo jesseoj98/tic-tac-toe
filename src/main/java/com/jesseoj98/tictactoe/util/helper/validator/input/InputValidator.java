@@ -7,7 +7,7 @@ public class InputValidator {
 	}
 
 	public boolean isYesOrNo(char input) {
-		return input == 'y' || input == 'Y' || input == 'n' || input == 'N';
+		return input != 'y' && input != 'Y' && input != 'n' && input != 'N';
 	}
 
 	public boolean isYes(char input) {
@@ -24,7 +24,7 @@ public class InputValidator {
 	}
 
 	public boolean isValidCoordinatesSpace(int input) {
-		return input == 1 || input == 2 || input == 3;
+		return input != 1 && input != 2 && input != 3;
 	}
 
 }

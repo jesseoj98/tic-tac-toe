@@ -21,7 +21,7 @@ public class TicTacToe {
 
 			do {
 				playAgain = scanner.next().charAt(0);
-			} while (!iv.isYesOrNo(playAgain));
+			} while (iv.isYesOrNo(playAgain));
 
 			System.out.println();
 
