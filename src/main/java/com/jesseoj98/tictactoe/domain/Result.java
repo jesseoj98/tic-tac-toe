@@ -5,13 +5,13 @@ import java.util.Objects;
 
 public class Result {
 
-	private boolean playerWon;
+	private final boolean playerWon;
 
-	private boolean cpuWon;
+	private final boolean cpuWon;
 
-	private List<Integer> winningSimpleCoordinates;
+	private final List<Integer> winningSimpleCoordinates;
 
-	private List<Coordinate> winningCoordinates;
+	private final List<Coordinate> winningCoordinates;
 
 	public Result(boolean playerWon, boolean cpuWon, List<Integer> winningSimpleCoordinates,
 			List<Coordinate> winningCoordinates) {

@@ -4,9 +4,9 @@ import java.util.Objects;
 
 public class Coordinate {
 
-	private int x;
+	private final int x;
 
-	private int y;
+	private final int y;
 
 	public Coordinate(int x, int y) {
 		this.x = x;
