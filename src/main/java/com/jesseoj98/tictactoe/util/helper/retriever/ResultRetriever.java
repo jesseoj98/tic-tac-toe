@@ -9,25 +9,19 @@ public class ResultRetriever {
 
 	public List<Integer> retrieveWinningPositions(char[] gameBoard, char playingCharacter) {
 		final List<Integer> winningPositions = new ArrayList<>();
-		final String ticTacToe = new StringBuilder().append(playingCharacter).append(playingCharacter)
-				.append(playingCharacter).toString();
+		final String ticTacToe = String.valueOf(playingCharacter) + playingCharacter +
+				playingCharacter;
 
-		final String topRow = new StringBuilder().append(gameBoard[0]).append(gameBoard[1]).append(gameBoard[2])
-				.toString();
-		final String middleRow = new StringBuilder().append(gameBoard[3]).append(gameBoard[4]).append(gameBoard[5])
-				.toString();
-		final String bottomRow = new StringBuilder().append(gameBoard[6]).append(gameBoard[7]).append(gameBoard[8])
-				.toString();
-		final String leftColumn = new StringBuilder().append(gameBoard[0]).append(gameBoard[3]).append(gameBoard[6])
-				.toString();
-		final String middleColumn = new StringBuilder().append(gameBoard[1]).append(gameBoard[4]).append(gameBoard[7])
-				.toString();
-		final String rightColumn = new StringBuilder().append(gameBoard[2]).append(gameBoard[5]).append(gameBoard[8])
-				.toString();
-		final String backwardDiagonal = new StringBuilder().append(gameBoard[0]).append(gameBoard[4])
-				.append(gameBoard[8]).toString();
-		final String forwardDiagonal = new StringBuilder().append(gameBoard[2]).append(gameBoard[4])
-				.append(gameBoard[6]).toString();
+		final String topRow = String.valueOf(gameBoard[0]) + gameBoard[1] + gameBoard[2];
+		final String middleRow = String.valueOf(gameBoard[3]) + gameBoard[4] + gameBoard[5];
+		final String bottomRow = String.valueOf(gameBoard[6]) + gameBoard[7] + gameBoard[8];
+		final String leftColumn = String.valueOf(gameBoard[0]) + gameBoard[3] + gameBoard[6];
+		final String middleColumn = String.valueOf(gameBoard[1]) + gameBoard[4] + gameBoard[7];
+		final String rightColumn = String.valueOf(gameBoard[2]) + gameBoard[5] + gameBoard[8];
+		final String backwardDiagonal = String.valueOf(gameBoard[0]) + gameBoard[4] +
+				gameBoard[8];
+		final String forwardDiagonal = String.valueOf(gameBoard[2]) + gameBoard[4] +
+				gameBoard[6];
 
 		if (ticTacToe.equals(topRow)) {
 			winningPositions.add(0);
@@ -74,25 +68,25 @@ public class ResultRetriever {
 
 	public List<Coordinate> retrieveWinningPositions(char[][] gameBoard, char playingCharacter) {
 		final List<Coordinate> winningPositions = new ArrayList<>();
-		final String ticTacToe = new StringBuilder().append(playingCharacter).append(playingCharacter)
-				.append(playingCharacter).toString();
+		final String ticTacToe = String.valueOf(playingCharacter) + playingCharacter +
+				playingCharacter;
 
-		final String topRow = new StringBuilder().append(gameBoard[0][0]).append(gameBoard[1][0])
-				.append(gameBoard[2][0]).toString();
-		final String middleRow = new StringBuilder().append(gameBoard[0][1]).append(gameBoard[1][1])
-				.append(gameBoard[2][1]).toString();
-		final String bottomRow = new StringBuilder().append(gameBoard[0][2]).append(gameBoard[1][2])
-				.append(gameBoard[2][2]).toString();
-		final String leftColumn = new StringBuilder().append(gameBoard[0][0]).append(gameBoard[0][1])
-				.append(gameBoard[0][2]).toString();
-		final String middleColumn = new StringBuilder().append(gameBoard[1][0]).append(gameBoard[1][1])
-				.append(gameBoard[1][2]).toString();
-		final String rightColumn = new StringBuilder().append(gameBoard[2][0]).append(gameBoard[2][1])
-				.append(gameBoard[2][2]).toString();
-		final String backwardDiagonal = new StringBuilder().append(gameBoard[0][0]).append(gameBoard[1][1])
-				.append(gameBoard[2][2]).toString();
-		final String forwardDiagonal = new StringBuilder().append(gameBoard[2][0]).append(gameBoard[1][1])
-				.append(gameBoard[0][2]).toString();
+		final String topRow = String.valueOf(gameBoard[0][0]) + gameBoard[1][0] +
+				gameBoard[2][0];
+		final String middleRow = String.valueOf(gameBoard[0][1]) + gameBoard[1][1] +
+				gameBoard[2][1];
+		final String bottomRow = String.valueOf(gameBoard[0][2]) + gameBoard[1][2] +
+				gameBoard[2][2];
+		final String leftColumn = String.valueOf(gameBoard[0][0]) + gameBoard[0][1] +
+				gameBoard[0][2];
+		final String middleColumn = String.valueOf(gameBoard[1][0]) + gameBoard[1][1] +
+				gameBoard[1][2];
+		final String rightColumn = String.valueOf(gameBoard[2][0]) + gameBoard[2][1] +
+				gameBoard[2][2];
+		final String backwardDiagonal = String.valueOf(gameBoard[0][0]) + gameBoard[1][1] +
+				gameBoard[2][2];
+		final String forwardDiagonal = String.valueOf(gameBoard[2][0]) + gameBoard[1][1] +
+				gameBoard[0][2];
 
 		if (ticTacToe.equals(topRow)) {
 			winningPositions.add(new Coordinate(0, 0));
