@@ -24,9 +24,9 @@ public class ResultsPrinter {
         final StringBuilder spots = new StringBuilder();
         for (int i = 0; i < positions.size(); i++) {
             if (i != positions.size() - 1) {
-                spots.append(Integer.toString(positions.get(i) + 1)).append(", ");
+                spots.append(positions.get(i) + 1).append(", ");
             } else {
-                spots.append(Integer.toString(positions.get(i) + 1));
+                spots.append(positions.get(i) + 1);
             }
         }
         return spots.toString();
