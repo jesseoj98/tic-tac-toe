@@ -25,32 +25,12 @@ public class Result {
 		return playerWon;
 	}
 
-	public void setPlayerWon(boolean playerWon) {
-		this.playerWon = playerWon;
-	}
-
-	public boolean isCpuWon() {
-		return cpuWon;
-	}
-
-	public void setCpuWon(boolean cpuWon) {
-		this.cpuWon = cpuWon;
-	}
-
 	public List<Integer> getWinningSimpleCoordinates() {
 		return winningSimpleCoordinates;
 	}
 
-	public void setWinningSimpleCoordinates(List<Integer> winningSimpleCoordinates) {
-		this.winningSimpleCoordinates = winningSimpleCoordinates;
-	}
-
 	public List<Coordinate> getWinningCoordinates() {
 		return winningCoordinates;
-	}
-
-	public void setWinningCoordinates(List<Coordinate> winningCoordinates) {
-		this.winningCoordinates = winningCoordinates;
 	}
 
 	@Override
