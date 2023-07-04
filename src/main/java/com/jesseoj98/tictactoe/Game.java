@@ -75,13 +75,9 @@ public class Game {
 		System.out.println("\n---------------");
 
 		if (userInput == 's' || userInput == 'S') {
-
 			playSimpleGame(userPlayingCharacter, cpuPlayingCharacter, letCpuGoFirst);
-
 		} else {
-
 			playCoordinatesGame(userPlayingCharacter, cpuPlayingCharacter, letCpuGoFirst);
-
 		}
 
 		System.out.print("\nPlay again? (y/n): ");
