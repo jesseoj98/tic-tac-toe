@@ -13,7 +13,7 @@ public class CoordinateBoardPrinter implements SampleBoardPrinter {
     @Override
     public void printSampleBoardSequence() {
         printInstructions();
-        bsp.printBoardDivider(4, 3);
+        bsp.printBoardDivider(0, 3);
         printSampleBoard();
     }
 
@@ -23,7 +23,7 @@ public class CoordinateBoardPrinter implements SampleBoardPrinter {
                 System.out.print("|" + (j + 1) + "," + (i + 1));
                 if (!pv.endOfRowMatch(j)) {
                     System.out.println("|");
-                    bsp.printBoardDivider(4, 3);
+                    bsp.printBoardDivider(0, 3);
                 }
             }
         }

@@ -3,13 +3,11 @@ package com.jesseoj98.tictactoe.util.printer.board.structure;
 public class BoardStructurePrinter {
 
     public void printBoardDivider(int spaces, int columns) {
-        System.out.println();
         printSpaces(spaces);
         printColumnsOrNumbers(columns, true);
     }
 
     public void printNumbers(int spaces, int numberOfNumbers) {
-        System.out.println();
         printSpaces(spaces);
         printColumnsOrNumbers(numberOfNumbers, false);
     }
@@ -22,6 +20,7 @@ public class BoardStructurePrinter {
                 break;
             }
         }
+        System.out.println();
     }
 
     private void printSpaces(int spaces) {
