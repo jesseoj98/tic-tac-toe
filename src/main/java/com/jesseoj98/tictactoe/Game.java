@@ -11,6 +11,8 @@ import com.jesseoj98.tictactoe.util.helper.validator.input.InputValidator;
 import com.jesseoj98.tictactoe.util.helper.validator.tictactoe.TicTacToeValidator;
 import com.jesseoj98.tictactoe.util.printer.ResultPrinter;
 import com.jesseoj98.tictactoe.util.printer.board.BoardPrinter;
+import com.jesseoj98.tictactoe.util.printer.board.sample.CoordinateBoardPrinter;
+import com.jesseoj98.tictactoe.util.printer.board.sample.SimpleBoardPrinter;
 
 public class Game {
 
@@ -18,6 +20,9 @@ public class Game {
 	private static final BoardInserter bi = new BoardInserter();
 	private static final BoardOccupier bo = new BoardOccupier();
 	private static final BoardValidator bv = new BoardValidator();
+
+	private static final CoordinateBoardPrinter cbp = new CoordinateBoardPrinter();
+	private static final SimpleBoardPrinter sbp = new SimpleBoardPrinter();
 
 	private static final CoordinateGenerator cg = new CoordinateGenerator();
 
@@ -56,8 +61,8 @@ public class Game {
 
 		letCpuGoFirst = iv.isYes(userInput);
 
-		bp.printSimpleSample();
-		bp.printCoordinatesSample();
+		sbp.printSampleBoardSequence();
+		cbp.printSampleBoardSequence();
 
 		System.out.print("\nChoose a game board type (s/c): ");
 
