@@ -157,9 +157,10 @@ public class Game {
 
 		do {
 
-			System.out.print("\nEnter an x coordinate to place your move: ");
-
 			do {
+
+				System.out.print("\nEnter an x coordinate to place your move: ");
+
 				do {
 					userInputXCoordinate = scanner.nextInt();
 				} while (iv.isValidCoordinatesSpace(userInputXCoordinate));
@@ -169,6 +170,7 @@ public class Game {
 				do {
 					userInputYCoordinate = scanner.nextInt();
 				} while (iv.isValidCoordinatesSpace(userInputYCoordinate));
+
 			} while (bo.isSpaceOccupied(gameBoard, userInputYCoordinate - 1, userInputXCoordinate - 1));
 
 			bi.insertIntoBoard(gameBoard, userInputYCoordinate - 1, userInputXCoordinate - 1, userPlayingCharacter);
