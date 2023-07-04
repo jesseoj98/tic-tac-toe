@@ -1,39 +1,35 @@
-package com.jesseoj98.tictactoe.util.printer.board.sample;
+package com.jesseoj98.tictactoe.util.printer.board.actual;
 
 import com.jesseoj98.tictactoe.domain.GameBoard;
 import com.jesseoj98.tictactoe.util.helper.validator.printer.PrinterValidator;
 import com.jesseoj98.tictactoe.util.printer.board.structure.BoardStructurePrinter;
+import com.jesseoj98.tictactoe.util.printer.space.SpacePrinter;
 
-public class SimpleBoardPrinter implements SampleBoardPrinter {
+public class ActualSimpleBoardPrinter {
 
     private static final BoardStructurePrinter bsp = new BoardStructurePrinter();
 
     private static final PrinterValidator pv = new PrinterValidator();
 
-    @Override
-    public void printSampleBoardSequence() {
-        printInstructions();
+    private static final SpacePrinter sp = new SpacePrinter();
+
+    public void printActualBoardSequence(char[] gameBoard) {
         bsp.printBoardDivider(0, 3);
-        printSampleBoard();
+        printActualBoard(gameBoard);
     }
 
-    private void printSampleBoard() {
+    private void printActualBoard(char[] gameBoard) {
         for (int i = 0; i < GameBoard.GAME_BOARD_SPACES; i++) {
             if (pv.endOfSimpleRowMatch(i)) {
-                System.out.println(" " + (i + 1) + " |");
+                System.out.println(" " + sp.printSpace(gameBoard[i], i) + " |");
                 bsp.printBoardDivider(0, 3);
             } else {
                 if (i % 3 != 0) {
-                    System.out.print((i + 1) + " |");
+                    System.out.print(sp.printSpace(gameBoard[i], i) + " |");
                 } else {
-                    System.out.print("| " + (i + 1) + " | ");
+                    System.out.print("| " + sp.printSpace(gameBoard[i], i) + " | ");
                 }
             }
         }
-    }
-
-    private void printInstructions() {
-        System.out.println("\nSimple Game Board");
-        System.out.println("\nEnter a single digit to place your move\n");
     }
 }

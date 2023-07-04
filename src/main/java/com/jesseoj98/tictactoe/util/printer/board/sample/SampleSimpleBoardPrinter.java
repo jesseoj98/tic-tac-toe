@@ -4,7 +4,7 @@ import com.jesseoj98.tictactoe.domain.GameBoard;
 import com.jesseoj98.tictactoe.util.helper.validator.printer.PrinterValidator;
 import com.jesseoj98.tictactoe.util.printer.board.structure.BoardStructurePrinter;
 
-public class CoordinateBoardPrinter implements SampleBoardPrinter {
+public class SampleSimpleBoardPrinter implements SampleBoardPrinter {
 
     private static final BoardStructurePrinter bsp = new BoardStructurePrinter();
 
@@ -18,20 +18,22 @@ public class CoordinateBoardPrinter implements SampleBoardPrinter {
     }
 
     private void printSampleBoard() {
-        for (int i = 0; i < GameBoard.GAME_BOARD_DIMENSION; i++) {
-            for (int j = 0; j < GameBoard.GAME_BOARD_DIMENSION; j++) {
-                System.out.print("|" + (j + 1) + "," + (i + 1));
-                if (!pv.endOfRowMatch(j)) {
-                    System.out.println("|");
-                    bsp.printBoardDivider(0, 3);
+        for (int i = 0; i < GameBoard.GAME_BOARD_SPACES; i++) {
+            if (pv.endOfSimpleRowMatch(i)) {
+                System.out.println(" " + (i + 1) + " |");
+                bsp.printBoardDivider(0, 3);
+            } else {
+                if (i % 3 != 0) {
+                    System.out.print((i + 1) + " |");
+                } else {
+                    System.out.print("| " + (i + 1) + " | ");
                 }
             }
         }
     }
 
     private void printInstructions() {
-        System.out.println("\nCoordinates Game Board");
-        System.out.println("\nEnter an x coordinate and a y coordinate to place your move\n");
+        System.out.println("\nSimple Game Board");
+        System.out.println("\nEnter a single digit to place your move\n");
     }
-
 }
