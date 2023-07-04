@@ -9,7 +9,7 @@ import com.jesseoj98.tictactoe.util.helper.occupier.BoardOccupier;
 import com.jesseoj98.tictactoe.util.helper.validator.board.BoardValidator;
 import com.jesseoj98.tictactoe.util.helper.validator.input.InputValidator;
 import com.jesseoj98.tictactoe.util.helper.validator.tictactoe.TicTacToeValidator;
-import com.jesseoj98.tictactoe.util.printer.ResultPrinter;
+import com.jesseoj98.tictactoe.util.helper.handler.ResultHandler;
 import com.jesseoj98.tictactoe.util.printer.board.actual.ActualCoordinateBoardPrinter;
 import com.jesseoj98.tictactoe.util.printer.board.actual.ActualSimpleBoardPrinter;
 import com.jesseoj98.tictactoe.util.printer.board.sample.SampleCoordinateBoardPrinter;
@@ -29,7 +29,7 @@ public class Game {
 	
 	private static final InputValidator inputValidator = new InputValidator();
 
-	private static final ResultPrinter resultPrinter = new ResultPrinter();
+	private static final ResultHandler resultHandler = new ResultHandler();
 
 	private static final SampleCoordinateBoardPrinter sampleCoordinateBoardPrinter = new SampleCoordinateBoardPrinter();
 	private static final SampleSimpleBoardPrinter sampleSimpleBoardPrinter = new SampleSimpleBoardPrinter();
@@ -132,7 +132,7 @@ public class Game {
 		final boolean cpuWon = ticTacToeValidator.ticTacToe(gameBoard, cpuPlayingCharacter);
 
 		System.out.println();
-		resultPrinter.handleResult(playerWon, cpuWon, gameBoard, userPlayingCharacter, cpuPlayingCharacter);
+		resultHandler.handleResult(playerWon, cpuWon, gameBoard, userPlayingCharacter, cpuPlayingCharacter);
 
 	}
 
@@ -199,7 +199,7 @@ public class Game {
 		final boolean cpuWon = ticTacToeValidator.ticTacToe(gameBoard, cpuPlayingCharacter);
 
 		System.out.println();
-		resultPrinter.handleResult(playerWon, cpuWon, gameBoard, userPlayingCharacter, cpuPlayingCharacter);
+		resultHandler.handleResult(playerWon, cpuWon, gameBoard, userPlayingCharacter, cpuPlayingCharacter);
 
 	}
 

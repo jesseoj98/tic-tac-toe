@@ -5,7 +5,7 @@ import com.jesseoj98.tictactoe.domain.Result;
 
 import java.util.List;
 
-public class ResultsPrinter {
+public class ResultPrinter {
 
     public void printResult(Result result) {
         if (result.isPlayerWon()) {
