@@ -164,13 +164,13 @@ public class Game {
 
 				do {
 					userInputXCoordinate = scanner.nextInt();
-				} while (inputValidator.isValidCoordinatesSpace(userInputXCoordinate));
+				} while (!inputValidator.isValidCoordinatesSpace(userInputXCoordinate));
 
 				System.out.print("Enter a y coordinate to place your move: ");
 
 				do {
 					userInputYCoordinate = scanner.nextInt();
-				} while (inputValidator.isValidCoordinatesSpace(userInputYCoordinate));
+				} while (!inputValidator.isValidCoordinatesSpace(userInputYCoordinate));
 
 			} while (boardOccupier.isSpaceOccupied(gameBoard, userInputYCoordinate - 1, userInputXCoordinate - 1));
 
