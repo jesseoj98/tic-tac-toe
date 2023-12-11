@@ -9,6 +9,7 @@ import com.jesseoj98.tictactoe.util.helper.occupier.BoardOccupier;
 import com.jesseoj98.tictactoe.util.helper.validator.board.BoardValidator;
 import com.jesseoj98.tictactoe.util.helper.validator.input.InputValidator;
 import com.jesseoj98.tictactoe.util.helper.validator.tictactoe.TicTacToeValidator;
+import com.jesseoj98.tictactoe.util.looper.game.GameLooper;
 import com.jesseoj98.tictactoe.util.helper.handler.ResultHandler;
 import com.jesseoj98.tictactoe.util.printer.board.actual.ActualCoordinateBoardPrinter;
 import com.jesseoj98.tictactoe.util.printer.board.actual.ActualSimpleBoardPrinter;
@@ -26,6 +27,8 @@ public class Game {
 	private static final BoardValidator boardValidator = new BoardValidator();
 
 	private static final CoordinateGenerator coordinateGenerator = new CoordinateGenerator();
+	
+	private static final GameLooper gameLooper = new GameLooper();
 	
 	private static final InputValidator inputValidator = new InputValidator();
 
@@ -87,9 +90,6 @@ public class Game {
 
 	private void playSimpleGame(char userPlayingCharacter, char cpuPlayingCharacter, boolean letCpuGoFirst) {
 
-		int userInputSimple;
-		int cpuInputSimple;
-
 		final char[] gameBoard = boardGenerator.generateSimple();
 
 		if (letCpuGoFirst) {
@@ -99,31 +99,8 @@ public class Game {
 
 		System.out.println();
 		actualSimpleBoardPrinter.printActualBoardSequence(gameBoard);
-
-		do {
-
-			System.out.print("\nEnter a spot to place your move: ");
-
-			do {
-				userInputSimple = scanner.nextInt();
-			} while (!inputValidator.isValidBoardSpace(userInputSimple) || boardOccupier.isSpaceOccupied(gameBoard, userInputSimple - 1));
-
-			boardInserter.insertIntoBoard(gameBoard, userInputSimple - 1, userPlayingCharacter);
-
-			if (ticTacToeValidator.ticTacToe(gameBoard, userPlayingCharacter) || boardValidator.areAllBoardSpacesFilled(gameBoard)) {
-				break;
-			}
-
-			do {
-				cpuInputSimple = coordinateGenerator.generateSimple();
-			} while (boardOccupier.isSpaceOccupied(gameBoard, cpuInputSimple - 1));
-
-			boardInserter.insertIntoBoard(gameBoard, cpuInputSimple - 1, cpuPlayingCharacter);
-
-			System.out.println();
-			actualSimpleBoardPrinter.printActualBoardSequence(gameBoard);
-
-		} while (!ticTacToeValidator.ticTacToe(gameBoard, cpuPlayingCharacter) && !boardValidator.areAllBoardSpacesFilled(gameBoard));
+		
+		gameLooper.loopSimpleGame(gameBoard, userPlayingCharacter, cpuPlayingCharacter);
 
 		System.out.println();
 		actualSimpleBoardPrinter.printActualBoardSequence(gameBoard);
