@@ -1,13 +1,11 @@
 package com.jesseoj98.tictactoe.util.looper.game;
 
-import java.util.Scanner;
-
 import com.jesseoj98.tictactoe.util.generator.coordinate.CoordinateGenerator;
 import com.jesseoj98.tictactoe.util.helper.inserter.BoardInserter;
 import com.jesseoj98.tictactoe.util.helper.occupier.BoardOccupier;
 import com.jesseoj98.tictactoe.util.helper.validator.board.BoardValidator;
-import com.jesseoj98.tictactoe.util.helper.validator.input.InputValidator;
 import com.jesseoj98.tictactoe.util.helper.validator.tictactoe.TicTacToeValidator;
+import com.jesseoj98.tictactoe.util.looper.input.CoordinateInputLooper;
 import com.jesseoj98.tictactoe.util.looper.input.SimpleInputLooper;
 import com.jesseoj98.tictactoe.util.printer.board.actual.ActualCoordinateBoardPrinter;
 import com.jesseoj98.tictactoe.util.printer.board.actual.ActualSimpleBoardPrinter;
@@ -22,11 +20,8 @@ public class GameLooper {
 	private static final BoardValidator boardValidator = new BoardValidator();
 
 	private static final CoordinateGenerator coordinateGenerator = new CoordinateGenerator();
-
-	private static final InputValidator inputValidator = new InputValidator();
-
-	private static final Scanner scanner = new Scanner(System.in);
 	
+	private static final CoordinateInputLooper coordinateInputLooper = new CoordinateInputLooper();
 	private static final SimpleInputLooper simpleInputLooper = new SimpleInputLooper();
 
 	private static final TicTacToeValidator ticTacToeValidator = new TicTacToeValidator();
@@ -71,15 +66,11 @@ public class GameLooper {
 
 				System.out.print("\nEnter an x coordinate to place your move: ");
 
-				do {
-					inputXCoordinate = scanner.nextInt();
-				} while (!inputValidator.isValidCoordinatesSpace(inputXCoordinate));
+				inputXCoordinate = coordinateInputLooper.loopPlayerCoordinateInput(gameBoard);
 
 				System.out.print("Enter a y coordinate to place your move: ");
 
-				do {
-					inputYCoordinate = scanner.nextInt();
-				} while (!inputValidator.isValidCoordinatesSpace(inputYCoordinate));
+				inputYCoordinate = coordinateInputLooper.loopPlayerCoordinateInput(gameBoard);
 
 			} while (boardOccupier.isSpaceOccupied(gameBoard, inputYCoordinate - 1, inputXCoordinate - 1));
 
