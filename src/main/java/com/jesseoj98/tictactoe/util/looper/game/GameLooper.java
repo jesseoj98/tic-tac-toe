@@ -30,19 +30,18 @@ public class GameLooper {
 
 	public void loopSimpleGame(char[] gameBoard, char userPlayingCharacter, char cpuPlayingCharacter) {
 
-		int userInputSimple;
-		int cpuInputSimple;
+		int inputSimple;
 
 		do {
 
 			System.out.print("\nEnter a spot to place your move: ");
 
 			do {
-				userInputSimple = scanner.nextInt();
-			} while (!inputValidator.isValidBoardSpace(userInputSimple)
-					|| boardOccupier.isSpaceOccupied(gameBoard, userInputSimple - 1));
+				inputSimple = scanner.nextInt();
+			} while (!inputValidator.isValidBoardSpace(inputSimple)
+					|| boardOccupier.isSpaceOccupied(gameBoard, inputSimple - 1));
 
-			boardInserter.insertIntoBoard(gameBoard, userInputSimple - 1, userPlayingCharacter);
+			boardInserter.insertIntoBoard(gameBoard, inputSimple - 1, userPlayingCharacter);
 
 			if (ticTacToeValidator.ticTacToe(gameBoard, userPlayingCharacter)
 					|| boardValidator.areAllBoardSpacesFilled(gameBoard)) {
@@ -50,10 +49,10 @@ public class GameLooper {
 			}
 
 			do {
-				cpuInputSimple = coordinateGenerator.generateSimple();
-			} while (boardOccupier.isSpaceOccupied(gameBoard, cpuInputSimple - 1));
+				inputSimple = coordinateGenerator.generateSimple();
+			} while (boardOccupier.isSpaceOccupied(gameBoard, inputSimple - 1));
 
-			boardInserter.insertIntoBoard(gameBoard, cpuInputSimple - 1, cpuPlayingCharacter);
+			boardInserter.insertIntoBoard(gameBoard, inputSimple - 1, cpuPlayingCharacter);
 
 			System.out.println();
 			actualSimpleBoardPrinter.printActualBoardSequence(gameBoard);
