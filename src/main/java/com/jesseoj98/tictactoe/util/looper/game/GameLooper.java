@@ -85,8 +85,7 @@ public class GameLooper {
 
 			} while (boardOccupier.isSpaceOccupied(gameBoard, inputYCoordinate - 1, inputXCoordinate - 1));
 
-			boardInserter.insertIntoBoard(gameBoard, inputYCoordinate - 1, inputXCoordinate - 1,
-					userPlayingCharacter);
+			boardInserter.insertIntoBoard(gameBoard, inputYCoordinate - 1, inputXCoordinate - 1, userPlayingCharacter);
 
 			if (ticTacToeValidator.ticTacToe(gameBoard, userPlayingCharacter)
 					|| boardValidator.areAllBoardSpacesFilled(gameBoard)) {
@@ -98,8 +97,7 @@ public class GameLooper {
 				inputYCoordinate = coordinateGenerator.generateCoordinate();
 			} while (boardOccupier.isSpaceOccupied(gameBoard, inputYCoordinate - 1, inputXCoordinate - 1));
 
-			boardInserter.insertIntoBoard(gameBoard, inputYCoordinate - 1, inputXCoordinate - 1,
-					cpuPlayingCharacter);
+			boardInserter.insertIntoBoard(gameBoard, inputYCoordinate - 1, inputXCoordinate - 1, cpuPlayingCharacter);
 
 			System.out.println();
 			actualCoordinateBoardPrinter.printActualBoardSequence(gameBoard);
