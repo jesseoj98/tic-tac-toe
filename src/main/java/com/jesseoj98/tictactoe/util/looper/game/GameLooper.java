@@ -64,11 +64,8 @@ public class GameLooper {
 
 	public void loopCoordinatesGame(char[][] gameBoard, char userPlayingCharacter, char cpuPlayingCharacter) {
 
-		int userInputXCoordinate;
-		int userInputYCoordinate;
-
-		int cpuInputXCoordinate;
-		int cpuInputYCoordinate;
+		int inputXCoordinate;
+		int inputYCoordinate;
 
 		do {
 
@@ -77,18 +74,18 @@ public class GameLooper {
 				System.out.print("\nEnter an x coordinate to place your move: ");
 
 				do {
-					userInputXCoordinate = scanner.nextInt();
-				} while (!inputValidator.isValidCoordinatesSpace(userInputXCoordinate));
+					inputXCoordinate = scanner.nextInt();
+				} while (!inputValidator.isValidCoordinatesSpace(inputXCoordinate));
 
 				System.out.print("Enter a y coordinate to place your move: ");
 
 				do {
-					userInputYCoordinate = scanner.nextInt();
-				} while (!inputValidator.isValidCoordinatesSpace(userInputYCoordinate));
+					inputYCoordinate = scanner.nextInt();
+				} while (!inputValidator.isValidCoordinatesSpace(inputYCoordinate));
 
-			} while (boardOccupier.isSpaceOccupied(gameBoard, userInputYCoordinate - 1, userInputXCoordinate - 1));
+			} while (boardOccupier.isSpaceOccupied(gameBoard, inputYCoordinate - 1, inputXCoordinate - 1));
 
-			boardInserter.insertIntoBoard(gameBoard, userInputYCoordinate - 1, userInputXCoordinate - 1,
+			boardInserter.insertIntoBoard(gameBoard, inputYCoordinate - 1, inputXCoordinate - 1,
 					userPlayingCharacter);
 
 			if (ticTacToeValidator.ticTacToe(gameBoard, userPlayingCharacter)
@@ -97,11 +94,11 @@ public class GameLooper {
 			}
 
 			do {
-				cpuInputXCoordinate = coordinateGenerator.generateCoordinate();
-				cpuInputYCoordinate = coordinateGenerator.generateCoordinate();
-			} while (boardOccupier.isSpaceOccupied(gameBoard, cpuInputYCoordinate - 1, cpuInputXCoordinate - 1));
+				inputXCoordinate = coordinateGenerator.generateCoordinate();
+				inputYCoordinate = coordinateGenerator.generateCoordinate();
+			} while (boardOccupier.isSpaceOccupied(gameBoard, inputYCoordinate - 1, inputXCoordinate - 1));
 
-			boardInserter.insertIntoBoard(gameBoard, cpuInputYCoordinate - 1, cpuInputXCoordinate - 1,
+			boardInserter.insertIntoBoard(gameBoard, inputYCoordinate - 1, inputXCoordinate - 1,
 					cpuPlayingCharacter);
 
 			System.out.println();
