@@ -8,6 +8,7 @@ import com.jesseoj98.tictactoe.util.helper.occupier.BoardOccupier;
 import com.jesseoj98.tictactoe.util.helper.validator.board.BoardValidator;
 import com.jesseoj98.tictactoe.util.helper.validator.input.InputValidator;
 import com.jesseoj98.tictactoe.util.helper.validator.tictactoe.TicTacToeValidator;
+import com.jesseoj98.tictactoe.util.looper.input.SimpleInputLooper;
 import com.jesseoj98.tictactoe.util.printer.board.actual.ActualCoordinateBoardPrinter;
 import com.jesseoj98.tictactoe.util.printer.board.actual.ActualSimpleBoardPrinter;
 
@@ -25,6 +26,8 @@ public class GameLooper {
 	private static final InputValidator inputValidator = new InputValidator();
 
 	private static final Scanner scanner = new Scanner(System.in);
+	
+	private static final SimpleInputLooper simpleInputLooper = new SimpleInputLooper();
 
 	private static final TicTacToeValidator ticTacToeValidator = new TicTacToeValidator();
 
@@ -36,10 +39,7 @@ public class GameLooper {
 
 			System.out.print("\nEnter a spot to place your move: ");
 
-			do {
-				inputSimple = scanner.nextInt();
-			} while (!inputValidator.isValidBoardSpace(inputSimple)
-					|| boardOccupier.isSpaceOccupied(gameBoard, inputSimple - 1));
+			inputSimple = simpleInputLooper.loopSimpleInput(gameBoard, true);
 
 			boardInserter.insertIntoBoard(gameBoard, inputSimple - 1, userPlayingCharacter);
 
@@ -48,9 +48,7 @@ public class GameLooper {
 				break;
 			}
 
-			do {
-				inputSimple = coordinateGenerator.generateSimple();
-			} while (boardOccupier.isSpaceOccupied(gameBoard, inputSimple - 1));
+			inputSimple = simpleInputLooper.loopSimpleInput(gameBoard, false);
 
 			boardInserter.insertIntoBoard(gameBoard, inputSimple - 1, cpuPlayingCharacter);
 
