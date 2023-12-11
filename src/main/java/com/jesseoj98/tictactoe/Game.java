@@ -5,8 +5,6 @@ import java.util.Scanner;
 import com.jesseoj98.tictactoe.util.generator.board.BoardGenerator;
 import com.jesseoj98.tictactoe.util.generator.coordinate.CoordinateGenerator;
 import com.jesseoj98.tictactoe.util.helper.inserter.BoardInserter;
-import com.jesseoj98.tictactoe.util.helper.occupier.BoardOccupier;
-import com.jesseoj98.tictactoe.util.helper.validator.board.BoardValidator;
 import com.jesseoj98.tictactoe.util.helper.validator.input.InputValidator;
 import com.jesseoj98.tictactoe.util.helper.validator.tictactoe.TicTacToeValidator;
 import com.jesseoj98.tictactoe.util.looper.game.GameLooper;
@@ -23,8 +21,6 @@ public class Game {
 
 	private static final BoardGenerator boardGenerator = new BoardGenerator();
 	private static final BoardInserter boardInserter = new BoardInserter();
-	private static final BoardOccupier boardOccupier = new BoardOccupier();
-	private static final BoardValidator boardValidator = new BoardValidator();
 
 	private static final CoordinateGenerator coordinateGenerator = new CoordinateGenerator();
 	
@@ -115,12 +111,6 @@ public class Game {
 
 	private void playCoordinatesGame(char userPlayingCharacter, char cpuPlayingCharacter, boolean letCpuGoFirst) {
 
-		int userInputXCoordinate;
-		int userInputYCoordinate;
-
-		int cpuInputXCoordinate;
-		int cpuInputYCoordinate;
-
 		final char[][] gameBoard = boardGenerator.generateCoordinate();
 
 		if (letCpuGoFirst) {
@@ -132,42 +122,8 @@ public class Game {
 
 		System.out.println();
 		actualCoordinateBoardPrinter.printActualBoardSequence(gameBoard);
-
-		do {
-
-			do {
-
-				System.out.print("\nEnter an x coordinate to place your move: ");
-
-				do {
-					userInputXCoordinate = scanner.nextInt();
-				} while (!inputValidator.isValidCoordinatesSpace(userInputXCoordinate));
-
-				System.out.print("Enter a y coordinate to place your move: ");
-
-				do {
-					userInputYCoordinate = scanner.nextInt();
-				} while (!inputValidator.isValidCoordinatesSpace(userInputYCoordinate));
-
-			} while (boardOccupier.isSpaceOccupied(gameBoard, userInputYCoordinate - 1, userInputXCoordinate - 1));
-
-			boardInserter.insertIntoBoard(gameBoard, userInputYCoordinate - 1, userInputXCoordinate - 1, userPlayingCharacter);
-
-			if (ticTacToeValidator.ticTacToe(gameBoard, userPlayingCharacter) || boardValidator.areAllBoardSpacesFilled(gameBoard)) {
-				break;
-			}
-
-			do {
-				cpuInputXCoordinate = coordinateGenerator.generateCoordinate();
-				cpuInputYCoordinate = coordinateGenerator.generateCoordinate();
-			} while (boardOccupier.isSpaceOccupied(gameBoard, cpuInputYCoordinate - 1, cpuInputXCoordinate - 1));
-
-			boardInserter.insertIntoBoard(gameBoard, cpuInputYCoordinate - 1, cpuInputXCoordinate - 1, cpuPlayingCharacter);
-
-			System.out.println();
-			actualCoordinateBoardPrinter.printActualBoardSequence(gameBoard);
-
-		} while (!ticTacToeValidator.ticTacToe(gameBoard, cpuPlayingCharacter) && !boardValidator.areAllBoardSpacesFilled(gameBoard));
+		
+		gameLooper.loopCoordinatesGame(gameBoard, userPlayingCharacter, cpuPlayingCharacter);
 
 		System.out.println();
 		actualCoordinateBoardPrinter.printActualBoardSequence(gameBoard);
