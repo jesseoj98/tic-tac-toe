@@ -11,24 +11,20 @@ public class ActualSimpleBoardPrinter {
 	private static final SpacePrinter spacePrinter = new SpacePrinter();
 
 	public void printActualBoardSequence(char[] gameBoard) {
-		boardStructurePrinter.printGameBoardDivider(3);
-		System.out.println();
 		printActualBoard(gameBoard);
-		boardStructurePrinter.printGameBoardDivider(3);
-		System.out.println();
 	}
 
 	private void printActualBoard(char[] gameBoard) {
+		boardStructurePrinter.printGameBoardDivider(3);
 		for (int i = 0; i < GameBoard.GAME_BOARD_SPACES; i++) {
 			System.out.print("| " + spacePrinter.printSpace(gameBoard[i], i) + " ");
 			if ((i + 1) % 3 == 0) {
 				System.out.print("|");
-				System.out.println();
 				if ((i + 1) != GameBoard.GAME_BOARD_SPACES) {
 					boardStructurePrinter.printGameBoardDivider(3);
-					System.out.println();
 				}
 			}
 		}
+		boardStructurePrinter.printGameBoardDivider(3);
 	}
 }
