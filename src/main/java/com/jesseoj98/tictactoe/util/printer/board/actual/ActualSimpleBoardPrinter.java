@@ -6,20 +6,20 @@ import com.jesseoj98.tictactoe.util.printer.space.SpacePrinter;
 
 public class ActualSimpleBoardPrinter {
 
-    private static final BoardStructurePrinter boardStructurePrinter = new BoardStructurePrinter();
+	private static final BoardStructurePrinter boardStructurePrinter = new BoardStructurePrinter();
 
-    private static final SpacePrinter spacePrinter = new SpacePrinter();
+	private static final SpacePrinter spacePrinter = new SpacePrinter();
 
-    public void printActualBoardSequence(char[] gameBoard) {
+	public void printActualBoardSequence(char[] gameBoard) {
 		boardStructurePrinter.printGameBoardDivider(3);
 		System.out.println();
-        printActualBoard(gameBoard);
+		printActualBoard(gameBoard);
 		boardStructurePrinter.printGameBoardDivider(3);
 		System.out.println();
-    }
+	}
 
-    private void printActualBoard(char[] gameBoard) {
-    	for (int i = 0; i < GameBoard.GAME_BOARD_SPACES; i++) {
+	private void printActualBoard(char[] gameBoard) {
+		for (int i = 0; i < GameBoard.GAME_BOARD_SPACES; i++) {
 			System.out.print("| " + spacePrinter.printSpace(gameBoard[i], i) + " ");
 			if ((i + 1) % 3 == 0) {
 				System.out.print("|");
@@ -30,5 +30,5 @@ public class ActualSimpleBoardPrinter {
 				}
 			}
 		}
-    }
+	}
 }
