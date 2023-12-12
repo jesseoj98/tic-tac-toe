@@ -1,39 +1,43 @@
 package com.jesseoj98.tictactoe.util.printer.board.sample;
 
 import com.jesseoj98.tictactoe.domain.GameBoard;
-import com.jesseoj98.tictactoe.util.helper.validator.printer.PrinterValidator;
 import com.jesseoj98.tictactoe.util.printer.board.structure.BoardStructurePrinter;
 
 public class SampleSimpleBoardPrinter implements SampleBoardPrinter {
 
-    private static final BoardStructurePrinter boardStructurePrinter = new BoardStructurePrinter();
+	private static final BoardStructurePrinter boardStructurePrinter = new BoardStructurePrinter();
 
-    private static final PrinterValidator printerValidator = new PrinterValidator();
+	@Override
+	public void printSampleBoardSequence() {
+		System.out.println();
+		printInstructions();
+		System.out.println();
+		boardStructurePrinter.printGameBoardDivider(3);
+		System.out.println();
+		printSampleBoard();
+		boardStructurePrinter.printGameBoardDivider(3);
+		System.out.println();
+	}
 
-    @Override
-    public void printSampleBoardSequence() {
-        printInstructions();
-        boardStructurePrinter.printBoardDivider(0, 3);
-        printSampleBoard();
-    }
+	private void printSampleBoard() {
+		for (int i = 1; i <= GameBoard.GAME_BOARD_SPACES; i++) {
+			System.out.print("| " + i + " ");
+			if (i % GameBoard.GAME_BOARD_DIMENSION == 0) {
+				System.out.print("|");
+				System.out.println();
+				if (i != GameBoard.GAME_BOARD_SPACES) {
+					boardStructurePrinter.printGameBoardDivider(3);
+					System.out.println();
+				}
+			}
+		}
+	}
 
-    private void printSampleBoard() {
-        for (int i = 0; i < GameBoard.GAME_BOARD_SPACES; i++) {
-            if (printerValidator.endOfSimpleRowMatch(i)) {
-                System.out.println(" " + (i + 1) + " |");
-                boardStructurePrinter.printBoardDivider(0, 3);
-            } else {
-                if (i % 3 != 0) {
-                    System.out.print((i + 1) + " |");
-                } else {
-                    System.out.print("| " + (i + 1) + " | ");
-                }
-            }
-        }
-    }
-
-    private void printInstructions() {
-        System.out.println("\nSimple Game Board");
-        System.out.println("\nEnter a single digit to place your move\n");
-    }
+	private void printInstructions() {
+		System.out.print("Simple Game Board");
+		System.out.println();
+		System.out.println();
+		System.out.print("Enter a single digit to place your move");
+		System.out.println();
+	}
 }
