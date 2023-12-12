@@ -9,7 +9,6 @@ public class SampleCoordinateBoardPrinter implements SampleBoardPrinter {
 
 	@Override
 	public void printSampleBoardSequence() {
-		System.out.println();
 		printInstructions();
 		System.out.println();
 		boardStructurePrinter.printGameBoardDivider(3);
@@ -36,6 +35,7 @@ public class SampleCoordinateBoardPrinter implements SampleBoardPrinter {
 	}
 
 	private void printInstructions() {
+		System.out.println();
 		System.out.print("Coordinates Game Board");
 		System.out.println();
 		System.out.println();

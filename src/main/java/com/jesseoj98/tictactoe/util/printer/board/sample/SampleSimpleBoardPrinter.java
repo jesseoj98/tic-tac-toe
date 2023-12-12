@@ -9,7 +9,6 @@ public class SampleSimpleBoardPrinter implements SampleBoardPrinter {
 
 	@Override
 	public void printSampleBoardSequence() {
-		System.out.println();
 		printInstructions();
 		System.out.println();
 		boardStructurePrinter.printGameBoardDivider(3);
@@ -34,6 +33,7 @@ public class SampleSimpleBoardPrinter implements SampleBoardPrinter {
 	}
 
 	private void printInstructions() {
+		System.out.println();
 		System.out.print("Simple Game Board");
 		System.out.println();
 		System.out.println();
