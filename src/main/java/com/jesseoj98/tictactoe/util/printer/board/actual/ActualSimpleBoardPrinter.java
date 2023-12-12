@@ -24,7 +24,7 @@ public class ActualSimpleBoardPrinter {
 			if ((i + 1) % 3 == 0) {
 				System.out.print("|");
 				System.out.println();
-				if ((i + 1) != gameBoard.length) {
+				if ((i + 1) != GameBoard.GAME_BOARD_SPACES) {
 					boardStructurePrinter.printGameBoardDivider(3);
 					System.out.println();
 				}

@@ -18,7 +18,7 @@ public class SampleCoordinateBoardPrinter implements SampleBoardPrinter {
 		for (int i = 1; i <= GameBoard.GAME_BOARD_DIMENSION; i++) {
 			for (int j = 1; j <= GameBoard.GAME_BOARD_DIMENSION; j++) {
 				System.out.print("|" + j + "," + i);
-				if (j % 3 == 0) {
+				if (j % GameBoard.GAME_BOARD_DIMENSION == 0) {
 					System.out.print("|");
 				}
 			}
