@@ -10,28 +10,23 @@ public class SampleCoordinateBoardPrinter implements SampleBoardPrinter {
 	@Override
 	public void printSampleBoardSequence() {
 		printInstructions();
-		System.out.println();
-		boardStructurePrinter.printGameBoardDivider(3);
-		System.out.println();
 		printSampleBoard();
-		boardStructurePrinter.printGameBoardDivider(3);
-		System.out.println();
 	}
 
 	private void printSampleBoard() {
+		boardStructurePrinter.printGameBoardDivider(3);
 		for (int i = 1; i <= GameBoard.GAME_BOARD_DIMENSION; i++) {
 			for (int j = 1; j <= GameBoard.GAME_BOARD_DIMENSION; j++) {
 				System.out.print("|" + j + "," + i);
 				if (j % 3 == 0) {
 					System.out.print("|");
-					System.out.println();
 				}
 			}
 			if (i != GameBoard.GAME_BOARD_DIMENSION) {
 				boardStructurePrinter.printGameBoardDivider(3);
-				System.out.println();
 			}
 		}
+		boardStructurePrinter.printGameBoardDivider(3);
 	}
 
 	private void printInstructions() {

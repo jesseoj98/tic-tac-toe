@@ -36,12 +36,14 @@ public class BoardStructurePrinter {
 	}
 
 	public void printGameBoardDivider(int columns) {
+		System.out.println();
 		for (int i = 1; i <= columns; i++) {
 			System.out.print("|---");
 			if (i == columns) {
 				System.out.print("|");
 			}
 		}
+		System.out.println();
 	}
 
 }
