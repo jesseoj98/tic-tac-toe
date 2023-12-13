@@ -2,7 +2,7 @@ package com.jesseoj98.tictactoe.util.helper.validator.tictactoe;
 
 public class TicTacToeValidator {
 
-	public boolean ticTacToe(char[] gameBoard, char playingCharacter) {
+	public boolean isTicTacToe(char[] gameBoard, char playingCharacter) {
 		final String ticTacToe = String.valueOf(playingCharacter) + playingCharacter + playingCharacter;
 
 		final String topRow = String.valueOf(gameBoard[0]) + gameBoard[1] + gameBoard[2];
@@ -19,7 +19,7 @@ public class TicTacToeValidator {
 				|| ticTacToe.equals(backwardDiagonal) || ticTacToe.equals(forwardDiagonal);
 	}
 
-	public boolean ticTacToe(char[][] gameBoard, char playingCharacter) {
+	public boolean isTicTacToe(char[][] gameBoard, char playingCharacter) {
 		final String ticTacToe = String.valueOf(playingCharacter) + playingCharacter + playingCharacter;
 
 		final String topRow = String.valueOf(gameBoard[0][0]) + gameBoard[0][1] + gameBoard[0][2];

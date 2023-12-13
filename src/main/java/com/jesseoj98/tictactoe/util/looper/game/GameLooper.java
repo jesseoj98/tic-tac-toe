@@ -39,7 +39,7 @@ public class GameLooper {
 
 			boardInserter.insertIntoBoard(gameBoard, inputSimple - 1, userPlayingCharacter);
 
-			if (ticTacToeValidator.ticTacToe(gameBoard, userPlayingCharacter)
+			if (ticTacToeValidator.isTicTacToe(gameBoard, userPlayingCharacter)
 					|| boardValidator.areAllBoardSpacesFilled(gameBoard)) {
 				break;
 			}
@@ -51,7 +51,7 @@ public class GameLooper {
 			System.out.println();
 			actualSimpleBoardPrinter.printActualBoard(gameBoard);
 
-		} while (!ticTacToeValidator.ticTacToe(gameBoard, cpuPlayingCharacter)
+		} while (!ticTacToeValidator.isTicTacToe(gameBoard, cpuPlayingCharacter)
 				&& !boardValidator.areAllBoardSpacesFilled(gameBoard));
 
 	}
@@ -78,7 +78,7 @@ public class GameLooper {
 
 			boardInserter.insertIntoBoard(gameBoard, inputYCoordinate - 1, inputXCoordinate - 1, userPlayingCharacter);
 
-			if (ticTacToeValidator.ticTacToe(gameBoard, userPlayingCharacter)
+			if (ticTacToeValidator.isTicTacToe(gameBoard, userPlayingCharacter)
 					|| boardValidator.areAllBoardSpacesFilled(gameBoard)) {
 				break;
 			}
@@ -93,7 +93,7 @@ public class GameLooper {
 			System.out.println();
 			actualCoordinateBoardPrinter.printActualBoard(gameBoard);
 
-		} while (!ticTacToeValidator.ticTacToe(gameBoard, cpuPlayingCharacter)
+		} while (!ticTacToeValidator.isTicTacToe(gameBoard, cpuPlayingCharacter)
 				&& !boardValidator.areAllBoardSpacesFilled(gameBoard));
 
 	}
