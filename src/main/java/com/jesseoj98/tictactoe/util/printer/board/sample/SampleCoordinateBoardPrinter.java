@@ -1,37 +1,41 @@
 package com.jesseoj98.tictactoe.util.printer.board.sample;
 
 import com.jesseoj98.tictactoe.domain.GameBoard;
-import com.jesseoj98.tictactoe.util.helper.validator.printer.PrinterValidator;
 import com.jesseoj98.tictactoe.util.printer.board.structure.BoardStructurePrinter;
 
 public class SampleCoordinateBoardPrinter implements SampleBoardPrinter {
 
-    private static final BoardStructurePrinter boardStructurePrinter = new BoardStructurePrinter();
+	private static final BoardStructurePrinter boardStructurePrinter = new BoardStructurePrinter();
 
-    private static final PrinterValidator printerValidator = new PrinterValidator();
+	@Override
+	public void printSampleBoardSequence() {
+		printInstructions();
+		printSampleBoard();
+	}
 
-    @Override
-    public void printSampleBoardSequence() {
-        printInstructions();
-        boardStructurePrinter.printBoardDivider(0, 3);
-        printSampleBoard();
-    }
+	private void printSampleBoard() {
+		boardStructurePrinter.printGameBoardDivider(3);
+		for (int i = 1; i <= GameBoard.GAME_BOARD_DIMENSION; i++) {
+			for (int j = 1; j <= GameBoard.GAME_BOARD_DIMENSION; j++) {
+				System.out.print("|" + j + "," + i);
+				if (j % GameBoard.GAME_BOARD_DIMENSION == 0) {
+					System.out.print("|");
+				}
+			}
+			if (i != GameBoard.GAME_BOARD_DIMENSION) {
+				boardStructurePrinter.printGameBoardDivider(3);
+			}
+		}
+		boardStructurePrinter.printGameBoardDivider(3);
+	}
 
-    private void printSampleBoard() {
-        for (int i = 0; i < GameBoard.GAME_BOARD_DIMENSION; i++) {
-            for (int j = 0; j < GameBoard.GAME_BOARD_DIMENSION; j++) {
-                System.out.print("|" + (j + 1) + "," + (i + 1));
-                if (!printerValidator.endOfRowMatch(j)) {
-                    System.out.println("|");
-                    boardStructurePrinter.printBoardDivider(0, 3);
-                }
-            }
-        }
-    }
-
-    private void printInstructions() {
-        System.out.println("\nCoordinates Game Board");
-        System.out.println("\nEnter an x coordinate and a y coordinate to place your move\n");
-    }
+	private void printInstructions() {
+		System.out.println();
+		System.out.print("Coordinates Game Board");
+		System.out.println();
+		System.out.println();
+		System.out.print("Enter an x coordinate and a y coordinate to place your move");
+		System.out.println();
+	}
 
 }
