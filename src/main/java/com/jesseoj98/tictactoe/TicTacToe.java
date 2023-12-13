@@ -16,6 +16,9 @@ public class TicTacToe {
 
 			game.playGame();
 
+			System.out.println();
+			System.out.print("Play again? (y/n): ");
+
 			do {
 				playAgain = scanner.next().charAt(0);
 			} while (playAgain != 'y' && playAgain != 'Y' && playAgain != 'n' && playAgain != 'N');

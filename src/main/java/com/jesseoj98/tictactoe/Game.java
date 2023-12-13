@@ -76,9 +76,6 @@ public class Game {
 			playCoordinatesGame(userPlayingCharacter, cpuPlayingCharacter, letCpuGoFirst);
 		}
 
-		System.out.println();
-		System.out.print("Play again? (y/n): ");
-
 	}
 
 	private void playSimpleGame(char userPlayingCharacter, char cpuPlayingCharacter, boolean letCpuGoFirst) {
