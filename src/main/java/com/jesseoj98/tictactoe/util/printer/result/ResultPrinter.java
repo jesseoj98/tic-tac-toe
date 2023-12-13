@@ -1,9 +1,9 @@
 package com.jesseoj98.tictactoe.util.printer.result;
 
+import java.util.List;
+
 import com.jesseoj98.tictactoe.domain.Coordinate;
 import com.jesseoj98.tictactoe.domain.Result;
-
-import java.util.List;
 
 public class ResultPrinter {
 

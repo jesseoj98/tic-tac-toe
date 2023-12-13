@@ -4,9 +4,9 @@ import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
 import com.jesseoj98.tictactoe.domain.GameBoard;
+import com.jesseoj98.tictactoe.util.helper.handler.ResultHandler;
 import com.jesseoj98.tictactoe.util.helper.validator.tictactoe.TicTacToeValidator;
 import com.jesseoj98.tictactoe.util.looper.game.GameLooper;
-import com.jesseoj98.tictactoe.util.helper.handler.ResultHandler;
 import com.jesseoj98.tictactoe.util.printer.board.actual.ActualCoordinateBoardPrinter;
 import com.jesseoj98.tictactoe.util.printer.board.actual.ActualSimpleBoardPrinter;
 import com.jesseoj98.tictactoe.util.printer.board.sample.SampleCoordinateBoardPrinter;
