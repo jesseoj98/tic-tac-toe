@@ -107,8 +107,8 @@ public class Game {
 		System.out.println();
 		actualSimpleBoardPrinter.printActualBoard(gameBoard);
 
-		final boolean playerWon = ticTacToeValidator.ticTacToe(gameBoard, userPlayingCharacter);
-		final boolean cpuWon = ticTacToeValidator.ticTacToe(gameBoard, cpuPlayingCharacter);
+		final boolean playerWon = ticTacToeValidator.isTicTacToe(gameBoard, userPlayingCharacter);
+		final boolean cpuWon = ticTacToeValidator.isTicTacToe(gameBoard, cpuPlayingCharacter);
 
 		System.out.println();
 		resultHandler.handleResult(playerWon, cpuWon, gameBoard, userPlayingCharacter, cpuPlayingCharacter);
@@ -134,8 +134,8 @@ public class Game {
 		System.out.println();
 		actualCoordinateBoardPrinter.printActualBoard(gameBoard);
 
-		final boolean playerWon = ticTacToeValidator.ticTacToe(gameBoard, userPlayingCharacter);
-		final boolean cpuWon = ticTacToeValidator.ticTacToe(gameBoard, cpuPlayingCharacter);
+		final boolean playerWon = ticTacToeValidator.isTicTacToe(gameBoard, userPlayingCharacter);
+		final boolean cpuWon = ticTacToeValidator.isTicTacToe(gameBoard, cpuPlayingCharacter);
 
 		System.out.println();
 		resultHandler.handleResult(playerWon, cpuWon, gameBoard, userPlayingCharacter, cpuPlayingCharacter);
