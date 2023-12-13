@@ -14,7 +14,7 @@ public class ActualSimpleBoardPrinter {
 		boardStructurePrinter.printGameBoardDivider(GameBoard.GAME_BOARD_DIMENSION);
 		for (int i = 0; i < GameBoard.GAME_BOARD_SPACES; i++) {
 			System.out.print("| " + spacePrinter.printSpace(gameBoard[i], i) + " ");
-			if ((i + 1) % 3 == 0) {
+			if ((i + 1) % GameBoard.GAME_BOARD_DIMENSION == 0) {
 				System.out.print("|");
 				if ((i + 1) != GameBoard.GAME_BOARD_SPACES) {
 					boardStructurePrinter.printGameBoardDivider(GameBoard.GAME_BOARD_DIMENSION);
