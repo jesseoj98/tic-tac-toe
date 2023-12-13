@@ -43,7 +43,7 @@ public class Game {
 
 		do {
 			userInput = scanner.next().charAt(0);
-		} while (!(userInput == 'x' || userInput == 'X' || userInput == 'o' || userInput == 'O'));
+		} while (userInput != 'x' && userInput != 'X' && userInput != 'o' && userInput != 'O');
 
 		userPlayingCharacter = Character.toUpperCase(userInput);
 
@@ -65,7 +65,7 @@ public class Game {
 
 		do {
 			userInput = scanner.next().charAt(0);
-		} while (!(userInput == 's' || userInput == 'S' || userInput == 'c' || userInput == 'C'));
+		} while (userInput != 's' && userInput != 'S' && userInput != 'c' && userInput != 'C');
 
 		System.out.println();
 		System.out.print("---------------");
