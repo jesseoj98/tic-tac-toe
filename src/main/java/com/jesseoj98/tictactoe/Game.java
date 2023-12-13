@@ -43,7 +43,10 @@ public class Game {
 		char userPlayingCharacter;
 		boolean letCpuGoFirst;
 
-		System.out.println("Tic-tac-toe by Jesse Jones\n");
+		System.out.print("Tic-tac-toe by Jesse Jones");
+
+		System.out.println();
+		System.out.println();
 
 		System.out.print("Choose X or O: ");
 
@@ -66,13 +69,15 @@ public class Game {
 		sampleSimpleBoardPrinter.printSampleBoardSequence();
 		sampleCoordinateBoardPrinter.printSampleBoardSequence();
 
-		System.out.print("\nChoose a game board type (s/c): ");
+		System.out.println();
+		System.out.print("Choose a game board type (s/c): ");
 
 		do {
 			userInput = scanner.next().charAt(0);
 		} while (!inputValidator.isValidBoardType(userInput));
 
-		System.out.println("\n---------------");
+		System.out.println();
+		System.out.print("---------------");
 
 		if (userInput == 's' || userInput == 'S') {
 			playSimpleGame(userPlayingCharacter, cpuPlayingCharacter, letCpuGoFirst);
@@ -80,7 +85,8 @@ public class Game {
 			playCoordinatesGame(userPlayingCharacter, cpuPlayingCharacter, letCpuGoFirst);
 		}
 
-		System.out.print("\nPlay again? (y/n): ");
+		System.out.println();
+		System.out.print("Play again? (y/n): ");
 
 	}
 

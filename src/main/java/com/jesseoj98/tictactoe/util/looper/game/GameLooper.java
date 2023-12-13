@@ -32,7 +32,8 @@ public class GameLooper {
 
 		do {
 
-			System.out.print("\nEnter a spot to place your move: ");
+			System.out.println();
+			System.out.print("Enter a spot to place your move: ");
 
 			inputSimple = simpleInputLooper.loopSimpleInput(gameBoard, true);
 
@@ -64,7 +65,8 @@ public class GameLooper {
 
 			do {
 
-				System.out.print("\nEnter an x coordinate to place your move: ");
+				System.out.println();
+				System.out.print("Enter an x coordinate to place your move: ");
 
 				inputXCoordinate = coordinateInputLooper.loopPlayerCoordinateInput(gameBoard);
 
