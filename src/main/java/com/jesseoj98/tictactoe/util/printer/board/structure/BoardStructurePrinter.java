@@ -1,7 +1,7 @@
 package com.jesseoj98.tictactoe.util.printer.board.structure;
 
 public class BoardStructurePrinter {
-	
+
 	public void printHorizontalEdgeIndices(int indices) {
 		System.out.print("  ");
 		for (int i = 1; i <= indices; i++) {
