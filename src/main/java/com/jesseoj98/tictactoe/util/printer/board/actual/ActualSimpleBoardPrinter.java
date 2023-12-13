@@ -15,16 +15,16 @@ public class ActualSimpleBoardPrinter {
 	}
 
 	private void printActualBoard(char[] gameBoard) {
-		boardStructurePrinter.printGameBoardDivider(3);
+		boardStructurePrinter.printGameBoardDivider(GameBoard.GAME_BOARD_DIMENSION);
 		for (int i = 0; i < GameBoard.GAME_BOARD_SPACES; i++) {
 			System.out.print("| " + spacePrinter.printSpace(gameBoard[i], i) + " ");
 			if ((i + 1) % 3 == 0) {
 				System.out.print("|");
 				if ((i + 1) != GameBoard.GAME_BOARD_SPACES) {
-					boardStructurePrinter.printGameBoardDivider(3);
+					boardStructurePrinter.printGameBoardDivider(GameBoard.GAME_BOARD_DIMENSION);
 				}
 			}
 		}
-		boardStructurePrinter.printGameBoardDivider(3);
+		boardStructurePrinter.printGameBoardDivider(GameBoard.GAME_BOARD_DIMENSION);
 	}
 }

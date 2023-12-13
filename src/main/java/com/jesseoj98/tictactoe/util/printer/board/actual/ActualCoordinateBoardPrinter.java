@@ -15,7 +15,7 @@ public class ActualCoordinateBoardPrinter {
 	}
 
 	private void printActualBoard(char[][] gameBoard) {
-		boardStructurePrinter.printGameBoardDivider(3);
+		boardStructurePrinter.printGameBoardDivider(GameBoard.GAME_BOARD_DIMENSION);
 		for (int i = 0; i < GameBoard.GAME_BOARD_DIMENSION; i++) {
 			for (int j = 0; j < GameBoard.GAME_BOARD_DIMENSION; j++) {
 				if (boardOccupier.isSpaceOccupied(gameBoard[i][j])) {
@@ -26,10 +26,10 @@ public class ActualCoordinateBoardPrinter {
 			}
 			System.out.print("| " + (i + 1));
 			if (i != GameBoard.GAME_BOARD_DIMENSION - 1) {
-				boardStructurePrinter.printGameBoardDivider(3);
+				boardStructurePrinter.printGameBoardDivider(GameBoard.GAME_BOARD_DIMENSION);
 			}
 		}
-		boardStructurePrinter.printGameBoardDivider(3);
-		boardStructurePrinter.printHorizontalEdgeIndices(3);
+		boardStructurePrinter.printGameBoardDivider(GameBoard.GAME_BOARD_DIMENSION);
+		boardStructurePrinter.printHorizontalEdgeIndices(GameBoard.GAME_BOARD_DIMENSION);
 	}
 }

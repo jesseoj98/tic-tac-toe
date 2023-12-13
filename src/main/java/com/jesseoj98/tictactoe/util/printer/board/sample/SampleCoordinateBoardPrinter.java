@@ -14,7 +14,7 @@ public class SampleCoordinateBoardPrinter implements SampleBoardPrinter {
 	}
 
 	private void printSampleBoard() {
-		boardStructurePrinter.printGameBoardDivider(3);
+		boardStructurePrinter.printGameBoardDivider(GameBoard.GAME_BOARD_DIMENSION);
 		for (int i = 1; i <= GameBoard.GAME_BOARD_DIMENSION; i++) {
 			for (int j = 1; j <= GameBoard.GAME_BOARD_DIMENSION; j++) {
 				System.out.print("|" + j + "," + i);
@@ -23,10 +23,10 @@ public class SampleCoordinateBoardPrinter implements SampleBoardPrinter {
 				}
 			}
 			if (i != GameBoard.GAME_BOARD_DIMENSION) {
-				boardStructurePrinter.printGameBoardDivider(3);
+				boardStructurePrinter.printGameBoardDivider(GameBoard.GAME_BOARD_DIMENSION);
 			}
 		}
-		boardStructurePrinter.printGameBoardDivider(3);
+		boardStructurePrinter.printGameBoardDivider(GameBoard.GAME_BOARD_DIMENSION);
 	}
 
 	private void printInstructions() {
