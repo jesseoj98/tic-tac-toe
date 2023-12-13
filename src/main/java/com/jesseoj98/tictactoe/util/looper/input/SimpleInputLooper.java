@@ -1,18 +1,11 @@
 package com.jesseoj98.tictactoe.util.looper.input;
 
 import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
 
-import com.jesseoj98.tictactoe.util.generator.coordinate.CoordinateGenerator;
-import com.jesseoj98.tictactoe.util.helper.occupier.BoardOccupier;
-import com.jesseoj98.tictactoe.util.helper.validator.input.InputValidator;
+import com.jesseoj98.tictactoe.domain.GameBoard;
 
 public class SimpleInputLooper {
-
-	private static final BoardOccupier boardOccupier = new BoardOccupier();
-
-	private static final CoordinateGenerator coordinateGenerator = new CoordinateGenerator();
-
-	private static final InputValidator inputValidator = new InputValidator();
 
 	private static final Scanner scanner = new Scanner(System.in);
 
@@ -21,9 +14,10 @@ public class SimpleInputLooper {
 		int inputSimple;
 
 		do {
-			inputSimple = isPlayer ? scanner.nextInt() : coordinateGenerator.generateSimple();
-		} while (!inputValidator.isValidBoardSpace(inputSimple)
-				|| boardOccupier.isSpaceOccupied(gameBoard, inputSimple - 1));
+			inputSimple = isPlayer ? scanner.nextInt()
+					: ThreadLocalRandom.current().nextInt(1, GameBoard.GAME_BOARD_SPACES + 1);
+		} while (!(inputSimple > 0 && inputSimple < 10) || gameBoard[inputSimple - 1] == 'X'
+				|| gameBoard[inputSimple - 1] == 'O');
 
 		return inputSimple;
 

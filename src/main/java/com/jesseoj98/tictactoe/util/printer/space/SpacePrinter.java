@@ -1,13 +1,9 @@
 package com.jesseoj98.tictactoe.util.printer.space;
 
-import com.jesseoj98.tictactoe.util.helper.occupier.BoardOccupier;
-
 public class SpacePrinter {
 
-	private static final BoardOccupier boardOccupier = new BoardOccupier();
-
 	public String printSpace(char space, int index) {
-		if (!boardOccupier.isSpaceOccupied(space)) {
+		if (!(space == 'X' || space == 'O')) {
 			return switch (index) {
 			case 0 -> "1";
 			case 1 -> "2";

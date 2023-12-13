@@ -2,11 +2,7 @@ package com.jesseoj98.tictactoe.util.looper.input;
 
 import java.util.Scanner;
 
-import com.jesseoj98.tictactoe.util.helper.validator.input.InputValidator;
-
 public class CoordinateInputLooper {
-
-	private static final InputValidator inputValidator = new InputValidator();
 
 	private static final Scanner scanner = new Scanner(System.in);
 
@@ -16,7 +12,7 @@ public class CoordinateInputLooper {
 
 		do {
 			inputCoordinate = scanner.nextInt();
-		} while (!inputValidator.isValidCoordinatesSpace(inputCoordinate));
+		} while (!(inputCoordinate == 1 || inputCoordinate == 2 || inputCoordinate == 3));
 
 		return inputCoordinate;
 

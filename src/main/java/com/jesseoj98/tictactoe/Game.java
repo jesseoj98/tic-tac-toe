@@ -1,11 +1,9 @@
 package com.jesseoj98.tictactoe;
 
 import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
 
-import com.jesseoj98.tictactoe.util.generator.board.BoardGenerator;
-import com.jesseoj98.tictactoe.util.generator.coordinate.CoordinateGenerator;
-import com.jesseoj98.tictactoe.util.helper.inserter.BoardInserter;
-import com.jesseoj98.tictactoe.util.helper.validator.input.InputValidator;
+import com.jesseoj98.tictactoe.domain.GameBoard;
 import com.jesseoj98.tictactoe.util.helper.validator.tictactoe.TicTacToeValidator;
 import com.jesseoj98.tictactoe.util.looper.game.GameLooper;
 import com.jesseoj98.tictactoe.util.helper.handler.ResultHandler;
@@ -19,14 +17,7 @@ public class Game {
 	private static final ActualCoordinateBoardPrinter actualCoordinateBoardPrinter = new ActualCoordinateBoardPrinter();
 	private static final ActualSimpleBoardPrinter actualSimpleBoardPrinter = new ActualSimpleBoardPrinter();
 
-	private static final BoardGenerator boardGenerator = new BoardGenerator();
-	private static final BoardInserter boardInserter = new BoardInserter();
-
-	private static final CoordinateGenerator coordinateGenerator = new CoordinateGenerator();
-
 	private static final GameLooper gameLooper = new GameLooper();
-
-	private static final InputValidator inputValidator = new InputValidator();
 
 	private static final ResultHandler resultHandler = new ResultHandler();
 
@@ -52,7 +43,7 @@ public class Game {
 
 		do {
 			userInput = scanner.next().charAt(0);
-		} while (!inputValidator.isValidPlayingCharacter(userInput));
+		} while (!(userInput == 'x' || userInput == 'X' || userInput == 'o' || userInput == 'O'));
 
 		userPlayingCharacter = Character.toUpperCase(userInput);
 
@@ -62,9 +53,9 @@ public class Game {
 
 		do {
 			userInput = scanner.next().charAt(0);
-		} while (inputValidator.isYesOrNo(userInput));
+		} while (userInput != 'y' && userInput != 'Y' && userInput != 'n' && userInput != 'N');
 
-		letCpuGoFirst = inputValidator.isYes(userInput);
+		letCpuGoFirst = userInput == 'y' || userInput == 'Y';
 
 		sampleSimpleBoardPrinter.printSampleBoardSequence();
 		sampleCoordinateBoardPrinter.printSampleBoardSequence();
@@ -74,7 +65,7 @@ public class Game {
 
 		do {
 			userInput = scanner.next().charAt(0);
-		} while (!inputValidator.isValidBoardType(userInput));
+		} while (!(userInput == 's' || userInput == 'S' || userInput == 'c' || userInput == 'C'));
 
 		System.out.println();
 		System.out.print("---------------");
@@ -92,11 +83,11 @@ public class Game {
 
 	private void playSimpleGame(char userPlayingCharacter, char cpuPlayingCharacter, boolean letCpuGoFirst) {
 
-		final char[] gameBoard = boardGenerator.generateSimple();
+		final char[] gameBoard = new char[GameBoard.GAME_BOARD_SPACES];
 
 		if (letCpuGoFirst) {
-			final int cpuFirstPlay = coordinateGenerator.generateCoordinate();
-			boardInserter.insertIntoBoard(gameBoard, cpuFirstPlay - 1, cpuPlayingCharacter);
+			final int cpuFirstPlay = ThreadLocalRandom.current().nextInt(1, GameBoard.GAME_BOARD_SPACES + 1);
+			gameBoard[cpuFirstPlay - 1] = cpuPlayingCharacter;
 		}
 
 		System.out.println();
@@ -117,13 +108,14 @@ public class Game {
 
 	private void playCoordinatesGame(char userPlayingCharacter, char cpuPlayingCharacter, boolean letCpuGoFirst) {
 
-		final char[][] gameBoard = boardGenerator.generateCoordinate();
+		final char[][] gameBoard = new char[GameBoard.GAME_BOARD_DIMENSION][GameBoard.GAME_BOARD_DIMENSION];
 
 		if (letCpuGoFirst) {
-			final int cpuFirstPlayXCoordinate = coordinateGenerator.generateCoordinate();
-			final int cpuFirstPlayYCoordinate = coordinateGenerator.generateCoordinate();
-			boardInserter.insertIntoBoard(gameBoard, cpuFirstPlayYCoordinate - 1, cpuFirstPlayXCoordinate - 1,
-					cpuPlayingCharacter);
+			final int cpuFirstPlayXCoordinate = ThreadLocalRandom.current().nextInt(1,
+					GameBoard.GAME_BOARD_DIMENSION + 1);
+			final int cpuFirstPlayYCoordinate = ThreadLocalRandom.current().nextInt(1,
+					GameBoard.GAME_BOARD_DIMENSION + 1);
+			gameBoard[cpuFirstPlayYCoordinate - 1][cpuFirstPlayXCoordinate - 1] = cpuPlayingCharacter;
 		}
 
 		System.out.println();

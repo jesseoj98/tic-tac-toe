@@ -2,13 +2,9 @@ package com.jesseoj98.tictactoe;
 
 import java.util.Scanner;
 
-import com.jesseoj98.tictactoe.util.helper.validator.input.InputValidator;
-
 public class TicTacToe {
 
 	private static final Game game = new Game();
-
-	private static final InputValidator inputValidator = new InputValidator();
 
 	private static final Scanner scanner = new Scanner(System.in);
 
@@ -22,11 +18,11 @@ public class TicTacToe {
 
 			do {
 				playAgain = scanner.next().charAt(0);
-			} while (inputValidator.isYesOrNo(playAgain));
+			} while (playAgain != 'y' && playAgain != 'Y' && playAgain != 'n' && playAgain != 'N');
 
 			System.out.println();
 
-		} while (inputValidator.isYes(playAgain));
+		} while (playAgain == 'y' || playAgain == 'Y');
 
 		System.out.println("Thanks for playing!");
 
