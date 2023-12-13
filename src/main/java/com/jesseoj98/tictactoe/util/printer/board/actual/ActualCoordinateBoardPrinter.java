@@ -10,11 +10,7 @@ public class ActualCoordinateBoardPrinter {
 
 	private static final BoardStructurePrinter boardStructurePrinter = new BoardStructurePrinter();
 
-	public void printActualBoardSequence(char[][] gameBoard) {
-		printActualBoard(gameBoard);
-	}
-
-	private void printActualBoard(char[][] gameBoard) {
+	public void printActualBoard(char[][] gameBoard) {
 		boardStructurePrinter.printGameBoardDivider(GameBoard.GAME_BOARD_DIMENSION);
 		for (int i = 0; i < GameBoard.GAME_BOARD_DIMENSION; i++) {
 			for (int j = 0; j < GameBoard.GAME_BOARD_DIMENSION; j++) {

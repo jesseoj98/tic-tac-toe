@@ -91,7 +91,7 @@ public class GameLooper {
 			boardInserter.insertIntoBoard(gameBoard, inputYCoordinate - 1, inputXCoordinate - 1, cpuPlayingCharacter);
 
 			System.out.println();
-			actualCoordinateBoardPrinter.printActualBoardSequence(gameBoard);
+			actualCoordinateBoardPrinter.printActualBoard(gameBoard);
 
 		} while (!ticTacToeValidator.ticTacToe(gameBoard, cpuPlayingCharacter)
 				&& !boardValidator.areAllBoardSpacesFilled(gameBoard));

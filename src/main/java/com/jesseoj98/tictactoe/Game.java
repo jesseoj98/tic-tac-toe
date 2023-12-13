@@ -127,12 +127,12 @@ public class Game {
 		}
 
 		System.out.println();
-		actualCoordinateBoardPrinter.printActualBoardSequence(gameBoard);
+		actualCoordinateBoardPrinter.printActualBoard(gameBoard);
 
 		gameLooper.loopCoordinatesGame(gameBoard, userPlayingCharacter, cpuPlayingCharacter);
 
 		System.out.println();
-		actualCoordinateBoardPrinter.printActualBoardSequence(gameBoard);
+		actualCoordinateBoardPrinter.printActualBoard(gameBoard);
 
 		final boolean playerWon = ticTacToeValidator.ticTacToe(gameBoard, userPlayingCharacter);
 		final boolean cpuWon = ticTacToeValidator.ticTacToe(gameBoard, cpuPlayingCharacter);
