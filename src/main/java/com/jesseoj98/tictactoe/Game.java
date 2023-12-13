@@ -23,9 +23,9 @@ public class Game {
 	private static final BoardInserter boardInserter = new BoardInserter();
 
 	private static final CoordinateGenerator coordinateGenerator = new CoordinateGenerator();
-	
+
 	private static final GameLooper gameLooper = new GameLooper();
-	
+
 	private static final InputValidator inputValidator = new InputValidator();
 
 	private static final ResultHandler resultHandler = new ResultHandler();
@@ -95,7 +95,7 @@ public class Game {
 
 		System.out.println();
 		actualSimpleBoardPrinter.printActualBoardSequence(gameBoard);
-		
+
 		gameLooper.loopSimpleGame(gameBoard, userPlayingCharacter, cpuPlayingCharacter);
 
 		System.out.println();
@@ -122,7 +122,7 @@ public class Game {
 
 		System.out.println();
 		actualCoordinateBoardPrinter.printActualBoardSequence(gameBoard);
-		
+
 		gameLooper.loopCoordinatesGame(gameBoard, userPlayingCharacter, cpuPlayingCharacter);
 
 		System.out.println();

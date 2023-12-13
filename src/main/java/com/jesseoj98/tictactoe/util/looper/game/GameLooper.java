@@ -20,7 +20,7 @@ public class GameLooper {
 	private static final BoardValidator boardValidator = new BoardValidator();
 
 	private static final CoordinateGenerator coordinateGenerator = new CoordinateGenerator();
-	
+
 	private static final CoordinateInputLooper coordinateInputLooper = new CoordinateInputLooper();
 	private static final SimpleInputLooper simpleInputLooper = new SimpleInputLooper();
 

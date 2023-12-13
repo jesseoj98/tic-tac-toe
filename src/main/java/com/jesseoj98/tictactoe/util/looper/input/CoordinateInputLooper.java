@@ -9,9 +9,9 @@ public class CoordinateInputLooper {
 	private static final InputValidator inputValidator = new InputValidator();
 
 	private static final Scanner scanner = new Scanner(System.in);
-	
+
 	public int loopPlayerCoordinateInput(char[][] gameBoard) {
-		
+
 		int inputCoordinate;
 
 		do {
@@ -19,7 +19,7 @@ public class CoordinateInputLooper {
 		} while (!inputValidator.isValidCoordinatesSpace(inputCoordinate));
 
 		return inputCoordinate;
-		
+
 	}
 
 }

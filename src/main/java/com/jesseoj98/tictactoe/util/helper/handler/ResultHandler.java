@@ -14,9 +14,8 @@ public class ResultHandler {
 		if (!playerWon && !cpuWon) {
 			System.out.println("Tie!");
 		} else {
-			final Result result = new Result(playerWon, cpuWon,
-					resultRetriever.retrieveWinningPositions(gameBoard, playerWon ? userPlayingCharacter : cpuPlayingCharacter),
-					null);
+			final Result result = new Result(playerWon, cpuWon, resultRetriever.retrieveWinningPositions(gameBoard,
+					playerWon ? userPlayingCharacter : cpuPlayingCharacter), null);
 			resultPrinter.printResult(result);
 			System.out.println();
 		}
@@ -27,8 +26,8 @@ public class ResultHandler {
 		if (!playerWon && !cpuWon) {
 			System.out.println("Tie!");
 		} else {
-			final Result result = new Result(playerWon, cpuWon, null,
-					resultRetriever.retrieveWinningPositions(gameBoard, playerWon ? userPlayingCharacter : cpuPlayingCharacter));
+			final Result result = new Result(playerWon, cpuWon, null, resultRetriever
+					.retrieveWinningPositions(gameBoard, playerWon ? userPlayingCharacter : cpuPlayingCharacter));
 			resultPrinter.printResult(result);
 			System.out.println();
 		}
