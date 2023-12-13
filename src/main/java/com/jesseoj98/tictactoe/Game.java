@@ -100,12 +100,12 @@ public class Game {
 		}
 
 		System.out.println();
-		actualSimpleBoardPrinter.printActualBoardSequence(gameBoard);
+		actualSimpleBoardPrinter.printActualBoard(gameBoard);
 
 		gameLooper.loopSimpleGame(gameBoard, userPlayingCharacter, cpuPlayingCharacter);
 
 		System.out.println();
-		actualSimpleBoardPrinter.printActualBoardSequence(gameBoard);
+		actualSimpleBoardPrinter.printActualBoard(gameBoard);
 
 		final boolean playerWon = ticTacToeValidator.ticTacToe(gameBoard, userPlayingCharacter);
 		final boolean cpuWon = ticTacToeValidator.ticTacToe(gameBoard, cpuPlayingCharacter);

@@ -10,11 +10,7 @@ public class ActualSimpleBoardPrinter {
 
 	private static final SpacePrinter spacePrinter = new SpacePrinter();
 
-	public void printActualBoardSequence(char[] gameBoard) {
-		printActualBoard(gameBoard);
-	}
-
-	private void printActualBoard(char[] gameBoard) {
+	public void printActualBoard(char[] gameBoard) {
 		boardStructurePrinter.printGameBoardDivider(GameBoard.GAME_BOARD_DIMENSION);
 		for (int i = 0; i < GameBoard.GAME_BOARD_SPACES; i++) {
 			System.out.print("| " + spacePrinter.printSpace(gameBoard[i], i) + " ");

@@ -49,7 +49,7 @@ public class GameLooper {
 			boardInserter.insertIntoBoard(gameBoard, inputSimple - 1, cpuPlayingCharacter);
 
 			System.out.println();
-			actualSimpleBoardPrinter.printActualBoardSequence(gameBoard);
+			actualSimpleBoardPrinter.printActualBoard(gameBoard);
 
 		} while (!ticTacToeValidator.ticTacToe(gameBoard, cpuPlayingCharacter)
 				&& !boardValidator.areAllBoardSpacesFilled(gameBoard));
