@@ -16,7 +16,7 @@ public class SimpleInputLooper {
 		do {
 			inputSimple = isPlayer ? scanner.nextInt()
 					: ThreadLocalRandom.current().nextInt(1, GameBoard.GAME_BOARD_SPACES + 1);
-		} while (!(inputSimple > 0 && inputSimple < 10) || gameBoard[inputSimple - 1] == 'X'
+		} while (inputSimple < 1 || inputSimple > 9 || gameBoard[inputSimple - 1] == 'X'
 				|| gameBoard[inputSimple - 1] == 'O');
 
 		return inputSimple;
