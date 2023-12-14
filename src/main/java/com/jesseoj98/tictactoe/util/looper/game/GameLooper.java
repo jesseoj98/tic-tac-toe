@@ -23,25 +23,25 @@ public class GameLooper {
 
 	public void loopSimpleGame(char[] gameBoard, char userPlayingCharacter, char cpuPlayingCharacter) {
 
-		int inputSimple;
+		int index;
 
 		do {
 
 			System.out.println();
 			System.out.print("Enter a spot to place your move: ");
 
-			inputSimple = simpleInputLooper.loopSimpleInput(gameBoard, true);
+			index = simpleInputLooper.loopSimpleInput(gameBoard, true);
 
-			gameBoard[inputSimple - 1] = userPlayingCharacter;
+			gameBoard[index - 1] = userPlayingCharacter;
 
 			if (ticTacToeValidator.isTicTacToe(gameBoard, userPlayingCharacter)
 					|| boardValidator.areAllBoardSpacesFilled(gameBoard)) {
 				break;
 			}
 
-			inputSimple = simpleInputLooper.loopSimpleInput(gameBoard, false);
+			index = simpleInputLooper.loopSimpleInput(gameBoard, false);
 
-			gameBoard[inputSimple - 1] = cpuPlayingCharacter;
+			gameBoard[index - 1] = cpuPlayingCharacter;
 
 			System.out.println();
 			actualSimpleBoardPrinter.printActualBoard(gameBoard);
@@ -53,8 +53,8 @@ public class GameLooper {
 
 	public void loopCoordinatesGame(char[][] gameBoard, char userPlayingCharacter, char cpuPlayingCharacter) {
 
-		int inputXCoordinate;
-		int inputYCoordinate;
+		int column;
+		int row;
 
 		do {
 
@@ -63,16 +63,16 @@ public class GameLooper {
 				System.out.println();
 				System.out.print("Enter an x coordinate to place your move: ");
 
-				inputXCoordinate = coordinateInputLooper.loopPlayerCoordinateInput(gameBoard);
+				column = coordinateInputLooper.loopPlayerCoordinateInput(gameBoard);
 
 				System.out.print("Enter a y coordinate to place your move: ");
 
-				inputYCoordinate = coordinateInputLooper.loopPlayerCoordinateInput(gameBoard);
+				row = coordinateInputLooper.loopPlayerCoordinateInput(gameBoard);
 
-			} while (gameBoard[inputYCoordinate - 1][inputXCoordinate - 1] == 'X'
-					|| gameBoard[inputYCoordinate - 1][inputXCoordinate - 1] == 'O');
+			} while (gameBoard[row - 1][column - 1] == 'X'
+					|| gameBoard[row - 1][column - 1] == 'O');
 
-			gameBoard[inputYCoordinate - 1][inputXCoordinate - 1] = userPlayingCharacter;
+			gameBoard[row - 1][column - 1] = userPlayingCharacter;
 
 			if (ticTacToeValidator.isTicTacToe(gameBoard, userPlayingCharacter)
 					|| boardValidator.areAllBoardSpacesFilled(gameBoard)) {
@@ -80,12 +80,12 @@ public class GameLooper {
 			}
 
 			do {
-				inputXCoordinate = ThreadLocalRandom.current().nextInt(1, GameBoard.GAME_BOARD_DIMENSION + 1);
-				inputYCoordinate = ThreadLocalRandom.current().nextInt(1, GameBoard.GAME_BOARD_DIMENSION + 1);
-			} while (gameBoard[inputYCoordinate - 1][inputXCoordinate - 1] == 'X'
-					|| gameBoard[inputYCoordinate - 1][inputXCoordinate - 1] == 'O');
+				column = ThreadLocalRandom.current().nextInt(1, GameBoard.GAME_BOARD_DIMENSION + 1);
+				row = ThreadLocalRandom.current().nextInt(1, GameBoard.GAME_BOARD_DIMENSION + 1);
+			} while (gameBoard[row - 1][column - 1] == 'X'
+					|| gameBoard[row - 1][column - 1] == 'O');
 
-			gameBoard[inputYCoordinate - 1][inputXCoordinate - 1] = cpuPlayingCharacter;
+			gameBoard[row - 1][column - 1] = cpuPlayingCharacter;
 
 			System.out.println();
 			actualCoordinateBoardPrinter.printActualBoard(gameBoard);
